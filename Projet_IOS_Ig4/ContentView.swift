@@ -14,10 +14,12 @@ struct ContentView: View {
     var body: some View {
         ZStack{
             //Switch Content Here
-            navBar
             if selected == "person" {
                 LoginView()
+
             }
+            navBar
+
         }.edgesIgnoringSafeArea(.bottom)
         
     }

@@ -25,16 +25,9 @@ struct RegisterView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
 
-            Button(action: {
+            CustomButton(title: "S'inscrire",action: {
                 viewModel.register()
-            }) {
-                Text("S'inscrire")
-                    .foregroundColor(.white)
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .padding()
-                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.blue))
-            }
-            .padding()
+            }).padding()
             .onAppear {
                 viewModel.onRegisterSuccess = {
                     print("Inscription réussie")
