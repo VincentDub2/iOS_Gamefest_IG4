@@ -6,3 +6,69 @@
 //
 
 import Foundation
+
+import SwiftUI
+
+import SwiftUI
+
+struct LoginView: View {
+    @StateObject private var viewModel = LoginViewModel()
+    @State private var showingAlert = false
+    @State private var alertMessage = ""
+    @State private var isLoading = false // Pour indiquer l'état de chargement
+
+    var body: some View {
+        VStack {
+            if isLoading {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .padding()
+            } else {
+                TextField("Email", text: $viewModel.email)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+
+                SecureField("Mot de passe", text: $viewModel.password)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+
+                Button(action: {
+                    isLoading = true // Commence le chargement
+                    viewModel.login()
+                }) {
+                    Text("Connexion")
+                        .foregroundColor(.white)
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .padding()
+                        .background(RoundedRectangle(cornerRadius: 10).fill(Color.blue))
+                }
+                .padding()
+            }
+        }
+        .padding()
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Message"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+        }
+        .onAppear {
+            viewModel.onLoginSuccess = {
+                isLoading = false // Arrête le chargement
+                alertMessage = "Connexion réussie"
+                showingAlert = true
+                // Naviguez vers l'écran suivant ou mettez à jour l'état de l'interface utilisateur ici
+            }
+
+            viewModel.onLoginFailure = { error in
+                isLoading = false // Arrête le chargement
+                alertMessage = "Erreur de connexion: \(error.localizedDescription)"
+                showingAlert = true
+                // Affichez une alerte ou mettez à jour l'interface utilisateur en conséquence
+            }
+        }
+    }
+}
+
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView()
+    }
+}
