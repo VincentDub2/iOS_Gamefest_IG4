@@ -8,9 +8,11 @@
 import Foundation
 
 class RegisterViewModel: ObservableObject {
-    @Published var username: String = ""
-    @Published var password: String = ""
-    @Published var email: String = "" // Ajoutez d'autres champs nécessaires à l'inscription
+    @Published var firstName: String = ""
+        @Published var lastName: String = ""
+        @Published var address: String = ""
+        @Published var email: String = ""
+        @Published var password: String = ""
 
     var onRegisterSuccess: (() -> Void)?
     var onRegisterFailure: ((Error) -> Void)?
@@ -18,8 +20,8 @@ class RegisterViewModel: ObservableObject {
     private var authService: AuthService = AuthService()
     
     func register() {
-        let newUser = User(username: username, password: password) // Assurez-vous que le modèle User correspond à vos besoins
-        authService.register(user: newUser) { [weak self] result in
+        let newUser = User(firstName: firstName, lastName: lastName, email: email, address: "r", password: password);
+        authService.register(userDetails: newUser) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(_):

@@ -7,41 +7,63 @@
 
 import SwiftUI
 
-// Vue pour l'inscription
 struct RegisterView: View {
     @StateObject private var viewModel = RegisterViewModel()
+    @State private var showingAlert = false
+    @State private var alertMessage = ""
+    @State private var isLoading = false // Pour indiquer l'état de chargement
 
     var body: some View {
-        VStack {
-            TextField("Nom d'utilisateur", text: $viewModel.username)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            
-            TextField("Email", text: $viewModel.email)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-
-            SecureField("Mot de passe", text: $viewModel.password)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-
-            CustomButton(title: "S'inscrire",action: {
-                viewModel.register()
-            }).padding()
-            .onAppear {
-                viewModel.onRegisterSuccess = {
-                    print("Inscription réussie")
-                    // Naviguez vers l'écran suivant ou mettez à jour l'état de l'interface utilisateur ici
+        ScrollView {
+            VStack {
+                if isLoading {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .padding()
+                } else {
+                    TextField("Prénom", text: $viewModel.firstName)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
                     
+                    TextField("Nom de famille", text: $viewModel.lastName)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
+                    
+                    TextField("Adresse", text: $viewModel.address)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
+                    TextField("Email", text: $viewModel.email)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
+                    
+                    SecureField("Mot de passe", text: $viewModel.password)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
+                    
+                    CustomButton(title: "S'inscrire", action: {
+                        isLoading = true
+                        viewModel.register()
+                    })
                 }
-
+            }.padding()
+            .alert(isPresented: $showingAlert) {
+                Alert(title: Text("Message"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+            }.onAppear {
+                viewModel.onRegisterSuccess = {
+                    isLoading = false // Arrête le chargement
+                    alertMessage = "Connexion réussie"
+                    showingAlert = true
+                    // Naviguez vers l'écran suivant ou mettez à jour l'état de l'interface utilisateur ici
+                }
+                
                 viewModel.onRegisterFailure = { error in
-                    print("Erreur d'inscription: \(error.localizedDescription)")
+                    isLoading = false // Arrête le chargement
+                    alertMessage = "Erreur de connexion: \(error.localizedDescription)"
+                    showingAlert = true
                     // Affichez une alerte ou mettez à jour l'interface utilisateur en conséquence
                 }
             }
         }
-        .padding()
     }
 }
 

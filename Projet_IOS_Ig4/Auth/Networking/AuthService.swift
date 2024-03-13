@@ -49,13 +49,35 @@ class AuthService {
             task.resume()
         }
     
-    // Ajoutez ici la méthode d'inscription si nécessaire
-    func register(user: User, completion: @escaping (Result<Bool, Error>) -> Void) {
-        // Simuler un appel API pour l'inscription
-        // Dans votre cas, implémentez ici l'appel à votre API
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+    func register(userDetails: User, completion: @escaping (Result<Bool, Error>) -> Void) {
+        guard let url = URL(string: "\(baseUrlString)/register") else {
+            completion(.failure(AuthError.failedRequest))
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let encoder = JSONEncoder()
+            let jsonData = try encoder.encode(userDetails)
+            request.httpBody = jsonData
+        } catch {
+            completion(.failure(error))
+            return
+        }
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 201, let _ = data else {
+                completion(.failure(error ?? AuthError.failedRequest))
+                return
+            }
+
             completion(.success(true))
         }
+
+        task.resume()
     }
 
 }
