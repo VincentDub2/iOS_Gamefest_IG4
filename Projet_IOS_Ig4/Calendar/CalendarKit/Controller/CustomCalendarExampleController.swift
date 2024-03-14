@@ -38,6 +38,8 @@ final class CustomCalendarExampleController: DayViewController {
                  "Craig Federighi"],
 
     ]
+    var creneaux: [Creneau] = []
+
     
     //Store the event generated
     var generatedEvents = [EventDescriptor]()
@@ -75,19 +77,60 @@ final class CustomCalendarExampleController: DayViewController {
         title = "Planning"
         navigationController?.navigationBar.isTranslucent = false
         dayView.autoScrollToFirstEvent = true
+        
+        // Récupérer les créneaux ici et les transformer en événements
+        
+        fetchAndPrepareCreneaux()
         reloadData()
     }
 
     // MARK: EventDataSource
-    
-    // Détermine les événements à afficher pour une date donnée.
     override func eventsForDate(_ date: Date) -> [EventDescriptor] {
         if !alreadyGeneratedSet.contains(date) {
             alreadyGeneratedSet.insert(date)
-            generatedEvents.append(contentsOf: generateEventsForDate(date))
+            // Ajoutez ici la logique pour filtrer les créneaux basés sur la date si nécessaire
+            let eventsForDate = creneaux.compactMap { transformCreneauToEvent($0) }
+            generatedEvents.append(contentsOf: eventsForDate)
         }
         return generatedEvents
     }
+    
+    func fetchAndPrepareCreneaux() {
+        PlanningService.shared.getCreneaux { [weak self] result in
+            switch result {
+            case .success(let creneaux):
+                // Transformer les créneaux en événements et les stocker dans generatedEvents
+                self?.generatedEvents = creneaux.compactMap { self?.transformCreneauToEvent($0) }
+                DispatchQueue.main.async {
+                    self?.reloadData()
+                }
+            case .failure(let error):
+                print("Erreur lors de la récupération des créneaux: \(error)")
+            }
+        }
+    }
+    
+    func transformCreneauToEvent(_ creneau: Creneau) -> Event {
+        let event = Event()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" // Assurez-vous que ce format correspond à celui de vos créneaux
+        dateFormatter.timeZone = TimeZone(identifier: "Europe/Paris") // Ajustez selon le fuseau horaire des créneaux
+        
+        if let start = dateFormatter.date(from: creneau.timeStart),
+           let end = dateFormatter.date(from: creneau.timeEnd) {
+            event.dateInterval = DateInterval(start: start, end: end)
+        }
+        
+        // Personnalisez ici avec les détails de votre créneau
+        event.text = "Creneau: \(creneau.id)\nDebut: \(creneau.timeStart)\nFin: \(creneau.timeEnd)"
+        event.color = colors.randomElement() ?? .gray // Choisissez une couleur par défaut ou selon une logique spécifique
+        event.isAllDay = false // Ou true si c'est un événement sur toute la journée
+        // event.lineBreakMode et event.userInfo peuvent être configurés si nécessaire
+        
+        return event
+    }
+
     
     // Crée aléatoirement un ensemble d'événements pour une date spécifique
     // Can be delete

@@ -42,6 +42,5 @@ class SessionManager {
     func logout() {
         user = nil
         deleteAuthToken()
-        // Assurez-vous de nettoyer également UserDefaults ou Keychain si vous les utilisez.
     }
 }
