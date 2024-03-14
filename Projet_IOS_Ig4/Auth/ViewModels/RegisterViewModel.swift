@@ -20,7 +20,7 @@ class RegisterViewModel: ObservableObject {
     private var authService: AuthService = AuthService()
     
     func register() {
-        let newUser = User(firstName: firstName, lastName: lastName, email: email, address: "r", password: password);
+        let newUser = UserForRegister(firstName: firstName, lastName: lastName, email: email, address: "r", password: password);
         authService.register(userDetails: newUser) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
