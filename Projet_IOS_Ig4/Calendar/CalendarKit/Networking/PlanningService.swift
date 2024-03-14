@@ -5,6 +5,10 @@
 //  Created by vincent DUBUC on 14/03/2024.
 //
 
+struct InscriptionsResponse: Codable {
+    let inscriptions: [Creneau]
+}
+
 import Foundation
 import Alamofire
 
@@ -27,15 +31,16 @@ class PlanningService {
     let tempoFestivalId = 1
     
     func getCreneaux(completion: @escaping (Result<[Creneau], AFError>) -> Void) {
-        let endpoint = "/creneaux/user/\(tempoUserId)/festival/\(tempoFestivalId)"
+        let endpoint = "/planing/\(tempoUserId)/\(tempoFestivalId)"
         
-        APIManager.requestGET(endpoint: endpoint, parameters: nil) { (result: Result<[Creneau], AFError>) in
+        APIManager.requestGET(endpoint: endpoint, parameters: nil) { (result: Result<InscriptionsResponse, AFError>) in
             switch result {
-            case .success(let creneau):
+            case .success(let response):
                 DispatchQueue.main.async {
-                    self.creneau = creneau
-                    print(creneau)
-                    completion(.success(creneau)) // Informe l'appelant du succès avec les données des créneaux.
+                    self.creneau = response.inscriptions
+                    print("voici la reponse",response.inscriptions)
+                    print("voici creneau",self.creneau)
+                    completion(.success(self.creneau)) // Informe l'appelant du succès avec les données des créneaux.
                 }
             case .failure(let error):
                 DispatchQueue.main.async {

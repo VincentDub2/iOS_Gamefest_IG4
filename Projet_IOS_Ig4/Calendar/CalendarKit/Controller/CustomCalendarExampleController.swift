@@ -106,26 +106,33 @@ final class CustomCalendarExampleController: DayViewController {
                 }
             case .failure(let error):
                 print("Erreur lors de la récupération des créneaux: \(error)")
+                print("voici les creneaux ")
+                print(PlanningService.shared.creneau)
             }
         }
     }
     
-    func transformCreneauToEvent(_ creneau: Creneau) -> Event {
+    func transformCreneauToEvent(_ creneau: Creneau) -> Event? {
         let event = Event()
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" // Assurez-vous que ce format correspond à celui de vos créneaux
         dateFormatter.timeZone = TimeZone(identifier: "Europe/Paris") // Ajustez selon le fuseau horaire des créneaux
         
-        if let start = dateFormatter.date(from: creneau.timeStart),
-           let end = dateFormatter.date(from: creneau.timeEnd) {
-            event.dateInterval = DateInterval(start: start, end: end)
-        }
-        
+
+        guard let start = dateFormatter.date(from: creneau.timeStart),
+                  let end = dateFormatter.date(from: creneau.timeEnd),
+                  start < end else {
+                print("Erreur: Les dates de début et de fin sont invalides ou la date de début est après la date de fin.")
+                return nil // Retourne nil si les dates ne sont pas valides
+            }
+            
+        event.dateInterval = DateInterval(start: start.addingTimeInterval(30), end: end)
         // Personnalisez ici avec les détails de votre créneau
-        event.text = "Creneau: \(creneau.id)\nDebut: \(creneau.timeStart)\nFin: \(creneau.timeEnd)"
+        event.text = creneau.name
         event.color = colors.randomElement() ?? .gray // Choisissez une couleur par défaut ou selon une logique spécifique
         event.isAllDay = false // Ou true si c'est un événement sur toute la journée
+        event.lineBreakMode = .byTruncatingTail
         // event.lineBreakMode et event.userInfo peuvent être configurés si nécessaire
         
         return event
