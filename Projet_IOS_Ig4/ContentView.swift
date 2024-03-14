@@ -11,13 +11,20 @@ struct ContentView: View {
     var images : [String] = ["house","magnifyingglass","plus","person","loupe"]
     @State var selected = "house"
     @Namespace private var namespace
+    var window: UIWindow?
     var body: some View {
         ZStack{
             //Switch Content Here
             if selected == "person" {
                 LoginView()
-
+            }else if selected == "plus" {
+                CalendarKitView()
+            }else if selected == "magnifyingglass" {
+                CalendarView()
+            }else if selected == "loupe" {
+                CalendarContainerView()
             }
+
             navBar
 
         }.edgesIgnoringSafeArea(.bottom)
