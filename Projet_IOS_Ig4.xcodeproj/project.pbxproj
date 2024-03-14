@@ -29,6 +29,11 @@
 		C28998392BA226A6005A681E /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998372BA226A6005A681E /* CalendarView.swift */; };
 		C289983A2BA226A6005A681E /* Decoration+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998382BA226A6005A681E /* Decoration+SwiftUI.swift */; };
 		C289983C2BA229F9005A681E /* CalendarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C289983B2BA229F9005A681E /* CalendarContainerView.swift */; };
+		C28998412BA2E895005A681E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C28998402BA2E895005A681E /* Alamofire */; };
+		C28998432BA2E895005A681E /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = C28998422BA2E895005A681E /* AlamofireDynamic */; };
+		C28998452BA2E961005A681E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998442BA2E961005A681E /* APIManager.swift */; };
+		C28998482BA2F022005A681E /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998472BA2F022005A681E /* SessionManager.swift */; };
+		C289984B2BA2F106005A681E /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C289984A2BA2F106005A681E /* KeychainSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +78,8 @@
 		C28998372BA226A6005A681E /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		C28998382BA226A6005A681E /* Decoration+SwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Decoration+SwiftUI.swift"; sourceTree = "<group>"; };
 		C289983B2BA229F9005A681E /* CalendarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarContainerView.swift; sourceTree = "<group>"; };
+		C28998442BA2E961005A681E /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		C28998472BA2F022005A681E /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +88,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C28998302BA22258005A681E /* CalendarKit in Frameworks */,
+				C28998432BA2E895005A681E /* AlamofireDynamic in Frameworks */,
+				C289984B2BA2F106005A681E /* KeychainSwift in Frameworks */,
+				C28998412BA2E895005A681E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +134,7 @@
 		C28997DE2BA0974D005A681E /* Projet_IOS_Ig4 */ = {
 			isa = PBXGroup;
 			children = (
+				C289983E2BA2E827005A681E /* Utils */,
 				C28998282BA220A7005A681E /* Calendar */,
 				C28998222BA1A208005A681E /* Components */,
 				C28998092BA09764005A681E /* Auth */,
@@ -163,10 +174,12 @@
 		C28998092BA09764005A681E /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				C28998462BA2F010005A681E /* New Group */,
 				C289981B2BA09938005A681E /* Views */,
 				C28998182BA098EF005A681E /* ViewModels */,
 				C28998152BA09876005A681E /* Networking */,
 				C28998102BA097C3005A681E /* Models */,
+				C28998472BA2F022005A681E /* SessionManager.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -235,6 +248,21 @@
 			path = CalendarKit;
 			sourceTree = "<group>";
 		};
+		C289983E2BA2E827005A681E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C28998442BA2E961005A681E /* APIManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C28998462BA2F010005A681E /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -253,6 +281,9 @@
 			name = Projet_IOS_Ig4;
 			packageProductDependencies = (
 				C289982F2BA22258005A681E /* CalendarKit */,
+				C28998402BA2E895005A681E /* Alamofire */,
+				C28998422BA2E895005A681E /* AlamofireDynamic */,
+				C289984A2BA2F106005A681E /* KeychainSwift */,
 			);
 			productName = Projet_IOS_Ig4;
 			productReference = C28997DC2BA0974D005A681E /* Projet_IOS_Ig4.app */;
@@ -328,6 +359,8 @@
 			mainGroup = C28997D32BA0974D005A681E;
 			packageReferences = (
 				C28998272BA2208E005A681E /* XCRemoteSwiftPackageReference "CalendarKit" */,
+				C289983F2BA2E895005A681E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				C28998492BA2F106005A681E /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = C28997DD2BA0974D005A681E /* Products */;
 			projectDirPath = "";
@@ -373,6 +406,7 @@
 			files = (
 				C289982D2BA22128005A681E /* CustomCalendarExampleController.swift in Sources */,
 				C28998212BA09B3C005A681E /* RegisterView.swift in Sources */,
+				C28998482BA2F022005A681E /* SessionManager.swift in Sources */,
 				C289983A2BA226A6005A681E /* Decoration+SwiftUI.swift in Sources */,
 				C28998392BA226A6005A681E /* CalendarView.swift in Sources */,
 				C28997E22BA0974D005A681E /* ContentView.swift in Sources */,
@@ -383,6 +417,7 @@
 				C289981A2BA09901005A681E /* LoginViewModel.swift in Sources */,
 				C28998172BA0989C005A681E /* AuthService.swift in Sources */,
 				C28997E02BA0974D005A681E /* Projet_IOS_Ig4App.swift in Sources */,
+				C28998452BA2E961005A681E /* APIManager.swift in Sources */,
 				C289982E2BA22128005A681E /* DatePickerController.swift in Sources */,
 				C28998322BA2235E005A681E /* CalendarKitView.swift in Sources */,
 				C289983C2BA229F9005A681E /* CalendarContainerView.swift in Sources */,
@@ -726,6 +761,22 @@
 				minimumVersion = 1.1.10;
 			};
 		};
+		C289983F2BA2E895005A681E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.0;
+			};
+		};
+		C28998492BA2F106005A681E /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 21.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -733,6 +784,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C28998272BA2208E005A681E /* XCRemoteSwiftPackageReference "CalendarKit" */;
 			productName = CalendarKit;
+		};
+		C28998402BA2E895005A681E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C289983F2BA2E895005A681E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		C28998422BA2E895005A681E /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C289983F2BA2E895005A681E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+		C289984A2BA2F106005A681E /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C28998492BA2F106005A681E /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
