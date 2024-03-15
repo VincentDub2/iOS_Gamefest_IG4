@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF51A91F2BA4897100D6188B /* Festival.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A91E2BA4897100D6188B /* Festival.swift */; };
+		BF51A9212BA48B0B00D6188B /* FestivalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9202BA48B0B00D6188B /* FestivalViewModel.swift */; };
+		BF51A9232BA48B5B00D6188B /* FestivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9222BA48B5B00D6188B /* FestivalView.swift */; };
+		BF51A9262BA4900600D6188B /* FestivalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9252BA4900600D6188B /* FestivalService.swift */; };
 		C28997E02BA0974D005A681E /* Projet_IOS_Ig4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997DF2BA0974D005A681E /* Projet_IOS_Ig4App.swift */; };
 		C28997E22BA0974D005A681E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997E12BA0974D005A681E /* ContentView.swift */; };
 		C28997E42BA0974E005A681E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C28997E32BA0974E005A681E /* Assets.xcassets */; };
@@ -57,6 +61,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF51A91E2BA4897100D6188B /* Festival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Festival.swift; sourceTree = "<group>"; };
+		BF51A9202BA48B0B00D6188B /* FestivalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalViewModel.swift; sourceTree = "<group>"; };
+		BF51A9222BA48B5B00D6188B /* FestivalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalView.swift; sourceTree = "<group>"; };
+		BF51A9252BA4900600D6188B /* FestivalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalService.swift; sourceTree = "<group>"; };
 		C28997DC2BA0974D005A681E /* Projet_IOS_Ig4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Projet_IOS_Ig4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C28997DF2BA0974D005A681E /* Projet_IOS_Ig4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projet_IOS_Ig4App.swift; sourceTree = "<group>"; };
 		C28997E12BA0974D005A681E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,6 +125,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF51A91A2BA488FF00D6188B /* Festival */ = {
+			isa = PBXGroup;
+			children = (
+				BF51A9242BA48FDE00D6188B /* Networking */,
+				BF51A91D2BA4892500D6188B /* Models */,
+				BF51A91C2BA4891400D6188B /* ViewModels */,
+				BF51A91B2BA4890B00D6188B /* Views */,
+			);
+			path = Festival;
+			sourceTree = "<group>";
+		};
+		BF51A91B2BA4890B00D6188B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BF51A9222BA48B5B00D6188B /* FestivalView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BF51A91C2BA4891400D6188B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BF51A9202BA48B0B00D6188B /* FestivalViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BF51A91D2BA4892500D6188B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BF51A91E2BA4897100D6188B /* Festival.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BF51A9242BA48FDE00D6188B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BF51A9252BA4900600D6188B /* FestivalService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		C28997D32BA0974D005A681E = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +191,7 @@
 		C28997DE2BA0974D005A681E /* Projet_IOS_Ig4 */ = {
 			isa = PBXGroup;
 			children = (
+				BF51A91A2BA488FF00D6188B /* Festival */,
 				C289983E2BA2E827005A681E /* Utils */,
 				C28998282BA220A7005A681E /* Calendar */,
 				C28998222BA1A208005A681E /* Components */,
@@ -452,10 +504,13 @@
 				C289983A2BA226A6005A681E /* Decoration+SwiftUI.swift in Sources */,
 				C28998392BA226A6005A681E /* CalendarView.swift in Sources */,
 				C28998552BA30554005A681E /* CalendarViewModel.swift in Sources */,
+				BF51A9262BA4900600D6188B /* FestivalService.swift in Sources */,
 				C28997E22BA0974D005A681E /* ContentView.swift in Sources */,
 				C289981D2BA0994D005A681E /* LoginView.swift in Sources */,
 				C28998142BA09804005A681E /* AuthToken.swift in Sources */,
 				C28998242BA1A22D005A681E /* CustomButton.swift in Sources */,
+				BF51A9212BA48B0B00D6188B /* FestivalViewModel.swift in Sources */,
+				BF51A91F2BA4897100D6188B /* Festival.swift in Sources */,
 				C289981F2BA09B25005A681E /* RegisterViewModel.swift in Sources */,
 				C289981A2BA09901005A681E /* LoginViewModel.swift in Sources */,
 				C28998172BA0989C005A681E /* AuthService.swift in Sources */,
@@ -465,6 +520,7 @@
 				C28998322BA2235E005A681E /* CalendarKitView.swift in Sources */,
 				C289983C2BA229F9005A681E /* CalendarContainerView.swift in Sources */,
 				C28998122BA097EE005A681E /* User.swift in Sources */,
+				BF51A9232BA48B5B00D6188B /* FestivalView.swift in Sources */,
 				C28998532BA3016C005A681E /* Creneau.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -626,10 +682,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Projet_IOS_Ig4/Preview Content\"";
-				DEVELOPMENT_TEAM = Z3AQFUWRS9;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -644,6 +700,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "vincent.Projet-IOS-Ig4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -655,10 +712,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Projet_IOS_Ig4/Preview Content\"";
-				DEVELOPMENT_TEAM = Z3AQFUWRS9;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -673,6 +730,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "vincent.Projet-IOS-Ig4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
