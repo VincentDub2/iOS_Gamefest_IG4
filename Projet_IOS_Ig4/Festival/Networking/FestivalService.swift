@@ -15,8 +15,6 @@ class FestivalService {
         
         APIManager.requestGET(endpoint: endpoint) { (result: Result<FestivalModel, AFError>) in
             DispatchQueue.main.async {
-                print("testttttttttt")
-                print(result)
                 switch result {
                 case .success(let festival):
                     completion(.success(festival))
