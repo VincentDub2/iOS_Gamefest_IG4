@@ -15,7 +15,7 @@ struct FestivalView: View {
             if let festival = festivalViewModel.festival {
                 FestivalDetailsView(festival: festival)
             } else {
-                ProgressView("Loading festival...")
+                ProgressView("Chargement du festival...")
                     .progressViewStyle(CircularProgressViewStyle())
                     .onAppear {
                         festivalViewModel.fetchFestival()

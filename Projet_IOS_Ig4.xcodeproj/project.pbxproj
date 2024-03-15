@@ -12,6 +12,10 @@
 		BF51A9232BA48B5B00D6188B /* FestivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9222BA48B5B00D6188B /* FestivalView.swift */; };
 		BF51A9262BA4900600D6188B /* FestivalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9252BA4900600D6188B /* FestivalService.swift */; };
 		BF51A9292BA4AB6100D6188B /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = BF51A9282BA4AB6100D6188B /* CalendarKit */; };
+		BF51A92D2BA4AFC300D6188B /* PosteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A92C2BA4AFC300D6188B /* PosteService.swift */; };
+		BF51A9322BA4B00A00D6188B /* Poste.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9312BA4B00A00D6188B /* Poste.swift */; };
+		BF51A9342BA4B02000D6188B /* PosteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9332BA4B02000D6188B /* PosteViewModel.swift */; };
+		BF51A9362BA4B03100D6188B /* PosteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9352BA4B03100D6188B /* PosteView.swift */; };
 		C28997E02BA0974D005A681E /* Projet_IOS_Ig4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997DF2BA0974D005A681E /* Projet_IOS_Ig4App.swift */; };
 		C28997E22BA0974D005A681E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997E12BA0974D005A681E /* ContentView.swift */; };
 		C28997E42BA0974E005A681E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C28997E32BA0974E005A681E /* Assets.xcassets */; };
@@ -65,6 +69,10 @@
 		BF51A9202BA48B0B00D6188B /* FestivalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalViewModel.swift; sourceTree = "<group>"; };
 		BF51A9222BA48B5B00D6188B /* FestivalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalView.swift; sourceTree = "<group>"; };
 		BF51A9252BA4900600D6188B /* FestivalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalService.swift; sourceTree = "<group>"; };
+		BF51A92C2BA4AFC300D6188B /* PosteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosteService.swift; sourceTree = "<group>"; };
+		BF51A9312BA4B00A00D6188B /* Poste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poste.swift; sourceTree = "<group>"; };
+		BF51A9332BA4B02000D6188B /* PosteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosteViewModel.swift; sourceTree = "<group>"; };
+		BF51A9352BA4B03100D6188B /* PosteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosteView.swift; sourceTree = "<group>"; };
 		C28997DC2BA0974D005A681E /* Projet_IOS_Ig4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Projet_IOS_Ig4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C28997DF2BA0974D005A681E /* Projet_IOS_Ig4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projet_IOS_Ig4App.swift; sourceTree = "<group>"; };
 		C28997E12BA0974D005A681E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -168,6 +176,49 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		BF51A92A2BA4AED600D6188B /* Poste */ = {
+			isa = PBXGroup;
+			children = (
+				BF51A9302BA4AFF300D6188B /* Views */,
+				BF51A92F2BA4AFE500D6188B /* ViewModels */,
+				BF51A92E2BA4AFD500D6188B /* Models */,
+				BF51A92B2BA4AF9400D6188B /* Networking */,
+			);
+			path = Poste;
+			sourceTree = "<group>";
+		};
+		BF51A92B2BA4AF9400D6188B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BF51A92C2BA4AFC300D6188B /* PosteService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		BF51A92E2BA4AFD500D6188B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BF51A9312BA4B00A00D6188B /* Poste.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BF51A92F2BA4AFE500D6188B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BF51A9332BA4B02000D6188B /* PosteViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BF51A9302BA4AFF300D6188B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BF51A9352BA4B03100D6188B /* PosteView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C28997D32BA0974D005A681E = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +242,7 @@
 		C28997DE2BA0974D005A681E /* Projet_IOS_Ig4 */ = {
 			isa = PBXGroup;
 			children = (
+				BF51A92A2BA4AED600D6188B /* Poste */,
 				BF51A91A2BA488FF00D6188B /* Festival */,
 				C289983E2BA2E827005A681E /* Utils */,
 				C28998282BA220A7005A681E /* Calendar */,
@@ -500,6 +552,7 @@
 				C289982D2BA22128005A681E /* CustomCalendarExampleController.swift in Sources */,
 				C28998212BA09B3C005A681E /* RegisterView.swift in Sources */,
 				C28998482BA2F022005A681E /* SessionManager.swift in Sources */,
+				BF51A92D2BA4AFC300D6188B /* PosteService.swift in Sources */,
 				C28998512BA2FCAC005A681E /* PlanningService.swift in Sources */,
 				C289983A2BA226A6005A681E /* Decoration+SwiftUI.swift in Sources */,
 				C28998392BA226A6005A681E /* CalendarView.swift in Sources */,
@@ -510,16 +563,19 @@
 				C28998142BA09804005A681E /* AuthToken.swift in Sources */,
 				C28998242BA1A22D005A681E /* CustomButton.swift in Sources */,
 				BF51A9212BA48B0B00D6188B /* FestivalViewModel.swift in Sources */,
+				BF51A9342BA4B02000D6188B /* PosteViewModel.swift in Sources */,
 				BF51A91F2BA4897100D6188B /* Festival.swift in Sources */,
 				C289981F2BA09B25005A681E /* RegisterViewModel.swift in Sources */,
 				C289981A2BA09901005A681E /* LoginViewModel.swift in Sources */,
 				C28998172BA0989C005A681E /* AuthService.swift in Sources */,
 				C28997E02BA0974D005A681E /* Projet_IOS_Ig4App.swift in Sources */,
 				C28998452BA2E961005A681E /* APIManager.swift in Sources */,
+				BF51A9322BA4B00A00D6188B /* Poste.swift in Sources */,
 				C289982E2BA22128005A681E /* DatePickerController.swift in Sources */,
 				C28998322BA2235E005A681E /* CalendarKitView.swift in Sources */,
 				C289983C2BA229F9005A681E /* CalendarContainerView.swift in Sources */,
 				C28998122BA097EE005A681E /* User.swift in Sources */,
+				BF51A9362BA4B03100D6188B /* PosteView.swift in Sources */,
 				BF51A9232BA48B5B00D6188B /* FestivalView.swift in Sources */,
 				C28998532BA3016C005A681E /* Creneau.swift in Sources */,
 			);

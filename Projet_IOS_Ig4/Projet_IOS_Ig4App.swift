@@ -11,7 +11,7 @@ import SwiftUI
 struct Projet_IOS_Ig4App: App {
     var body: some Scene {
         WindowGroup {
-            FestivalView()
+            PosteView()
         }
     }
 }
