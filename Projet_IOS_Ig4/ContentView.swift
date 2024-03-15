@@ -16,8 +16,12 @@ struct ContentView: View {
         ZStack{
             //Switch Content Here
             if selected == "person" {
-                LoginView()
-            }else if selected == "plus" {
+                if SessionManager.shared.isLoggedIn() {
+                    ProfileView()
+                } else {
+                    LoginView()
+                }
+            } else if selected == "plus" {
                 CalendarKitView()
             }else if selected == "magnifyingglass" {
                 CalendarView()
