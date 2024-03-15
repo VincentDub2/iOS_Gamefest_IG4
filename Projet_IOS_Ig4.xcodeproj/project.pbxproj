@@ -37,6 +37,9 @@
 		C28998512BA2FCAC005A681E /* PlanningService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998502BA2FCAC005A681E /* PlanningService.swift */; };
 		C28998532BA3016C005A681E /* Creneau.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998522BA3016C005A681E /* Creneau.swift */; };
 		C28998552BA30554005A681E /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998542BA30554005A681E /* CalendarViewModel.swift */; };
+		C28998612BA48A88005A681E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998602BA48A88005A681E /* Post.swift */; };
+		C28998632BA48AA0005A681E /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998622BA48AA0005A681E /* Like.swift */; };
+		C28998652BA48AC2005A681E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998642BA48AC2005A681E /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,9 @@
 		C28998502BA2FCAC005A681E /* PlanningService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningService.swift; sourceTree = "<group>"; };
 		C28998522BA3016C005A681E /* Creneau.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creneau.swift; sourceTree = "<group>"; };
 		C28998542BA30554005A681E /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		C28998602BA48A88005A681E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		C28998622BA48AA0005A681E /* Like.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
+		C28998642BA48AC2005A681E /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,7 @@
 		C28997DE2BA0974D005A681E /* Projet_IOS_Ig4 */ = {
 			isa = PBXGroup;
 			children = (
+				C28998592BA48985005A681E /* Forum */,
 				C289983E2BA2E827005A681E /* Utils */,
 				C28998282BA220A7005A681E /* Calendar */,
 				C28998222BA1A208005A681E /* Components */,
@@ -304,6 +311,40 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		C28998592BA48985005A681E /* Forum */ = {
+			isa = PBXGroup;
+			children = (
+				C289985E2BA489C8005A681E /* Views */,
+				C289985D2BA489BE005A681E /* ViewModels */,
+				C289985C2BA489B1005A681E /* Models */,
+			);
+			path = Forum;
+			sourceTree = "<group>";
+		};
+		C289985C2BA489B1005A681E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C28998602BA48A88005A681E /* Post.swift */,
+				C28998622BA48AA0005A681E /* Like.swift */,
+				C28998642BA48AC2005A681E /* Comment.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C289985D2BA489BE005A681E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C289985E2BA489C8005A681E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -446,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C289982D2BA22128005A681E /* CustomCalendarExampleController.swift in Sources */,
+				C28998612BA48A88005A681E /* Post.swift in Sources */,
 				C28998212BA09B3C005A681E /* RegisterView.swift in Sources */,
 				C28998482BA2F022005A681E /* SessionManager.swift in Sources */,
 				C28998512BA2FCAC005A681E /* PlanningService.swift in Sources */,
@@ -457,11 +499,13 @@
 				C28998142BA09804005A681E /* AuthToken.swift in Sources */,
 				C28998242BA1A22D005A681E /* CustomButton.swift in Sources */,
 				C289981F2BA09B25005A681E /* RegisterViewModel.swift in Sources */,
+				C28998632BA48AA0005A681E /* Like.swift in Sources */,
 				C289981A2BA09901005A681E /* LoginViewModel.swift in Sources */,
 				C28998172BA0989C005A681E /* AuthService.swift in Sources */,
 				C28997E02BA0974D005A681E /* Projet_IOS_Ig4App.swift in Sources */,
 				C28998452BA2E961005A681E /* APIManager.swift in Sources */,
 				C289982E2BA22128005A681E /* DatePickerController.swift in Sources */,
+				C28998652BA48AC2005A681E /* Comment.swift in Sources */,
 				C28998322BA2235E005A681E /* CalendarKitView.swift in Sources */,
 				C289983C2BA229F9005A681E /* CalendarContainerView.swift in Sources */,
 				C28998122BA097EE005A681E /* User.swift in Sources */,
