@@ -11,6 +11,7 @@
 		BF51A9212BA48B0B00D6188B /* FestivalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9202BA48B0B00D6188B /* FestivalViewModel.swift */; };
 		BF51A9232BA48B5B00D6188B /* FestivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9222BA48B5B00D6188B /* FestivalView.swift */; };
 		BF51A9262BA4900600D6188B /* FestivalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9252BA4900600D6188B /* FestivalService.swift */; };
+		BF51A9292BA4AB6100D6188B /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = BF51A9282BA4AB6100D6188B /* CalendarKit */; };
 		C28997E02BA0974D005A681E /* Projet_IOS_Ig4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997DF2BA0974D005A681E /* Projet_IOS_Ig4App.swift */; };
 		C28997E22BA0974D005A681E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997E12BA0974D005A681E /* ContentView.swift */; };
 		C28997E42BA0974E005A681E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C28997E32BA0974E005A681E /* Assets.xcassets */; };
@@ -28,7 +29,6 @@
 		C28998242BA1A22D005A681E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998232BA1A22D005A681E /* CustomButton.swift */; };
 		C289982D2BA22128005A681E /* CustomCalendarExampleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C289982A2BA22128005A681E /* CustomCalendarExampleController.swift */; };
 		C289982E2BA22128005A681E /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C289982B2BA22128005A681E /* DatePickerController.swift */; };
-		C28998302BA22258005A681E /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = C289982F2BA22258005A681E /* CalendarKit */; };
 		C28998322BA2235E005A681E /* CalendarKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998312BA2235E005A681E /* CalendarKitView.swift */; };
 		C28998392BA226A6005A681E /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998372BA226A6005A681E /* CalendarView.swift */; };
 		C289983A2BA226A6005A681E /* Decoration+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998382BA226A6005A681E /* Decoration+SwiftUI.swift */; };
@@ -101,8 +101,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C28998302BA22258005A681E /* CalendarKit in Frameworks */,
 				C28998432BA2E895005A681E /* AlamofireDynamic in Frameworks */,
+				BF51A9292BA4AB6100D6188B /* CalendarKit in Frameworks */,
 				C289984B2BA2F106005A681E /* KeychainSwift in Frameworks */,
 				C28998412BA2E895005A681E /* Alamofire in Frameworks */,
 			);
@@ -373,10 +373,10 @@
 			);
 			name = Projet_IOS_Ig4;
 			packageProductDependencies = (
-				C289982F2BA22258005A681E /* CalendarKit */,
 				C28998402BA2E895005A681E /* Alamofire */,
 				C28998422BA2E895005A681E /* AlamofireDynamic */,
 				C289984A2BA2F106005A681E /* KeychainSwift */,
+				BF51A9282BA4AB6100D6188B /* CalendarKit */,
 			);
 			productName = Projet_IOS_Ig4;
 			productReference = C28997DC2BA0974D005A681E /* Projet_IOS_Ig4.app */;
@@ -451,9 +451,9 @@
 			);
 			mainGroup = C28997D32BA0974D005A681E;
 			packageReferences = (
-				C28998272BA2208E005A681E /* XCRemoteSwiftPackageReference "CalendarKit" */,
 				C289983F2BA2E895005A681E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				C28998492BA2F106005A681E /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				BF51A9272BA4AAF000D6188B /* XCRemoteSwiftPackageReference "CalendarKit" */,
 			);
 			productRefGroup = C28997DD2BA0974D005A681E /* Products */;
 			projectDirPath = "";
@@ -855,7 +855,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C28998272BA2208E005A681E /* XCRemoteSwiftPackageReference "CalendarKit" */ = {
+		BF51A9272BA4AAF000D6188B /* XCRemoteSwiftPackageReference "CalendarKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/richardtop/CalendarKit.git";
 			requirement = {
@@ -882,9 +882,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C289982F2BA22258005A681E /* CalendarKit */ = {
+		BF51A9282BA4AB6100D6188B /* CalendarKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C28998272BA2208E005A681E /* XCRemoteSwiftPackageReference "CalendarKit" */;
+			package = BF51A9272BA4AAF000D6188B /* XCRemoteSwiftPackageReference "CalendarKit" */;
 			productName = CalendarKit;
 		};
 		C28998402BA2E895005A681E /* Alamofire */ = {
