@@ -79,5 +79,28 @@ class AuthService {
             return .failedRequest
         }
     }
+    
+    func updateUser(user: User, completion: @escaping (Result<User, Error>) -> Void) {
+            guard let token = SessionManager.shared.getAuthToken() else { return }
+            let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
+            let parameters: [String: Any] = [
+                "firstName": user.firstName,
+                "lastName": user.lastName
+                // Ajouter d'autres champs si nécessaire
+            ]
+            let url = "https://montpellier-game-fest-volunteers-api-vincentdub2.vercel.app/users/\(user.id)"
+            
+            AF.request(url, method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+                .validate(statusCode: 200..<300)
+                .responseDecodable(of: User.self) { response in
+                    switch response.result {
+                    case .success(let updatedUser):
+                        completion(.success(updatedUser))
+                    case .failure(let error):
+                        completion(.failure(error))
+                    }
+                }
+        }
+    
 
 }
