@@ -58,6 +58,7 @@ class SessionManager: ObservableObject {
     func logout() {
         user = nil
         deleteAuthToken()
-        // Supprimez également les détails de l'utilisateur de UserDefaults ou Keychain, si vous les avez sauvegardés là.
+        deleteUserDetails()
+        
     }
 }

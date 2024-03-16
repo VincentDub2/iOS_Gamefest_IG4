@@ -27,6 +27,14 @@ struct ProfileView: View {
                 .alert(isPresented: $showingAlert) {
                     Alert(title: Text("Mise à jour"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
                 }
+                
+                Button("Déconnexion") {
+                    sessionManager.logout()
+                }
+                .padding()
+                .foregroundColor(.white)
+                .background(Color.red)
+                .cornerRadius(10)
             } else {
                 Text("Aucun utilisateur n'est connecté.")
             }
@@ -34,40 +42,44 @@ struct ProfileView: View {
         .navigationTitle("Profil")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
-            // Initialiser les champs avec les valeurs actuelles de l'utilisateur
-            self.firstName = sessionManager.user?.firstName ?? ""
-            self.lastName = sessionManager.user?.lastName ?? ""
+            firstName = sessionManager.user?.firstName ?? ""
+            lastName = sessionManager.user?.lastName ?? ""
         }
     }
 
     private func updateUserDetails() {
-        // Appeler la fonction pour mettre à jour le nom et le prénom de l'utilisateur
-        guard let user = sessionManager.user else { return }
-        
-        let updatedUser = User(id: user.id,
+        guard let currentUser = sessionManager.user else { return }
+
+        // Créez une nouvelle instance de User avec les valeurs mises à jour.
+        let updatedUser = User(id: currentUser.id,
                                lastName: lastName,
                                firstName: firstName,
-                               email: user.email,
-                               address: user.address,
-                               picture: user.picture,
-                               pictureId: user.pictureId,
-                               phoneNumber: user.phoneNumber,
-                               completed: user.completed,
-                               isGod: user.isGod,
-                               createdAt: user.createdAt,
-                               updatedAt: user.updatedAt,
-                               emailVerified: user.emailVerified,
-                               emailVerificationToken: user.emailVerificationToken)
+                               email: currentUser.email,
+                               address: currentUser.address,
+                               picture: currentUser.picture,
+                               pictureId: currentUser.pictureId,
+                               phoneNumber: currentUser.phoneNumber,
+                               completed: currentUser.completed,
+                               isGod: currentUser.isGod,
+                               createdAt: currentUser.createdAt,
+                               updatedAt: currentUser.updatedAt,
+                               emailVerified: currentUser.emailVerified,
+                               emailVerificationToken: currentUser.emailVerificationToken)
         
         AuthService().updateUser(user: updatedUser) { result in
-            switch result {
-            case .success(let updatedUser):
-                self.sessionManager.user = updatedUser
-                self.alertMessage = "Votre profil a été mis à jour."
-            case .failure(let error):
-                self.alertMessage = "Erreur de mise à jour: \(error.localizedDescription)"
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let updatedUser):
+                    // Mettez à jour l'utilisateur dans la session.
+                    self.sessionManager.saveUser(updatedUser)
+                    self.alertMessage = "Votre profil a été mis à jour."
+                    self.showingAlert = true
+                case .failure(let error):
+                    self.alertMessage = "Erreur de mise à jour: \(error.localizedDescription)"
+                    self.showingAlert = true
+                }
             }
-            self.showingAlert = true
         }
     }
+
 }
