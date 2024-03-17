@@ -9,9 +9,18 @@ import Foundation
 
 // Définition d'un commentaire lié à un post.
 struct Comment: Identifiable, Codable {
-    var id: String
-    var postId: String
+    var id: Int
+    var postId: Int
     var userId: String
+    var name: String = "Anonyme"
     var body: String
-    var createdAt: Date
+    var createdAt: String
+    enum CodingKeys: String, CodingKey {
+        case id = "idComment"
+        case postId = "idMsgForum"
+        case userId = "idUser"
+        case body = "message"
+        case createdAt = "createdAt"
+    }
+    
 }

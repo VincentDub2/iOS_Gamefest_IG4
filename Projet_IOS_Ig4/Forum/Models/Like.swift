@@ -9,8 +9,12 @@ import Foundation
 
 // Définition d'un "like" pour un post ou commentaire.
 struct Like: Identifiable, Codable {
-    var id: String
+    var id: Int
     var userId: String
-    var postId: String?
-    var commentId: String?
+    var postId: Int?
+    enum CodingKeys: String, CodingKey {
+        case id = "idLike"
+        case userId = "idUser"
+        case postId = "idMsgForum"
+    }
 }
