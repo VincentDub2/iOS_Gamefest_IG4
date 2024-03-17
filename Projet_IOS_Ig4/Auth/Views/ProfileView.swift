@@ -17,7 +17,7 @@ struct ProfileView: View {
     @State private var alertMessage: String = ""
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
-
+    
     var body: some View {
         VStack {
             if let user = sessionManager.user {
@@ -50,12 +50,14 @@ struct ProfileView: View {
         .onAppear {
             firstName = sessionManager.user?.firstName ?? ""
             lastName = sessionManager.user?.lastName ?? ""
+            
+            sessionManager.refreshUserDetails()
         }
     }
-
+    
     private func updateUserDetails() {
         guard let currentUser = sessionManager.user else { return }
-
+        
         // Créez une nouvelle instance de User avec les valeurs mises à jour.
         let updatedUser = User(id: currentUser.id,
                                lastName: lastName,
@@ -90,8 +92,9 @@ struct ProfileView: View {
     
     // Créez une nouvelle sous-vue pour afficher et sélectionner la photo de profil
     struct ProfileImageView: View {
-        @Binding var inputImage: UIImage?
-        @State private var profileImage: Image?
+        @ObservedObject private var sessionManager = SessionManager.shared // Observer pour les changements
+        @Binding var inputImage: UIImage? // Image entrante depuis l'ImagePicker
+        @State private var profileImage: Image? // Image SwiftUI pour l'affichage
         @State private var showingImagePicker = false
         @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
         
@@ -100,6 +103,13 @@ struct ProfileView: View {
                 ZStack {
                     if let profileImage = profileImage {
                         profileImage
+                            .resizable()
+                            .scaledToFit()
+                    } else if let placeholderImage = sessionManager.user?.picture,
+                              let url = URL(string: placeholderImage),
+                              let imageData = try? Data(contentsOf: url),
+                              let uiImage = UIImage(data: imageData) {
+                        Image(uiImage: uiImage)
                             .resizable()
                             .scaledToFit()
                     } else {
@@ -119,12 +129,6 @@ struct ProfileView: View {
                     ImagePicker(image: self.$inputImage, sourceType: self.sourceType)
                 }
             }
-            .onAppear(perform: loadProfileImage)
-        }
-        
-        private func loadProfileImage() {
-            // Charger l'image de profil existante si elle existe
-            // Vous devez récupérer l'image de profil depuis votre stockage (URL ou données locales)
         }
         
         private func loadImage() {
@@ -138,6 +142,8 @@ struct ProfileView: View {
                         switch result {
                         case .success:
                             print("Profile image successfully uploaded.")
+                            // Vous devriez aussi rafraîchir les informations de l'utilisateur ici pour obtenir la nouvelle URL de l'image
+                            sessionManager.refreshUserDetails()
                         case .failure(let error):
                             print("Error uploading profile image: \(error)")
                         }
@@ -145,6 +151,8 @@ struct ProfileView: View {
                 }
             }
         }
+        
+        
         
         func getDocumentsDirectory() -> URL {
             let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)

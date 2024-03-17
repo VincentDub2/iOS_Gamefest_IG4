@@ -64,4 +64,28 @@ class SessionManager: ObservableObject {
         deleteUserDetails()
         
     }
+    
+    func refreshUserDetails() {
+        guard let authToken = getAuthToken() else { return }
+        
+        let url = URL(string: "https://montpellier-game-fest-volunteers-api-vincentdub2.vercel.app/users/current")!
+        var request = URLRequest(url: url)
+        request.setValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+            guard let data = data else { return }
+            
+            if let user = try? JSONDecoder().decode(User.self, from: data) {
+                DispatchQueue.main.async {
+                    self?.saveUser(user)
+                    // After updating the user, also update UserDefaults with the new picture URL
+                    UserDefaults.standard.set(user.picture, forKey: "profilePictureURL")
+                }
+            }
+        }
+        
+        task.resume()
+    }
+
+
 }
