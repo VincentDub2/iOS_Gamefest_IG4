@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct Projet_IOS_Ig4App: App {
+    init(){
+        _ = ForumViewModel.shared
+        _ = CalendarViewModel.shared
+    }
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            ContentView()
         }
     }
 }

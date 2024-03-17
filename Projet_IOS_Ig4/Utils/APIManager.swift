@@ -11,6 +11,7 @@ import Alamofire
 /// Structure pour centraliser la configuration de l'API.
 struct APIConfiguration {
     static let baseURL = "https://montpellier-game-fest-volunteers-api-vincentdub2.vercel.app"
+    //static let baseURL = "http://localhost:8080"
 }
 
 /// Manager pour simplifier l'utilisation des requêtes Alamofire.

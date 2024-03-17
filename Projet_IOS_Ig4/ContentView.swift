@@ -7,8 +7,17 @@
 
 import SwiftUI
 
+//
+//  ContentView.swift
+//  Projet_IOS_Ig4
+//
+//  Created by vincent DUBUC on 12/03/2024.
+//
+
+import SwiftUI
+
 struct ContentView: View {
-    var images : [String] = ["house","magnifyingglass","plus","person","loupe"]
+    var images : [String] = ["house","pencil.and.list.clipboard","calendar","message","person"]
     @State var selected = "house"
     @Namespace private var namespace
     var window: UIWindow?
@@ -17,12 +26,12 @@ struct ContentView: View {
             //Switch Content Here
             if selected == "person" {
                 LoginView()
-            }else if selected == "plus" {
+            }else if selected == "calendar" {
                 CalendarKitView()
-            }else if selected == "magnifyingglass" {
+            }else if selected == "pencil.and.list.clipboard" {
                 CalendarView()
-            }else if selected == "loupe" {
-                CalendarContainerView()
+            }else if selected == "message" {
+               ForumView()
             }
 
             navBar
@@ -105,4 +114,9 @@ extension ContentView{
     ContentView().preferredColorScheme(.light)
 }
 
+
+
+#Preview {
+    ContentView().preferredColorScheme(.light)
+}
 
