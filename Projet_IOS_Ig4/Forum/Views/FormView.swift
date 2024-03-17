@@ -10,7 +10,7 @@ import SwiftUI
 
 
 struct ForumView: View {
-    @ObservedObject var viewModel: ForumViewModel
+    @ObservedObject var viewModel: ForumViewModel = ForumViewModel.shared
     @State private var showingNewPostView = false
     
     

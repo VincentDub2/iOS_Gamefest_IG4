@@ -12,7 +12,7 @@ struct Comment: Identifiable, Codable {
     var id: Int
     var postId: Int
     var userId: String
-    var name: String = "Anonyme"
+    var user : User?
     var body: String
     var createdAt: String
     enum CodingKeys: String, CodingKey {
@@ -21,6 +21,7 @@ struct Comment: Identifiable, Codable {
         case userId = "idUser"
         case body = "message"
         case createdAt = "createdAt"
+        case user = "user"
     }
     
 }

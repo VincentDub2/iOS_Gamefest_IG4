@@ -15,17 +15,8 @@ import Alamofire
 class PlanningService {
     static let shared = PlanningService()
     var creneau: [Creneau] = []
-    /*
-     private var planning: Planning?
-     
-     func savePlanning(_ planning: Planning) {
-         self.planning = planning
-     }
-     
-     func getPlanning() -> Planning? {
-         return planning
-     }
-     */
+
+    
     //https://montpellier-game-fest-volunteers-api-vincentdub2.vercel.app/creneaux/user/51681ba6-d39e-4bec-ba33-4f7288bf9ad2/festival/1
     let tempoUserId = "51681ba6-d39e-4bec-ba33-4f7288bf9ad2"
     let tempoFestivalId = 1

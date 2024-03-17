@@ -15,7 +15,10 @@ struct PostView: View {
     
     var like: RiveViewModel
     
-    init(post: Post, color: Color, avatar: RiveViewModel = RiveViewModel(fileName: "avatar_pack_use_case", artboardName: "Avatar \(Int.random(in: 1...3))")) {
+    init(post: Post, color: Color, 
+         //avatar: RiveViewModel = RiveViewModel(fileName: "avatar_pack_use_case", artboardName: "Avatar \(Int.random(in: 1...3))")
+         avatar: RiveViewModel = RiveViewModel(fileName: "walking_working")
+    ) {
         self.post = post
         self.like = RiveViewModel(fileName: "light_like", stateMachineName: "State Machine 1")
     
@@ -41,8 +44,11 @@ struct PostView: View {
             HStack(spacing: 16) {
                 avatar.view()
                     .frame(width: 50, height: 50)
+                    .scaledToFit()
+                    .scaleEffect(1.5)
                     .clipShape(Circle())
                     .shadow(radius: 5)
+                    .overlay(Circle().stroke(Color.black, lineWidth: 1))
             
                 Text(post.title)
                         .font(.headline)
@@ -93,8 +99,8 @@ struct Post_Previews: PreviewProvider {
                             Like(id: 1, userId: "1", postId: 5),
                             Like(id: 2, userId: "2", postId: 5)
                         ], comments: [
-                            Comment(id: 1, postId: 5, userId: "1", name: "Vincent", body: "Je trouve ce jeu très sympa !", createdAt: Date().ISO8601Format()),
-                            Comment(id: 2, postId: 5, userId: "2", name: "Benoit", body: "Je suis d'accord, c'est un jeu très fun !", createdAt: Date().ISO8601Format())])
+                            Comment(id: 1, postId: 5, userId: "1", body: "Je trouve ce jeu très sympa !", createdAt: Date().ISO8601Format()),
+                            Comment(id: 2, postId: 5, userId: "2", body: "Je suis d'accord, c'est un jeu très fun !", createdAt: Date().ISO8601Format())])
         
      PostView(post: post ,color: .clear)
     }

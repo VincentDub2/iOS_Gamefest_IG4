@@ -31,7 +31,7 @@ struct ContentView: View {
             }else if selected == "pencil.and.list.clipboard" {
                 CalendarView()
             }else if selected == "message" {
-                FinalFormView()
+               ForumView()
             }
 
             navBar

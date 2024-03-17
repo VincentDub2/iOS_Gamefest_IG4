@@ -33,7 +33,7 @@ struct PostDetailView: View {
 
                 // Amélioration de l'affichage des commentaires
                 ForEach(post.comments) { comment in
-                    CommentView(text: comment.body, name: comment.name)
+                    CommentView(text: comment.body, name: comment.user?.firstName ?? "Anonyme")
                 }
 
                 // Champ de texte plus intuitif pour ajouter des commentaires
@@ -69,8 +69,8 @@ struct PostDetailView_Previews: PreviewProvider {
                             Like(id: 1, userId: "1", postId: 5),
                             Like(id: 2, userId: "2", postId: 5)
                         ], comments: [
-                            Comment(id: 1, postId: 5, userId: "1", name: "Vincent", body: "Je trouve ce jeu très sympa !", createdAt: Date().ISO8601Format()),
-                            Comment(id: 2, postId: 5, userId: "2", name: "Benoit", body: "Je suis d'accord, c'est un jeu très fun !", createdAt: Date().ISO8601Format())])
+                            Comment(id: 1, postId: 5, userId: "1", body: "Je trouve ce jeu très sympa !", createdAt: Date().ISO8601Format()),
+                            Comment(id: 2, postId: 5, userId: "2", body: "Je suis d'accord, c'est un jeu très fun !", createdAt: Date().ISO8601Format())])
         
         return PostDetailView(post: post, viewModel: viewModel)
     }

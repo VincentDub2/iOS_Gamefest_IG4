@@ -9,11 +9,17 @@ import Foundation
 import Combine
 
 class CalendarViewModel: ObservableObject {
+    static let shared = CalendarViewModel()
+    
     @Published var events: [CalendarEvent] = []
     @Published var isLoading = false
     @Published var errorMessage: String?
 
     private var cancellables = Set<AnyCancellable>()
+    
+    init() {
+        fetchEvents()
+    }
 
     func fetchEvents() {
         isLoading = true
