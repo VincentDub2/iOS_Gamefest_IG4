@@ -24,6 +24,7 @@ class SessionManager: ObservableObject {
     func saveUser(_ user: User) {
         self.user = user
         // Sauvegardez ici l'utilisateur dans UserDefaults ou Keychain, si nécessaire.
+        UserDefaults.standard.set(user.picture, forKey: "profilePictureURL")
     }
     
     func getUser() -> User? {
@@ -36,10 +37,11 @@ class SessionManager: ObservableObject {
         // Ajoutez ici d'autres détails que vous souhaitez enregistrer.
     }
 
-    func getUserDetails() -> (firstName: String, lastName: String)? {
+    func getUserDetails() -> (firstName: String, lastName: String, pictureURL: String)? {
         if let firstName = UserDefaults.standard.string(forKey: "firstName"),
-           let lastName = UserDefaults.standard.string(forKey: "lastName") {
-            return (firstName, lastName)
+           let lastName = UserDefaults.standard.string(forKey: "lastName"),
+           let pictureURL = UserDefaults.standard.string(forKey: "profilePictureURL") {
+            return (firstName, lastName, pictureURL)
         } else {
             return nil
         }
@@ -48,6 +50,7 @@ class SessionManager: ObservableObject {
     func deleteUserDetails() {
         UserDefaults.standard.removeObject(forKey: "firstName")
         UserDefaults.standard.removeObject(forKey: "lastName")
+        UserDefaults.standard.removeObject(forKey: "profilePictureURL")
         // Supprimez ici d'autres détails que vous avez enregistrés.
     }
 

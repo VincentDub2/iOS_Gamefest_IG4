@@ -6,12 +6,17 @@
 //
 import SwiftUI
 
+import UIKit
+
+
 struct ProfileView: View {
     @ObservedObject private var sessionManager = SessionManager.shared
     @State private var firstName: String = ""
     @State private var lastName: String = ""
     @State private var showingAlert = false
     @State private var alertMessage: String = ""
+    @State private var showingImagePicker = false
+    @State private var inputImage: UIImage?
 
     var body: some View {
         VStack {
@@ -20,6 +25,7 @@ struct ProfileView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 TextField("Nom", text: $lastName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                ProfileImageView(inputImage: $inputImage)
                 
                 Button("Sauvegarder les modifications") {
                     updateUserDetails()
@@ -80,6 +86,71 @@ struct ProfileView: View {
                 }
             }
         }
+    }
+    
+    // Créez une nouvelle sous-vue pour afficher et sélectionner la photo de profil
+    struct ProfileImageView: View {
+        @Binding var inputImage: UIImage?
+        @State private var profileImage: Image?
+        @State private var showingImagePicker = false
+        @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
+        
+        var body: some View {
+            VStack {
+                ZStack {
+                    if let profileImage = profileImage {
+                        profileImage
+                            .resizable()
+                            .scaledToFit()
+                    } else {
+                        Image(systemName: "person.crop.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(.gray)
+                    }
+                }
+                .frame(width: 150, height: 150)
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.gray, lineWidth: 1))
+                .onTapGesture {
+                    self.showingImagePicker = true
+                }
+                .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+                    ImagePicker(image: self.$inputImage, sourceType: self.sourceType)
+                }
+            }
+            .onAppear(perform: loadProfileImage)
+        }
+        
+        private func loadProfileImage() {
+            // Charger l'image de profil existante si elle existe
+            // Vous devez récupérer l'image de profil depuis votre stockage (URL ou données locales)
+        }
+        
+        private func loadImage() {
+            guard let inputImage = inputImage else { return }
+            profileImage = Image(uiImage: inputImage)
+            
+            // Si l'authentification est requise pour votre API, assurez-vous que l'utilisateur est connecté et a un token valide
+            if let imageData = inputImage.jpegData(compressionQuality: 1) {
+                AuthService.shared.uploadProfilePicture(imageData: imageData) { result in
+                    DispatchQueue.main.async {
+                        switch result {
+                        case .success:
+                            print("Profile image successfully uploaded.")
+                        case .failure(let error):
+                            print("Error uploading profile image: \(error)")
+                        }
+                    }
+                }
+            }
+        }
+        
+        func getDocumentsDirectory() -> URL {
+            let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+            return paths[0]
+        }
+        
     }
 
 }
