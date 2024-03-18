@@ -19,41 +19,61 @@ struct ProfileView: View {
     @State private var inputImage: UIImage?
     
     var body: some View {
-        VStack {
-            if let user = sessionManager.user {
-                TextField("Prénom", text: $firstName)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                TextField("Nom", text: $lastName)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                ProfileImageView(inputImage: $inputImage)
-                
-                Button("Sauvegarder les modifications") {
-                    updateUserDetails()
+            VStack(spacing: 20) {
+                if let user = sessionManager.user {
+                    ProfileImageView(inputImage: $inputImage)
+                    
+                    TextField("Prénom", text: $firstName)
+                        .padding()
+                        .background(Color(UIColor.systemGray6))
+                        .cornerRadius(10)
+                        .shadow(radius: 1)
+                    TextField("Nom", text: $lastName)
+                        .padding()
+                        .background(Color(UIColor.systemGray6))
+                        .cornerRadius(10)
+                        .shadow(radius: 1)
+                 
+                    
+                    Button(action: {
+                        updateUserDetails()
+                    }) {
+                        Text("Sauvegarder les modifications")
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .frame(height: 50)
+                            .foregroundColor(.white)
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                            .font(.system(size: 18, weight: .bold))
+                    }
+                    .alert(isPresented: $showingAlert) {
+                        Alert(title: Text("Mise à jour"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                    }
+                    
+                    Button(action: {
+                        sessionManager.logout()
+                    }) {
+                        Text("Déconnexion")
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .frame(height: 50)
+                            .foregroundColor(.white)
+                            .background(Color.black)
+                            .cornerRadius(10)
+                            .font(.system(size: 18, weight: .bold))
+                    }
+                } else {
+                    Text("Aucun utilisateur n'est connecté.")
                 }
-                .alert(isPresented: $showingAlert) {
-                    Alert(title: Text("Mise à jour"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-                }
-                
-                Button("Déconnexion") {
-                    sessionManager.logout()
-                }
-                .padding()
-                .foregroundColor(.white)
-                .background(Color.red)
-                .cornerRadius(10)
-            } else {
-                Text("Aucun utilisateur n'est connecté.")
+            }
+            .padding(.horizontal)
+            .navigationTitle("Profil")
+            .navigationBarTitleDisplayMode(.inline)
+            .onAppear {
+                firstName = sessionManager.user?.firstName ?? ""
+                lastName = sessionManager.user?.lastName ?? ""
+                sessionManager.refreshUserDetails()
             }
         }
-        .navigationTitle("Profil")
-        .navigationBarTitleDisplayMode(.inline)
-        .onAppear {
-            firstName = sessionManager.user?.firstName ?? ""
-            lastName = sessionManager.user?.lastName ?? ""
-            
-            sessionManager.refreshUserDetails()
-        }
-    }
     
     private func updateUserDetails() {
         guard let currentUser = sessionManager.user else { return }
