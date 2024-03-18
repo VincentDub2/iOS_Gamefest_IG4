@@ -17,11 +17,17 @@ struct ProfileView: View {
     @State private var alertMessage: String = ""
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
+    @State private var email: String = ""
+        @State private var address: String = ""
     
     var body: some View {
+        ScrollView {
             VStack(spacing: 20) {
                 if let user = sessionManager.user {
                     ProfileImageView(inputImage: $inputImage)
+                    
+                    
+                        .padding(.vertical, 50)
                     
                     TextField("Prénom", text: $firstName)
                         .padding()
@@ -33,7 +39,21 @@ struct ProfileView: View {
                         .background(Color(UIColor.systemGray6))
                         .cornerRadius(10)
                         .shadow(radius: 1)
-                 
+                    TextField("Email", text: $email)
+                        .padding()
+                        .background(Color(UIColor.systemGray6))
+                        .cornerRadius(10)
+                        .shadow(radius: 1)
+                        .keyboardType(.emailAddress)
+                        .autocapitalization(.none)
+                    
+                    
+                    TextField("Adresse", text: $address)
+                        .padding()
+                        .background(Color(UIColor.systemGray6))
+                        .cornerRadius(10)
+                        .shadow(radius: 1)
+                    
                     
                     Button(action: {
                         updateUserDetails()
@@ -66,11 +86,15 @@ struct ProfileView: View {
                 }
             }
             .padding(.horizontal)
+            
+        }
             .navigationTitle("Profil")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 firstName = sessionManager.user?.firstName ?? ""
                 lastName = sessionManager.user?.lastName ?? ""
+                email = sessionManager.user?.email ?? ""
+                address = sessionManager.user?.address ?? ""
                 sessionManager.refreshUserDetails()
             }
         }
@@ -83,7 +107,7 @@ struct ProfileView: View {
                                lastName: lastName,
                                firstName: firstName,
                                email: currentUser.email,
-                               address: currentUser.address,
+                               address: address,
                                picture: currentUser.picture,
                                pictureId: currentUser.pictureId,
                                phoneNumber: currentUser.phoneNumber,
