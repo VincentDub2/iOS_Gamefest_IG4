@@ -33,35 +33,35 @@ struct SignupFestivalView: View {
         Creneau(id: 2, timeStart: "12h", timeEnd: "14h", idFestival: 1),
         Creneau(id: 3, timeStart: "16h", timeEnd: "18h", idFestival: 1)
     ]
-
+    
     // Custom widths for each column
     let columnWidths: [CGFloat] = [150, 100]
     
     var body: some View {
-        ScrollView(.horizontal) {
-            VStack(alignment: .leading, spacing: 20) {
-                // Festival information
-                Text(festivalName)
-                    .font(.title)
-                    .fontWeight(.bold)
-                Text("Du \(startDate) au \(endDate)")
-                
-                // Tee shirt size selection
-                Text("Taille de t-shirt")
-                Picker("Tee Shirt Size", selection: $teeShirtSize) {
-                    Text("XS").tag("XS")
-                    Text("S").tag("S")
-                    Text("M").tag("M")
-                    Text("L").tag("L")
-                    Text("XL").tag("XL")
-                }
-                .pickerStyle(MenuPickerStyle())
-                
-                // Vegetarian selection
-                Toggle("Vegetarien", isOn: $isVegetarian)
-                
-                // Postes selection
-                Text("Choix des postes")
+        VStack(alignment: .leading, spacing: 20) {
+            // Festival information
+            Text(festivalName)
+                .font(.title)
+                .fontWeight(.bold)
+            Text("Du \(startDate) au \(endDate)")
+            
+            // Tee shirt size selection
+            Text("Taille de t-shirt")
+            Picker("Tee Shirt Size", selection: $teeShirtSize) {
+                Text("XS").tag("XS")
+                Text("S").tag("S")
+                Text("M").tag("M")
+                Text("L").tag("L")
+                Text("XL").tag("XL")
+            }
+            .pickerStyle(MenuPickerStyle())
+            
+            // Vegetarian selection
+            Toggle("Vegetarien", isOn: $isVegetarian)
+            
+            // Postes selection
+            Text("Choix des postes")
+            ScrollView(.horizontal) {
                 VStack {
                     Text("") // Empty column
                         .frame(width: columnWidths[0])
@@ -95,21 +95,20 @@ struct SignupFestivalView: View {
                         }
                     }
                 }
-                // Signup button
-                Button(action: {
-                    print("Signup button tapped")
-                }) {
-                    Text("Je m'inscris au festival")
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
             }
-            .padding()
+            // Signup button
+            Button(action: {
+                print("Signup button tapped")
+            }) {
+                Text("Je m'inscris au festival")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
         }
-        .navigationTitle("Inscription au festival")
+        .padding()
     }
 }
 
