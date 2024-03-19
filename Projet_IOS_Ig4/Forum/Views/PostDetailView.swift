@@ -19,7 +19,7 @@ struct PostDetailView: View {
     
     var body: some View {
         ScrollView {
-            PostView(post: post, color: .clear)
+            PostView(post: post, color: post.color,avatar: post.avatar)
 
                 .padding()
             

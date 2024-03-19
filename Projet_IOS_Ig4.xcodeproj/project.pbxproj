@@ -69,6 +69,13 @@
 		C2BF7A6C2BA5ED2600CB30BA /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF7A6B2BA5ED2600CB30BA /* CommentView.swift */; };
 		C2BF7A6E2BA5F57200CB30BA /* CommentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF7A6D2BA5F57200CB30BA /* CommentInputView.swift */; };
 		C2BF7A722BA5F7E400CB30BA /* new_file.riv in Resources */ = {isa = PBXBuildFile; fileRef = C2BF7A712BA5F7E400CB30BA /* new_file.riv */; };
+		C2BF7A752BA7685E00CB30BA /* AnimateAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF7A742BA7685E00CB30BA /* AnimateAvatar.swift */; };
+		C2BF7A782BA76A1700CB30BA /* game_charecter.riv in Resources */ = {isa = PBXBuildFile; fileRef = C2BF7A772BA769C800CB30BA /* game_charecter.riv */; };
+		C2BF7A7A2BA76A6400CB30BA /* 404_cat.riv in Resources */ = {isa = PBXBuildFile; fileRef = C2BF7A792BA76A6400CB30BA /* 404_cat.riv */; };
+		C2BF7A7C2BA76B4E00CB30BA /* hey_ho_let's_go!.riv in Resources */ = {isa = PBXBuildFile; fileRef = C2BF7A7B2BA76B4E00CB30BA /* hey_ho_let's_go!.riv */; };
+		C2BF7A7E2BA76C0E00CB30BA /* sith_de_mayo.riv in Resources */ = {isa = PBXBuildFile; fileRef = C2BF7A7D2BA76C0E00CB30BA /* sith_de_mayo.riv */; };
+		C2BF7A822BA76D3F00CB30BA /* skin_demo_2.riv in Resources */ = {isa = PBXBuildFile; fileRef = C2BF7A812BA76D3F00CB30BA /* skin_demo_2.riv */; };
+		C2BF7A842BA76DE900CB30BA /* noonnap.riv in Resources */ = {isa = PBXBuildFile; fileRef = C2BF7A832BA76DE800CB30BA /* noonnap.riv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +157,13 @@
 		C2BF7A6B2BA5ED2600CB30BA /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		C2BF7A6D2BA5F57200CB30BA /* CommentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputView.swift; sourceTree = "<group>"; };
 		C2BF7A712BA5F7E400CB30BA /* new_file.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = new_file.riv; sourceTree = "<group>"; };
+		C2BF7A742BA7685E00CB30BA /* AnimateAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateAvatar.swift; sourceTree = "<group>"; };
+		C2BF7A772BA769C800CB30BA /* game_charecter.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = game_charecter.riv; sourceTree = "<group>"; };
+		C2BF7A792BA76A6400CB30BA /* 404_cat.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = 404_cat.riv; sourceTree = "<group>"; };
+		C2BF7A7B2BA76B4E00CB30BA /* hey_ho_let's_go!.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = "hey_ho_let's_go!.riv"; sourceTree = "<group>"; };
+		C2BF7A7D2BA76C0E00CB30BA /* sith_de_mayo.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = sith_de_mayo.riv; sourceTree = "<group>"; };
+		C2BF7A812BA76D3F00CB30BA /* skin_demo_2.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = skin_demo_2.riv; sourceTree = "<group>"; };
+		C2BF7A832BA76DE800CB30BA /* noonnap.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = noonnap.riv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -426,6 +440,7 @@
 		C28998882BA4D55A005A681E /* RiveAsset */ = {
 			isa = PBXGroup;
 			children = (
+				C2BF7A762BA7693800CB30BA /* avatar */,
 				C2BF7A632BA5B14800CB30BA /* icons.riv */,
 				C28998A72BA4EE84005A681E /* chess2.riv */,
 				C28998932BA4DD32005A681E /* button.riv */,
@@ -433,7 +448,6 @@
 				C2BF7A4C2BA58C1400CB30BA /* chessactiontest.riv */,
 				C2BF7A5F2BA5A21600CB30BA /* light_like.riv */,
 				C2BF7A712BA5F7E400CB30BA /* new_file.riv */,
-				C28998A92BA57FFA005A681E /* avatar_pack_use_case.riv */,
 				C28998922BA4DD32005A681E /* check.riv */,
 				C28998A22BA4DE6D005A681E /* nqueens.riv */,
 				C28998A52BA4EA03005A681E /* chess.riv */,
@@ -452,8 +466,23 @@
 			children = (
 				C2BF7A6B2BA5ED2600CB30BA /* CommentView.swift */,
 				C2BF7A6D2BA5F57200CB30BA /* CommentInputView.swift */,
+				C2BF7A742BA7685E00CB30BA /* AnimateAvatar.swift */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		C2BF7A762BA7693800CB30BA /* avatar */ = {
+			isa = PBXGroup;
+			children = (
+				C2BF7A772BA769C800CB30BA /* game_charecter.riv */,
+				C2BF7A812BA76D3F00CB30BA /* skin_demo_2.riv */,
+				C2BF7A7D2BA76C0E00CB30BA /* sith_de_mayo.riv */,
+				C2BF7A7B2BA76B4E00CB30BA /* hey_ho_let's_go!.riv */,
+				C28998A92BA57FFA005A681E /* avatar_pack_use_case.riv */,
+				C2BF7A832BA76DE800CB30BA /* noonnap.riv */,
+				C2BF7A792BA76A6400CB30BA /* 404_cat.riv */,
+			);
+			path = avatar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -576,16 +605,22 @@
 				C289989E2BA4DD32005A681E /* shapes.riv in Resources */,
 				C28997E42BA0974E005A681E /* Assets.xcassets in Resources */,
 				C2BF7A512BA58CB000CB30BA /* start_button.riv in Resources */,
+				C2BF7A842BA76DE900CB30BA /* noonnap.riv in Resources */,
+				C2BF7A7E2BA76C0E00CB30BA /* sith_de_mayo.riv in Resources */,
 				C28998A62BA4EA03005A681E /* chess.riv in Resources */,
 				C2BF7A602BA5A21600CB30BA /* light_like.riv in Resources */,
 				C289989B2BA4DD32005A681E /* confetti.riv in Resources */,
+				C2BF7A822BA76D3F00CB30BA /* skin_demo_2.riv in Resources */,
+				C2BF7A782BA76A1700CB30BA /* game_charecter.riv in Resources */,
 				C28998832BA4C934005A681E /* switch.riv in Resources */,
 				C289989C2BA4DD32005A681E /* house.riv in Resources */,
 				C289989A2BA4DD32005A681E /* button.riv in Resources */,
 				C28998A42BA4DF1B005A681E /* nqueens.riv in Resources */,
 				C28998992BA4DD32005A681E /* check.riv in Resources */,
+				C2BF7A7C2BA76B4E00CB30BA /* hey_ho_let's_go!.riv in Resources */,
 				C2BF7A722BA5F7E400CB30BA /* new_file.riv in Resources */,
 				C289989F2BA4DD32005A681E /* menu_button.riv in Resources */,
+				C2BF7A7A2BA76A6400CB30BA /* 404_cat.riv in Resources */,
 				C2BF7A642BA5B14800CB30BA /* icons.riv in Resources */,
 				C28998AA2BA57FFA005A681E /* avatar_pack_use_case.riv in Resources */,
 				C28998852BA4D3DB005A681E /* walking_working.riv in Resources */,
@@ -648,6 +683,7 @@
 				C289986C2BA48D76005A681E /* FormView.swift in Sources */,
 				C28998122BA097EE005A681E /* User.swift in Sources */,
 				C28998702BA48DE2005A681E /* NewPostView.swift in Sources */,
+				C2BF7A752BA7685E00CB30BA /* AnimateAvatar.swift in Sources */,
 				C289988C2BA4DACF005A681E /* AccueilView.swift in Sources */,
 				C28998532BA3016C005A681E /* Creneau.swift in Sources */,
 				C28998812BA4C8E0005A681E /* testRive.swift in Sources */,

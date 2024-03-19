@@ -19,7 +19,7 @@ struct ResponseApi : Codable {
 
 struct ForumService {
     
-    let tempoIdUser = "ccfba91c-1ec8-42f8-9962-02bfbd7c1e73"
+    let tempoIdUser = "96ac88b2-dee8-47f6-945b-3bbef421b96b"
     // Créer un post
     func createPost(title: String, body: String) -> AnyPublisher<Bool, Error> {
         let endpoint = "/forum"
@@ -32,7 +32,7 @@ struct ForumService {
             return Future<Bool, Error> { promise in
                 APIManager.requestPOST(endpoint: endpoint, parameters: parameters) { (result: Result<ResponseApi, AFError>) in
                     switch result {
-                    case .success(let title):
+                    case .success(_):
                         promise(.success(true))
                     case .failure(let error):
                         promise(.failure(error))
@@ -73,6 +73,7 @@ struct ForumService {
                 switch result {
                 case .success(let like):
                     promise(.success(like))
+                    setLikeLocalPost(id: Int(postId) ?? 0)
                 case .failure(let error):
                     promise(.failure(error))
                 }
@@ -103,6 +104,22 @@ struct ForumService {
             }
             .eraseToAnyPublisher()
         }
+    
+    func setLikeLocalPost(id: Int) {
+        for i in 0..<ForumViewModel.shared.posts.count {
+            if ForumViewModel.shared.posts[i].id == id {
+                // Si le like existe déjà, on le supprime
+                if ForumViewModel.shared.posts[i].likes.contains(where: { $0.userId == tempoIdUser }) {
+                    ForumViewModel.shared.posts[i].likes.removeAll(where: { $0.userId == tempoIdUser })
+                } else {
+                    // Assurez-vous de fournir une valeur pour `id` lors de la création de Like
+                    // Vous pourriez avoir besoin d'un mécanisme pour générer un identifiant unique pour chaque like
+                    let newLike = Like(id: Int.random(in: -100...100), userId: tempoIdUser, postId: id)
+                    ForumViewModel.shared.posts[i].likes.append(newLike)
+                }
+            }
+        }
+    }
     //Permet d'ajouter le commentaire au post sans refetch l'api
     func addPostToLocalPost(id: Int, comment: Comment) {
         for i in 0..<ForumViewModel.shared.posts.count {

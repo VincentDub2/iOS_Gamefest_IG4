@@ -58,8 +58,7 @@ class ForumViewModel: ObservableObject {
             .sink { completion in
                 switch completion {
                 case .finished:
-                    // Update the post with the new like.
-                    self.fetchPosts()
+                    print("Like added")
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
@@ -74,7 +73,7 @@ class ForumViewModel: ObservableObject {
                 switch completion {
                 case .finished:
                     // Update the post to show the new comment.
-                    self.fetchPosts()
+                    print("Comment added")
                 case .failure(let error):
                     print(error.localizedDescription)
                 }

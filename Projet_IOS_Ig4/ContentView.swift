@@ -17,6 +17,9 @@ import SwiftUI
 import SwiftUI
 
 struct ContentView: View {
+    var session = SessionManager.shared
+    
+    
     var images : [String] = ["house","pencil.and.list.clipboard","calendar","message","person"]
     @State var selected = "house"
     @Namespace private var namespace
@@ -25,9 +28,17 @@ struct ContentView: View {
         ZStack{
             //Switch Content Here
             if selected == "person" {
-                LoginView()
+                if session.isLoggedIn() {
+                    //ProfileView()
+                }else{
+                    LoginView()
+                }
             }else if selected == "calendar" {
-                CalendarKitView()
+                if session.isLoggedIn() {
+                    CalendarKitView()
+                }else{
+                    LoginView()
+                }
             }else if selected == "pencil.and.list.clipboard" {
                 CalendarView()
             }else if selected == "message" {
