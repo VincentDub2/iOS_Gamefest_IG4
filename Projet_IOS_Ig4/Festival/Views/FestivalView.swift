@@ -39,22 +39,10 @@ struct FestivalDetailsView: View {
             Text("Ville: \(festival.city)")
             Text("Pays: \(festival.country)")
             Text("Festival actif: \(festival.isActive ?? false ? "Oui" : "Non")")
-            Text("Date de début: \(formatDate(festival.dateDebut)!)")
-            Text("Date de fin: \(formatDate(festival.dateFin)!)")
+            Text("Date de début: \(DateUtils.formatDate(festival.dateDebut)!)")
+            Text("Date de fin: \(DateUtils.formatDate(festival.dateFin)!)")
         }
     }
-    
-    func formatDate(_ dateString: String) -> String? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        if let date = dateFormatter.date(from: dateString) {
-            dateFormatter.dateStyle = .long
-            return dateFormatter.string(from: date)
-        } else {
-            return nil
-        }
-    }
-
 }
 
 struct FestivalView_Previews: PreviewProvider {

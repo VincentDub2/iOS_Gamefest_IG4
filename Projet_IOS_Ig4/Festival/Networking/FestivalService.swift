@@ -11,7 +11,7 @@ import Alamofire
 class FestivalService {
     
     func fetchFestival(completion: @escaping (Result<FestivalModel, Error>) -> Void) {
-        let endpoint = "/festivals/1"
+        let endpoint = "/festivals/5"
         
         APIManager.requestGET(endpoint: endpoint) { (result: Result<FestivalModel, AFError>) in
             DispatchQueue.main.async {

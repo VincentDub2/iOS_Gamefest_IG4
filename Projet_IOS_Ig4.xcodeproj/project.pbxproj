@@ -18,6 +18,7 @@
 		BF51A9362BA4B03100D6188B /* PosteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9352BA4B03100D6188B /* PosteView.swift */; };
 		BFB04CEF2BA9DF8900055D58 /* SignupFestivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB04CEE2BA9DF8800055D58 /* SignupFestivalView.swift */; };
 		BFB04CF12BA9E8FF00055D58 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB04CF02BA9E8FF00055D58 /* CircularProgressView.swift */; };
+		BFB04CF32BA9F6F500055D58 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB04CF22BA9F6F500055D58 /* DateUtils.swift */; };
 		C28997E02BA0974D005A681E /* Projet_IOS_Ig4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997DF2BA0974D005A681E /* Projet_IOS_Ig4App.swift */; };
 		C28997E22BA0974D005A681E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997E12BA0974D005A681E /* ContentView.swift */; };
 		C28997E42BA0974E005A681E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C28997E32BA0974E005A681E /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		BF51A9352BA4B03100D6188B /* PosteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosteView.swift; sourceTree = "<group>"; };
 		BFB04CEE2BA9DF8800055D58 /* SignupFestivalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFestivalView.swift; sourceTree = "<group>"; };
 		BFB04CF02BA9E8FF00055D58 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		BFB04CF22BA9F6F500055D58 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		C28997DC2BA0974D005A681E /* Projet_IOS_Ig4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Projet_IOS_Ig4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C28997DF2BA0974D005A681E /* Projet_IOS_Ig4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projet_IOS_Ig4App.swift; sourceTree = "<group>"; };
 		C28997E12BA0974D005A681E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				C28998442BA2E961005A681E /* APIManager.swift */,
+				BFB04CF22BA9F6F500055D58 /* DateUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				C289982D2BA22128005A681E /* CustomCalendarExampleController.swift in Sources */,
 				C28998212BA09B3C005A681E /* RegisterView.swift in Sources */,
 				C28998482BA2F022005A681E /* SessionManager.swift in Sources */,
+				BFB04CF32BA9F6F500055D58 /* DateUtils.swift in Sources */,
 				BF51A92D2BA4AFC300D6188B /* PosteService.swift in Sources */,
 				C28998512BA2FCAC005A681E /* PlanningService.swift in Sources */,
 				C289983A2BA226A6005A681E /* Decoration+SwiftUI.swift in Sources */,
