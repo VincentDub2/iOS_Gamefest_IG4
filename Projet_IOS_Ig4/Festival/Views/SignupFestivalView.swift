@@ -46,21 +46,29 @@ struct SignupFestivalView: View {
             Text("Du \(startDate) au \(endDate)")
             
             // Tee shirt size selection
-            Text("Taille de t-shirt")
-            Picker("Tee Shirt Size", selection: $teeShirtSize) {
-                Text("XS").tag("XS")
-                Text("S").tag("S")
-                Text("M").tag("M")
-                Text("L").tag("L")
-                Text("XL").tag("XL")
+            HStack() {
+                Text("Taille de t-shirt")
+                Spacer()
+                Picker("Tee Shirt Size", selection: $teeShirtSize) {
+                    Text("XS").tag("XS")
+                    Text("S").tag("S")
+                    Text("M").tag("M")
+                    Text("L").tag("L")
+                    Text("XL").tag("XL")
+                }
+                .pickerStyle(MenuPickerStyle())
             }
-            .pickerStyle(MenuPickerStyle())
-            
+                        
             // Vegetarian selection
             Toggle("Vegetarien", isOn: $isVegetarian)
             
             // Postes selection
             Text("Choix des postes")
+                .font(.title2)
+                .fontWeight(.bold)
+            Text("01/01/2024")
+                .font(.title3)
+                .fontWeight(.bold)
             ScrollView(.horizontal) {
                 VStack {
                     Text("") // Empty column
