@@ -7,21 +7,38 @@
 
 import SwiftUI
 
+struct Poste {
+    let id: String
+    let name: String
+    let description: String
+    let capacity: Int
+}
+
 struct SignupFestivalView: View {
     @State private var teeShirtSize: String = "XS"
     @State private var isVegetarian: Bool = false
-    @State private var selectedCreneau: [String: Int] = [:] // Dictionary to store selected creneaux for each poste
-    
-    var festivalName: String
-    var startDate: String
-    var endDate: String
+    let festivalName: String
+    let startDate: String
+    let endDate: String
     
     // Sample data for postes and creneaux
-    let postes = ["Poste 1", "Poste 2", "Poste 3"]
-    let creneaux = ["Jour 1", "Jour 2", "Jour 3"]
+    let postes: [Poste] = [
+        Poste(id: "1", name: "Animation jeux", description: "Description", capacity: 10),
+        Poste(id: "2", name: "Cuisine", description: "Description", capacity: 8),
+        Poste(id: "3", name: "Accueil", description: "Description", capacity: 12)
+    ]
+    
+    let creneaux: [Creneau] = [
+        Creneau(id: 1, timeStart: "8h", timeEnd: "10h", idFestival: 1),
+        Creneau(id: 2, timeStart: "12h", timeEnd: "14h", idFestival: 1),
+        Creneau(id: 3, timeStart: "16h", timeEnd: "18h", idFestival: 1)
+    ]
+
+    // Custom widths for each column
+    let columnWidths: [CGFloat] = [150, 100]
     
     var body: some View {
-        ScrollView {
+        ScrollView(.horizontal) {
             VStack(alignment: .leading, spacing: 20) {
                 // Festival information
                 Text(festivalName)
@@ -45,19 +62,39 @@ struct SignupFestivalView: View {
                 
                 // Postes selection
                 Text("Choix des postes")
-                ForEach(creneaux, id: \.self) { creneau in
-                    VStack(alignment: .leading) {
-                        Text(creneau)
-                        // Select at most one creneau for each poste
-                        Picker("Select Creneau", selection: $selectedCreneau[creneau]) {
-                            ForEach(postes, id: \.self) { poste in
-                                Text(poste).tag(poste.hashValue)
+                VStack {
+                    Text("") // Empty column
+                        .frame(width: columnWidths[0])
+                    
+                    // Header row with creneaux
+                    HStack {
+                        Spacer()
+                        ForEach(creneaux, id: \.id) { creneau in
+                            Text("\(creneau.timeStart)-\(creneau.timeEnd)")
+                                .font(.headline)
+                                .frame(width: columnWidths[1], alignment: .center)
+                        }
+                    }
+                    
+                    // Data rows
+                    ForEach(postes, id: \.id) { poste in
+                        HStack {
+                            Text(poste.name)
+                                .padding()
+                                .frame(width: columnWidths[0]) // Width for poste name
+                            
+                            Spacer()
+                            
+                            ForEach(creneaux, id: \.id) { creneau in
+                                CircularProgressView(current: 7, max: poste.capacity)
+                                    .padding()
+                                    .frame(width: columnWidths[1]) // Width for circular progress bar cell
+                                
+                                Spacer()
                             }
                         }
-                        .pickerStyle(MenuPickerStyle())
                     }
                 }
-                
                 // Signup button
                 Button(action: {
                     print("Signup button tapped")
