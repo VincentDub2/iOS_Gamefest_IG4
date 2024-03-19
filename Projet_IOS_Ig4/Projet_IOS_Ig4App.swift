@@ -11,7 +11,7 @@ import SwiftUI
 struct Projet_IOS_Ig4App: App {
     var body: some Scene {
         WindowGroup {
-            PosteView()
+            SignupFestivalView(festivalName: "Sample Festival", startDate: "01/01/2024", endDate: "03/01/2024")
         }
     }
 }

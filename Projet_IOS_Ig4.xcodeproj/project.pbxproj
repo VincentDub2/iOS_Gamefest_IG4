@@ -16,6 +16,7 @@
 		BF51A9322BA4B00A00D6188B /* Poste.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9312BA4B00A00D6188B /* Poste.swift */; };
 		BF51A9342BA4B02000D6188B /* PosteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9332BA4B02000D6188B /* PosteViewModel.swift */; };
 		BF51A9362BA4B03100D6188B /* PosteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9352BA4B03100D6188B /* PosteView.swift */; };
+		BFB04CEF2BA9DF8900055D58 /* SignupFestivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB04CEE2BA9DF8800055D58 /* SignupFestivalView.swift */; };
 		C28997E02BA0974D005A681E /* Projet_IOS_Ig4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997DF2BA0974D005A681E /* Projet_IOS_Ig4App.swift */; };
 		C28997E22BA0974D005A681E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997E12BA0974D005A681E /* ContentView.swift */; };
 		C28997E42BA0974E005A681E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C28997E32BA0974E005A681E /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		BF51A9312BA4B00A00D6188B /* Poste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poste.swift; sourceTree = "<group>"; };
 		BF51A9332BA4B02000D6188B /* PosteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosteViewModel.swift; sourceTree = "<group>"; };
 		BF51A9352BA4B03100D6188B /* PosteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosteView.swift; sourceTree = "<group>"; };
+		BFB04CEE2BA9DF8800055D58 /* SignupFestivalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFestivalView.swift; sourceTree = "<group>"; };
 		C28997DC2BA0974D005A681E /* Projet_IOS_Ig4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Projet_IOS_Ig4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C28997DF2BA0974D005A681E /* Projet_IOS_Ig4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projet_IOS_Ig4App.swift; sourceTree = "<group>"; };
 		C28997E12BA0974D005A681E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				BF51A9222BA48B5B00D6188B /* FestivalView.swift */,
+				BFB04CEE2BA9DF8800055D58 /* SignupFestivalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				BF51A92D2BA4AFC300D6188B /* PosteService.swift in Sources */,
 				C28998512BA2FCAC005A681E /* PlanningService.swift in Sources */,
 				C289983A2BA226A6005A681E /* Decoration+SwiftUI.swift in Sources */,
+				BFB04CEF2BA9DF8900055D58 /* SignupFestivalView.swift in Sources */,
 				C28998392BA226A6005A681E /* CalendarView.swift in Sources */,
 				C28998552BA30554005A681E /* CalendarViewModel.swift in Sources */,
 				BF51A9262BA4900600D6188B /* FestivalService.swift in Sources */,
