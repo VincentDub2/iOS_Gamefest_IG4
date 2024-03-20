@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF51A91F2BA4897100D6188B /* Festival.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A91E2BA4897100D6188B /* Festival.swift */; };
+		BF51A9212BA48B0B00D6188B /* FestivalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9202BA48B0B00D6188B /* FestivalViewModel.swift */; };
+		BF51A9232BA48B5B00D6188B /* FestivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9222BA48B5B00D6188B /* FestivalView.swift */; };
+		BF51A9262BA4900600D6188B /* FestivalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9252BA4900600D6188B /* FestivalService.swift */; };
+		BF51A9292BA4AB6100D6188B /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = BF51A9282BA4AB6100D6188B /* CalendarKit */; };
+		BF51A92D2BA4AFC300D6188B /* PosteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A92C2BA4AFC300D6188B /* PosteService.swift */; };
+		BF51A9322BA4B00A00D6188B /* Poste.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9312BA4B00A00D6188B /* Poste.swift */; };
+		BF51A9342BA4B02000D6188B /* PosteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9332BA4B02000D6188B /* PosteViewModel.swift */; };
+		BF51A9362BA4B03100D6188B /* PosteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9352BA4B03100D6188B /* PosteView.swift */; };
 		C28997E02BA0974D005A681E /* Projet_IOS_Ig4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997DF2BA0974D005A681E /* Projet_IOS_Ig4App.swift */; };
 		C28997E22BA0974D005A681E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997E12BA0974D005A681E /* ContentView.swift */; };
 		C28997E42BA0974E005A681E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C28997E32BA0974E005A681E /* Assets.xcassets */; };
@@ -24,7 +33,6 @@
 		C28998242BA1A22D005A681E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998232BA1A22D005A681E /* CustomButton.swift */; };
 		C289982D2BA22128005A681E /* CustomCalendarExampleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C289982A2BA22128005A681E /* CustomCalendarExampleController.swift */; };
 		C289982E2BA22128005A681E /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C289982B2BA22128005A681E /* DatePickerController.swift */; };
-		C28998302BA22258005A681E /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = C289982F2BA22258005A681E /* CalendarKit */; };
 		C28998322BA2235E005A681E /* CalendarKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998312BA2235E005A681E /* CalendarKitView.swift */; };
 		C28998392BA226A6005A681E /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998372BA226A6005A681E /* CalendarView.swift */; };
 		C289983A2BA226A6005A681E /* Decoration+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998382BA226A6005A681E /* Decoration+SwiftUI.swift */; };
@@ -96,6 +104,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF51A91E2BA4897100D6188B /* Festival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Festival.swift; sourceTree = "<group>"; };
+		BF51A9202BA48B0B00D6188B /* FestivalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalViewModel.swift; sourceTree = "<group>"; };
+		BF51A9222BA48B5B00D6188B /* FestivalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalView.swift; sourceTree = "<group>"; };
+		BF51A9252BA4900600D6188B /* FestivalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalService.swift; sourceTree = "<group>"; };
+		BF51A92C2BA4AFC300D6188B /* PosteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosteService.swift; sourceTree = "<group>"; };
+		BF51A9312BA4B00A00D6188B /* Poste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poste.swift; sourceTree = "<group>"; };
+		BF51A9332BA4B02000D6188B /* PosteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosteViewModel.swift; sourceTree = "<group>"; };
+		BF51A9352BA4B03100D6188B /* PosteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosteView.swift; sourceTree = "<group>"; };
 		C28997DC2BA0974D005A681E /* Projet_IOS_Ig4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Projet_IOS_Ig4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C28997DF2BA0974D005A681E /* Projet_IOS_Ig4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projet_IOS_Ig4App.swift; sourceTree = "<group>"; };
 		C28997E12BA0974D005A681E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -171,9 +187,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				C28998792BA49B29005A681E /* Alamofire in Frameworks */,
 				C289987F2BA4C8BE005A681E /* RiveRuntime in Frameworks */,
 				C28998302BA22258005A681E /* CalendarKit in Frameworks */,
+=======
+				C28998432BA2E895005A681E /* AlamofireDynamic in Frameworks */,
+				BF51A9292BA4AB6100D6188B /* CalendarKit in Frameworks */,
+>>>>>>> FestivalDetail
 				C289984B2BA2F106005A681E /* KeychainSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +216,92 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF51A91A2BA488FF00D6188B /* Festival */ = {
+			isa = PBXGroup;
+			children = (
+				BF51A9242BA48FDE00D6188B /* Networking */,
+				BF51A91D2BA4892500D6188B /* Models */,
+				BF51A91C2BA4891400D6188B /* ViewModels */,
+				BF51A91B2BA4890B00D6188B /* Views */,
+			);
+			path = Festival;
+			sourceTree = "<group>";
+		};
+		BF51A91B2BA4890B00D6188B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BF51A9222BA48B5B00D6188B /* FestivalView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BF51A91C2BA4891400D6188B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BF51A9202BA48B0B00D6188B /* FestivalViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BF51A91D2BA4892500D6188B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BF51A91E2BA4897100D6188B /* Festival.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BF51A9242BA48FDE00D6188B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BF51A9252BA4900600D6188B /* FestivalService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		BF51A92A2BA4AED600D6188B /* Poste */ = {
+			isa = PBXGroup;
+			children = (
+				BF51A9302BA4AFF300D6188B /* Views */,
+				BF51A92F2BA4AFE500D6188B /* ViewModels */,
+				BF51A92E2BA4AFD500D6188B /* Models */,
+				BF51A92B2BA4AF9400D6188B /* Networking */,
+			);
+			path = Poste;
+			sourceTree = "<group>";
+		};
+		BF51A92B2BA4AF9400D6188B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BF51A92C2BA4AFC300D6188B /* PosteService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		BF51A92E2BA4AFD500D6188B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BF51A9312BA4B00A00D6188B /* Poste.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BF51A92F2BA4AFE500D6188B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BF51A9332BA4B02000D6188B /* PosteViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BF51A9302BA4AFF300D6188B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BF51A9352BA4B03100D6188B /* PosteView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C28997D32BA0974D005A681E = {
 			isa = PBXGroup;
 			children = (
@@ -218,8 +325,13 @@
 		C28997DE2BA0974D005A681E /* Projet_IOS_Ig4 */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				C28998882BA4D55A005A681E /* RiveAsset */,
 				C28998592BA48985005A681E /* Forum */,
+=======
+				BF51A92A2BA4AED600D6188B /* Poste */,
+				BF51A91A2BA488FF00D6188B /* Festival */,
+>>>>>>> FestivalDetail
 				C289983E2BA2E827005A681E /* Utils */,
 				C28998282BA220A7005A681E /* Calendar */,
 				C28998222BA1A208005A681E /* Components */,
@@ -502,10 +614,17 @@
 			);
 			name = Projet_IOS_Ig4;
 			packageProductDependencies = (
+<<<<<<< HEAD
 				C289982F2BA22258005A681E /* CalendarKit */,
 				C289984A2BA2F106005A681E /* KeychainSwift */,
 				C28998782BA49B29005A681E /* Alamofire */,
 				C289987E2BA4C8BE005A681E /* RiveRuntime */,
+=======
+				C28998402BA2E895005A681E /* Alamofire */,
+				C28998422BA2E895005A681E /* AlamofireDynamic */,
+				C289984A2BA2F106005A681E /* KeychainSwift */,
+				BF51A9282BA4AB6100D6188B /* CalendarKit */,
+>>>>>>> FestivalDetail
 			);
 			productName = Projet_IOS_Ig4;
 			productReference = C28997DC2BA0974D005A681E /* Projet_IOS_Ig4.app */;
@@ -580,10 +699,16 @@
 			);
 			mainGroup = C28997D32BA0974D005A681E;
 			packageReferences = (
+<<<<<<< HEAD
 				C28998272BA2208E005A681E /* XCRemoteSwiftPackageReference "CalendarKit" */,
 				C28998492BA2F106005A681E /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				C28998772BA49B29005A681E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				C289987D2BA4C8BE005A681E /* XCRemoteSwiftPackageReference "rive-ios" */,
+=======
+				C289983F2BA2E895005A681E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				C28998492BA2F106005A681E /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				BF51A9272BA4AAF000D6188B /* XCRemoteSwiftPackageReference "CalendarKit" */,
+>>>>>>> FestivalDetail
 			);
 			productRefGroup = C28997DD2BA0974D005A681E /* Products */;
 			projectDirPath = "";
@@ -654,18 +779,26 @@
 				C28998612BA48A88005A681E /* Post.swift in Sources */,
 				C28998212BA09B3C005A681E /* RegisterView.swift in Sources */,
 				C28998482BA2F022005A681E /* SessionManager.swift in Sources */,
+				BF51A92D2BA4AFC300D6188B /* PosteService.swift in Sources */,
 				C28998512BA2FCAC005A681E /* PlanningService.swift in Sources */,
 				C289983A2BA226A6005A681E /* Decoration+SwiftUI.swift in Sources */,
 				C2BF7A692BA5D6B900CB30BA /* PostView.swift in Sources */,
 				C28998392BA226A6005A681E /* CalendarView.swift in Sources */,
 				C28998552BA30554005A681E /* CalendarViewModel.swift in Sources */,
+<<<<<<< HEAD
 				C2BF7A6C2BA5ED2600CB30BA /* CommentView.swift in Sources */,
+=======
+				BF51A9262BA4900600D6188B /* FestivalService.swift in Sources */,
+>>>>>>> FestivalDetail
 				C28997E22BA0974D005A681E /* ContentView.swift in Sources */,
 				C289981D2BA0994D005A681E /* LoginView.swift in Sources */,
 				C28998142BA09804005A681E /* AuthToken.swift in Sources */,
 				C2BF7A6E2BA5F57200CB30BA /* CommentInputView.swift in Sources */,
 				C289986E2BA48DC8005A681E /* PostDetailView.swift in Sources */,
 				C28998242BA1A22D005A681E /* CustomButton.swift in Sources */,
+				BF51A9212BA48B0B00D6188B /* FestivalViewModel.swift in Sources */,
+				BF51A9342BA4B02000D6188B /* PosteViewModel.swift in Sources */,
+				BF51A91F2BA4897100D6188B /* Festival.swift in Sources */,
 				C289981F2BA09B25005A681E /* RegisterViewModel.swift in Sources */,
 				C28998872BA4D40E005A681E /* ZombieWalking.swift in Sources */,
 				C28998632BA48AA0005A681E /* Like.swift in Sources */,
@@ -674,6 +807,7 @@
 				C28998762BA4986D005A681E /* VCard.swift in Sources */,
 				C28997E02BA0974D005A681E /* Projet_IOS_Ig4App.swift in Sources */,
 				C28998452BA2E961005A681E /* APIManager.swift in Sources */,
+				BF51A9322BA4B00A00D6188B /* Poste.swift in Sources */,
 				C289982E2BA22128005A681E /* DatePickerController.swift in Sources */,
 				C289986A2BA48C74005A681E /* ForumService.swift in Sources */,
 				C28998652BA48AC2005A681E /* Comment.swift in Sources */,
@@ -682,9 +816,14 @@
 				C289983C2BA229F9005A681E /* CalendarContainerView.swift in Sources */,
 				C289986C2BA48D76005A681E /* FormView.swift in Sources */,
 				C28998122BA097EE005A681E /* User.swift in Sources */,
+<<<<<<< HEAD
 				C28998702BA48DE2005A681E /* NewPostView.swift in Sources */,
 				C2BF7A752BA7685E00CB30BA /* AnimateAvatar.swift in Sources */,
 				C289988C2BA4DACF005A681E /* AccueilView.swift in Sources */,
+=======
+				BF51A9362BA4B03100D6188B /* PosteView.swift in Sources */,
+				BF51A9232BA48B5B00D6188B /* FestivalView.swift in Sources */,
+>>>>>>> FestivalDetail
 				C28998532BA3016C005A681E /* Creneau.swift in Sources */,
 				C28998812BA4C8E0005A681E /* testRive.swift in Sources */,
 			);
@@ -847,10 +986,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Projet_IOS_Ig4/Preview Content\"";
-				DEVELOPMENT_TEAM = Z3AQFUWRS9;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -865,6 +1004,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "vincent.Projet-IOS-Ig4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -876,10 +1016,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Projet_IOS_Ig4/Preview Content\"";
-				DEVELOPMENT_TEAM = Z3AQFUWRS9;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -894,6 +1034,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "vincent.Projet-IOS-Ig4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1018,7 +1159,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C28998272BA2208E005A681E /* XCRemoteSwiftPackageReference "CalendarKit" */ = {
+		BF51A9272BA4AAF000D6188B /* XCRemoteSwiftPackageReference "CalendarKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/richardtop/CalendarKit.git";
 			requirement = {
@@ -1053,9 +1194,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C289982F2BA22258005A681E /* CalendarKit */ = {
+		BF51A9282BA4AB6100D6188B /* CalendarKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C28998272BA2208E005A681E /* XCRemoteSwiftPackageReference "CalendarKit" */;
+			package = BF51A9272BA4AAF000D6188B /* XCRemoteSwiftPackageReference "CalendarKit" */;
 			productName = CalendarKit;
 		};
 		C289984A2BA2F106005A681E /* KeychainSwift */ = {

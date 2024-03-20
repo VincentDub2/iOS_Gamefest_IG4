@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "originHash" : "57fb330f7ee0165676411f4b6c2128f87bf30919930f86ba8516cac0b88d467c",
+=======
+  "originHash" : "717ab1635408b8d66bc8cecdf8e2a472a02f4a7554c7e275f12ce79d94c4ad5c",
+>>>>>>> FestivalDetail
   "pins" : [
     {
       "identity" : "alamofire",

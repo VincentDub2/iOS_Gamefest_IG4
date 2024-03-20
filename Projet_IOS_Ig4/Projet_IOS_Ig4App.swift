@@ -15,7 +15,11 @@ struct Projet_IOS_Ig4App: App {
     }
     var body: some Scene {
         WindowGroup {
+<<<<<<< HEAD
             ContentView()
+=======
+            PosteView()
+>>>>>>> FestivalDetail
         }
     }
 }
