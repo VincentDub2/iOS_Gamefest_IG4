@@ -45,6 +45,7 @@ struct SignupFestivalView: View {
     @StateObject var festivalViewModel = FestivalViewModel()
     @State private var postes: [Poste] = []
     @State private var creneaux: [Creneau] = []
+    @State private var creneauxEspaces: [CreneauEspace] = []
     @State private var teeShirtSize: String = "XS"
     @State private var isVegetarian: Bool = false
     let festivalName: String
@@ -65,7 +66,6 @@ struct SignupFestivalView: View {
                 result.append((date, [creneau]))
             }
         }
-        print(result)
         return result
     }
     
@@ -202,12 +202,39 @@ struct SignupFestivalView: View {
         FestivalService().fetchCreneauEspaceByCreneau(id: "\(creneau.id)") { result in
             switch result {
             case .success(let creneauEspaces):
-                print(creneauEspaces)
+                self.creneauxEspaces.append(contentsOf: creneauEspaces)
+                //print("==========================")
+                //print(creneauxEspaces)
+                
+                let creneauxEspacesByPoste = creneauxEspacesByPoste()
+                print(creneauxEspacesByPoste)
             case .failure(let error):
                 print("Failed to fetch creneauEspace: \(error)")
             }
         }
     }
+    
+    func creneauxEspacesByPoste() -> [String: [CreneauEspace]] {
+        var creneauxEspacesByPoste: [String: [CreneauEspace]] = [:]
+        
+        // Parcourir tous les creneauxEspaces
+        for creneauEspace in creneauxEspaces {
+            // Récupérer le nom du poste pour cet espace
+            let posteName = creneauEspace.espace.name
+            
+            // Vérifier si le poste existe déjà dans le dictionnaire
+            if creneauxEspacesByPoste[posteName] == nil {
+                // Si le poste n'existe pas encore, initialiser un tableau vide pour ce poste
+                creneauxEspacesByPoste[posteName] = []
+            }
+            
+            // Ajouter le creneauEspace au tableau correspondant au poste
+            creneauxEspacesByPoste[posteName]?.append(creneauEspace)
+        }
+        
+        return creneauxEspacesByPoste
+    }
+
 }
 
 struct SignupFestivalView_Previews: PreviewProvider {
