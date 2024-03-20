@@ -54,4 +54,20 @@ class FestivalService {
             }
         }
     }
+    
+    func fetchCreneauEspaceByCreneau(id: String, completion: @escaping (Result<[CreneauEspace], Error>) -> Void) {
+        let endpoint = "/creneauEspaces/creneau/\(id)"
+        
+        APIManager.requestGET(endpoint: endpoint) { (result: Result<[CreneauEspace], AFError>) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let creneauEspace):
+                    completion(.success(creneauEspace))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
+
 }

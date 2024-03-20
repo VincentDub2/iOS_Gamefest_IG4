@@ -7,7 +7,6 @@
 
 import Foundation
 
-// Define the PosteModel struct
 struct PosteModel: Decodable {
     var idPoste: Int
     var name: String

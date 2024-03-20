@@ -14,6 +14,33 @@ struct Poste: Decodable {
     let capacityPoste: Int
 }
 
+struct CreneauEspace: Decodable {
+    let idCreneauEspace: Int
+    let idCreneau: Int
+    let idEspace: Int
+    let currentCapacity: Int
+    let capacityEspaceAnimationJeux: Int
+    let creneau: CreneauInfo
+    let espace: EspaceInfo
+    let inscriptions: [InscriptionInfo]
+}
+
+struct CreneauInfo: Decodable {
+    let idCreneau: Int
+    let timeStart: String
+    let timeEnd: String
+    let idFestival: Int
+}
+
+struct EspaceInfo: Decodable {
+    let idEspace: Int
+    let name: String
+}
+
+struct InscriptionInfo: Decodable {
+}
+
+
 struct SignupFestivalView: View {
     @StateObject var festivalViewModel = FestivalViewModel()
     @State private var postes: [Poste] = []
@@ -155,20 +182,32 @@ struct SignupFestivalView: View {
                     print("Failed to fetch postes: \(error)")
                 }
             }
-            
+                
             FestivalService().fetchCreneauxByFestival(id: "5") { result in
                 switch result {
                 case .success(let fetchedCreneaux):
                     creneaux = fetchedCreneaux
-                    // Evaluate creneauxSeparated and print the result
-                    let separated = creneauxSeparated
-                    print(separated)
+                    for (_, creneauxForDay) in creneauxSeparated {
+                        for creneau in creneauxForDay {
+                            fetchCreneauEspace(creneau: creneau)
+                        }
+                    }
                 case .failure(let error):
                     print("Failed to fetch creneaux: \(error)")
                 }
             }
         }
-
+    
+    func fetchCreneauEspace(creneau: Creneau) {
+        FestivalService().fetchCreneauEspaceByCreneau(id: "\(creneau.id)") { result in
+            switch result {
+            case .success(let creneauEspaces):
+                print(creneauEspaces)
+            case .failure(let error):
+                print("Failed to fetch creneauEspace: \(error)")
+            }
+        }
+    }
 }
 
 struct SignupFestivalView_Previews: PreviewProvider {
