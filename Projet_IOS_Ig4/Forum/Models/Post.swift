@@ -5,6 +5,7 @@
 
 
 import Foundation
+import SwiftUI
 
 // Définition d'un post dans le forum.
 struct Post: Identifiable, Codable {
@@ -14,6 +15,8 @@ struct Post: Identifiable, Codable {
     var body: String
     var createdAt: String
     var User: User
+    var avatar : Int = Int.random(in: 1...10)
+    var color : Color = Color(hue: Double.random(in: 0...1), saturation: 0.5, brightness: 0.8)
     var likes: [Like]
     var comments: [Comment]
     enum CodingKeys: String, CodingKey {
