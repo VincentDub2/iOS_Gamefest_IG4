@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showNextView = false
     @ObservedObject private var sessionManager = SessionManager.shared
     var images: [String] = ["house", "magnifyingglass", "plus", "person", "loupe"]
     @State var selected = "house"
@@ -15,70 +16,55 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            //Switch Content Here
-            if selected == "person" {
-                if sessionManager.isLoggedIn() {
-                    ProfileView()
-                } else {
-                    LoginView()
+            if !showNextView {
+                // Background Image with Enter Button
+                BackgroundView(showNextView: $showNextView)
+            } else {
+                //Switch Content Here
+                if selected == "person" {
+                    if sessionManager.isLoggedIn() {
+                        ProfileView()
+                    } else {
+                        LoginView()
+                    }
+                } else if selected == "plus" {
+                    CalendarKitView()
+                } else if selected == "magnifyingglass" {
+                    CalendarView()
+                } else if selected == "loupe" {
+                    CalendarContainerView()
                 }
-            } else if selected == "plus" {
-                CalendarKitView()
-            } else if selected == "magnifyingglass" {
-                CalendarView()
-            } else if selected == "loupe" {
-                CalendarContainerView()
-            }
 
-            navBar
+                navBar
+            }
         }
         .edgesIgnoringSafeArea(.bottom)
     }
-}
 
-struct Wave: Shape {
-    func path(in rect: CGRect) -> Path {
-        Path{path in
-            path.move(to: .zero)
-            path.addQuadCurve(to: CGPoint(x: rect.width * 0.4, y: rect.height * 0.7),
-                              control: CGPoint(x: rect.width * 0.2, y: rect.minY))
-            path.addQuadCurve(to: CGPoint(x: rect.width * 0.6, y: rect.height * 0.7),
-                              control: CGPoint(x: rect.midX, y: rect.maxY))
-            path.addQuadCurve(to: CGPoint(x: rect.maxX, y: rect.minY),
-                              control: CGPoint(x: rect.width * 0.8, y: rect.minY))
-            path.move(to: CGPoint(x: rect.minX, y: rect.minY))
-
-        }
-        
-    }
-}
-
-extension ContentView{
     private var navBar: some View {
-        VStack{
+        VStack {
             Spacer()
-            HStack(){
-                HStack{
+            HStack {
+                HStack {
                     ForEach(images, id: \.self) { iconName in
                         if selected == iconName {
-                            ZStack{
+                            ZStack {
                                 Wave()
                                     .fill(.background)
                                     .frame(width: 80, height: 20)
                                     //.border(.orange, width: 1)
                                     .scaleEffect(2)
-                                    .offset(y:-10)
+                                    .offset(y: -10)
                                     .matchedGeometryEffect(id: "let1", in: namespace)
                                 Image(systemName: selected)
                                     .font(.title3.bold())
                                     .foregroundColor(.primary)
-                                    .padding(.horizontal,40)
-                                    .offset(y:-30)
+                                    .padding(.horizontal, 40)
+                                    .offset(y: -30)
                                     .matchedGeometryEffect(id: "let2", in: namespace)
                                     .shadow(color: .black.opacity(0.5), radius: 10, x: 0, y: 0)
-                                
                             }
-                        }else {
+                        } else {
                             Image(systemName: iconName)
                                 .resizable()
                                 .scaledToFill()
@@ -91,10 +77,9 @@ extension ContentView{
                                     }
                                 }
                         }
-                        
                     }
                 }
-                .padding(.bottom,30)
+                .padding(.bottom, 30)
                 .frame(maxWidth: .infinity)
                 .background(
                     .black
@@ -104,8 +89,60 @@ extension ContentView{
         }
     }
 }
+
+struct BackgroundView: View {
+    @Binding var showNextView: Bool
+
+    var body: some View {
+        ZStack {
+            // Background Image
+            Image("backgroundimage")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+                .opacity(0.8) // Opacity of the background image
+
+            VStack {
+                Spacer()
+               
+                // Button to enter
+                Button(action: {
+                    self.showNextView = true
+                }) {
+                    Text("Entrer")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.green) // Green color for the button background
+                        .cornerRadius(10) // Rounded corners for the button
+                        
+                }
+                .padding()
+
+               
+            }
+        }
+    }
+}
+
+struct Wave: Shape {
+    func path(in rect: CGRect) -> Path {
+        Path { path in
+            path.move(to: .zero)
+            path.addQuadCurve(to: CGPoint(x: rect.width * 0.4, y: rect.height * 0.7),
+                              control: CGPoint(x: rect.width * 0.2, y: rect.minY))
+            path.addQuadCurve(to: CGPoint(x: rect.width * 0.6, y: rect.height * 0.7),
+                              control: CGPoint(x: rect.midX, y: rect.maxY))
+            path.addQuadCurve(to: CGPoint(x: rect.maxX, y: rect.minY),
+                              control: CGPoint(x: rect.width * 0.8, y: rect.minY))
+            path.move(to: CGPoint(x: rect.minX, y: rect.minY))
+
+        }
+
+    }
+}
+
 #Preview {
     ContentView().preferredColorScheme(.light)
 }
-
-

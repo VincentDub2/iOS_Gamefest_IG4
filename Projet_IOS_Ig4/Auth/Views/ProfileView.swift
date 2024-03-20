@@ -136,11 +136,13 @@ struct ProfileView: View {
     
     // Créez une nouvelle sous-vue pour afficher et sélectionner la photo de profil
     struct ProfileImageView: View {
-        @ObservedObject private var sessionManager = SessionManager.shared // Observer pour les changements
-        @Binding var inputImage: UIImage? // Image entrante depuis l'ImagePicker
-        @State private var profileImage: Image? // Image SwiftUI pour l'affichage
+        @ObservedObject private var sessionManager = SessionManager.shared
+        @Binding var inputImage: UIImage?
+        @State private var profileImage: Image? // Declare profileImage here
         @State private var showingImagePicker = false
+        @State private var showingActionSheet = false // Declare showingActionSheet here
         @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
+
         
         var body: some View {
             VStack {
@@ -164,23 +166,40 @@ struct ProfileView: View {
                     }
                 }
                 .frame(width: 150, height: 150)
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.gray, lineWidth: 1))
-                .onTapGesture {
-                    self.showingImagePicker = true
-                }
-                .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
-                    ImagePicker(image: self.$inputImage, sourceType: self.sourceType)
-                }
-            }
-        }
+                            .clipShape(Circle())
+                            .overlay(Circle().stroke(Color.gray, lineWidth: 1))
+                            .onTapGesture {
+                                self.showingActionSheet = true // set to true to show action sheet
+                            }
+                            .actionSheet(isPresented: $showingActionSheet) { // corrected syntax
+                                ActionSheet(
+                                    title: Text("Modifier la photo"),
+                                    message: Text("Choisissez une action"),
+                                    buttons: [
+                                        .default(Text("Prendre une photo")) {
+                                            self.sourceType = .camera
+                                            self.showingImagePicker = true
+                                        },
+                                        .default(Text("Choisir une photo")) {
+                                            self.sourceType = .photoLibrary
+                                            self.showingImagePicker = true
+                                        },
+                                        .cancel()
+                                    ]
+                                )
+                            }
+                            .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+                                ImagePicker(image: self.$inputImage, sourceType: self.sourceType)
+                            }
+                        }
+                    }
         
         private func loadImage() {
             guard let inputImage = inputImage else { return }
             profileImage = Image(uiImage: inputImage)
             
-            // Si l'authentification est requise pour votre API, assurez-vous que l'utilisateur est connecté et a un token valide
-            if let imageData = inputImage.jpegData(compressionQuality: 1) {
+          
+            if let imageData = inputImage.jpegData(compressionQuality: 0.5)  {
                 AuthService.shared.uploadProfilePicture(imageData: imageData) { result in
                     DispatchQueue.main.async {
                         switch result {
