@@ -19,4 +19,16 @@ struct DateUtils {
             return nil
         }
     }
+    
+    static func formatTime(_ timeString: String) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        guard let date = dateFormatter.date(from: timeString) else {
+            return nil
+        }
+        
+        dateFormatter.dateFormat = "HH:mm"
+        return dateFormatter.string(from: date)
+    }
+
 }
