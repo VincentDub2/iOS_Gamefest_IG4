@@ -24,4 +24,34 @@ class FestivalService {
             }
         }
     }
+    
+    func fetchPostesByFestival(id: String, completion: @escaping (Result<[Poste], Error>) -> Void) {
+        let endpoint = "/festivals/\(id)/postes"
+        
+        APIManager.requestGET(endpoint: endpoint) { (result: Result<[Poste], AFError>) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let postes):
+                    completion(.success(postes))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
+
+    func fetchCreneauxByFestival(id: String, completion: @escaping (Result<[Creneau], Error>) -> Void) {
+        let endpoint = "/festivals/\(id)/creneaux"
+        
+        APIManager.requestGET(endpoint: endpoint) { (result: Result<[Creneau], AFError>) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let creneaux):
+                    completion(.success(creneaux))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
 }

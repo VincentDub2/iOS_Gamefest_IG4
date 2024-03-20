@@ -7,39 +7,28 @@
 
 import SwiftUI
 
-struct Poste {
-    let id: String
-    let name: String
+struct Poste: Decodable {
+    let idPoste: Int
+    var name: String
     let description: String
-    let capacity: Int
+    let capacityPoste: Int
 }
 
 struct SignupFestivalView: View {
     @StateObject var festivalViewModel = FestivalViewModel()
+    @State private var postes: [Poste] = []
+    @State private var creneaux: [Creneau] = []
     @State private var teeShirtSize: String = "XS"
     @State private var isVegetarian: Bool = false
     let festivalName: String
     let startDate: String
     let endDate: String
-    
-    // Sample data for postes and creneaux
-    let postes: [Poste] = [
-        Poste(id: "1", name: "Animation jeux", description: "Description", capacity: 10),
-        Poste(id: "2", name: "Cuisine", description: "Description", capacity: 8),
-        Poste(id: "3", name: "Accueil", description: "Description", capacity: 12)
-    ]
-    
-    let creneaux: [Creneau] = [
-        Creneau(id: 1, timeStart: "8h", timeEnd: "10h", idFestival: 1),
-        Creneau(id: 2, timeStart: "12h", timeEnd: "14h", idFestival: 1),
-        Creneau(id: 3, timeStart: "16h", timeEnd: "18h", idFestival: 1)
-    ]
-    
+        
     // Custom widths for each column
     let columnWidths: [CGFloat] = [150, 100]
     
     var body: some View {
-        if let festival = festivalViewModel.festival {
+        if let festival = festivalViewModel.festival, !postes.isEmpty && !creneaux.isEmpty {
             VStack(alignment: .leading, spacing: 20) {
                 // Festival information
                 Text(festival.name)
@@ -87,7 +76,7 @@ struct SignupFestivalView: View {
                         }
                         
                         // Data rows
-                        ForEach(postes, id: \.id) { poste in
+                        ForEach($postes, id: \.idPoste) { $poste in // Remove the $
                             HStack {
                                 Text(poste.name)
                                     .padding()
@@ -96,7 +85,7 @@ struct SignupFestivalView: View {
                                 Spacer()
                                 
                                 ForEach(creneaux, id: \.id) { creneau in
-                                    CircularProgressView(current: 7, max: poste.capacity)
+                                    CircularProgressView(current: 7, max: poste.capacityPoste)
                                         .padding()
                                         .frame(width: columnWidths[1]) // Width for circular progress bar cell
                                     
@@ -124,9 +113,33 @@ struct SignupFestivalView: View {
                 .progressViewStyle(CircularProgressViewStyle())
                 .onAppear {
                     festivalViewModel.fetchFestival()
+                    fetchPostesAndCreneaux()
                 }
         }
     }
+    
+    func fetchPostesAndCreneaux() {
+            FestivalService().fetchPostesByFestival(id: "5") { result in
+                print(result)
+                switch result {
+                case .success(let fetchedPostes):
+                    postes = fetchedPostes
+                case .failure(let error):
+                    print("Failed to fetch postes: \(error)")
+                }
+            }
+            
+            FestivalService().fetchCreneauxByFestival(id: "5") { result in
+                print(result)
+                switch result {
+                case .success(let fetchedCreneaux):
+                    creneaux = fetchedCreneaux
+                case .failure(let error):
+                    print("Failed to fetch creneaux: \(error)")
+                }
+            }
+        }
+
 }
 
 struct SignupFestivalView_Previews: PreviewProvider {
