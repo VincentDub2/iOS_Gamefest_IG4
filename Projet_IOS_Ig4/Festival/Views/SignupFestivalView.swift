@@ -46,6 +46,7 @@ struct SignupFestivalView: View {
     @State private var postes: [Poste] = []
     @State private var creneaux: [Creneau] = []
     @State private var creneauxEspaces: [CreneauEspace] = []
+    @State private var creneauxEspacesByPoste: [String : [CreneauEspace]] = [:]
     @State private var teeShirtSize: String = "XS"
     @State private var isVegetarian: Bool = false
     let festivalName: String
@@ -110,7 +111,8 @@ struct SignupFestivalView: View {
                         Text(day)
                             .font(.title3)
                             .fontWeight(.bold)
-                        
+
+
                         ScrollView(.horizontal) {
                             VStack {
                                 Text("") // Empty column
@@ -126,8 +128,9 @@ struct SignupFestivalView: View {
                                     }
                                 }
                                 
-                                // Data rows
-                                ForEach($postes, id: \.idPoste) { $poste in
+                                ForEach(postes, id: \.idPoste) { poste in
+                                    let creneauxEspaces = creneauxEspacesByPoste[poste.name] ?? []
+                                    
                                     HStack {
                                         Text(poste.name)
                                             .padding()
@@ -136,7 +139,8 @@ struct SignupFestivalView: View {
                                         Spacer()
                                         
                                         ForEach(creneauxForDay, id: \.id) { creneau in
-                                            CircularProgressView(current: 7, max: poste.capacityPoste)
+                                            let capacity = creneauxEspaces.first { $0.creneau.idCreneau == creneau.id }?.currentCapacity ?? 0
+                                            CircularProgressView(current: capacity, max: poste.capacityPoste)
                                                 .padding()
                                                 .frame(width: columnWidths[1])
                                             
@@ -203,18 +207,14 @@ struct SignupFestivalView: View {
             switch result {
             case .success(let creneauEspaces):
                 self.creneauxEspaces.append(contentsOf: creneauEspaces)
-                //print("==========================")
-                //print(creneauxEspaces)
-                
-                let creneauxEspacesByPoste = creneauxEspacesByPoste()
-                print(creneauxEspacesByPoste)
+                creneauxEspacesByPoste = getCreneauxEspacesByPoste()
             case .failure(let error):
                 print("Failed to fetch creneauEspace: \(error)")
             }
         }
     }
     
-    func creneauxEspacesByPoste() -> [String: [CreneauEspace]] {
+    func getCreneauxEspacesByPoste() -> [String: [CreneauEspace]] {
         var creneauxEspacesByPoste: [String: [CreneauEspace]] = [:]
         
         // Parcourir tous les creneauxEspaces
