@@ -18,7 +18,7 @@ struct CreneauEspace: Decodable {
     let idCreneauEspace: Int
     let idCreneau: Int
     let idEspace: Int
-    let currentCapacity: Int
+    var currentCapacity: Int
     let capacityEspaceAnimationJeux: Int
     let creneau: CreneauInfo
     let espace: EspaceInfo
@@ -40,12 +40,15 @@ struct EspaceInfo: Decodable {
 struct InscriptionInfo: Decodable {
 }
 
+class FestivalState: ObservableObject {
+    @Published var creneauxEspaces: [CreneauEspace] = []
+}
 
 struct SignupFestivalView: View {
     @StateObject var festivalViewModel = FestivalViewModel()
     @State private var postes: [Poste] = []
     @State private var creneaux: [Creneau] = []
-    @State private var creneauxEspaces: [CreneauEspace] = []
+    @ObservedObject var festivalState = FestivalState()
     @State private var creneauxEspacesByPoste: [String : [CreneauEspace]] = [:]
     @State private var teeShirtSize: String = "XS"
     @State private var isVegetarian: Bool = false
@@ -140,10 +143,15 @@ struct SignupFestivalView: View {
                                         
                                         ForEach(creneauxForDay, id: \.id) { creneau in
                                             let capacity = creneauxEspaces.first { $0.creneau.idCreneau == creneau.id }?.currentCapacity ?? 0
-                                            CircularProgressView(current: capacity, max: poste.capacityPoste)
-                                                .padding()
-                                                .frame(width: columnWidths[1])
-                                            
+                                            CircularProgressView(current: capacity, max: poste.capacityPoste) {
+                                                // Handle tap event
+                                                handleTapForCreneau(creneau, poste)
+                                            }
+                                            .padding()
+                                            .frame(width: columnWidths[1])
+                                            .animation(.easeInOut) // Add animation to reflect the changes
+                                            .disabled(capacity >= poste.capacityPoste) // Disable tapping if capacity is already at max
+                                            .opacity(capacity >= poste.capacityPoste ? 0.5 : 1.0) // Reduce opacity if capacity is at max
                                             Spacer()
                                         }
                                     }
@@ -177,6 +185,18 @@ struct SignupFestivalView: View {
         }
     }
     
+    func handleTapForCreneau(_ creneau: Creneau, _ poste: Poste) {
+        guard let index = self.festivalState.creneauxEspaces.firstIndex(where: { $0.creneau.idCreneau == creneau.id }) else {
+            return
+        }
+        var updatedCreneauxEspaces = self.festivalState.creneauxEspaces
+        if updatedCreneauxEspaces[index].currentCapacity < poste.capacityPoste {
+            updatedCreneauxEspaces[index].currentCapacity += 1
+        }
+        self.festivalState.creneauxEspaces = updatedCreneauxEspaces
+    }
+
+    
     func fetchPostesAndCreneaux() {
             FestivalService().fetchPostesByFestival(id: "5") { result in
                 switch result {
@@ -206,7 +226,7 @@ struct SignupFestivalView: View {
         FestivalService().fetchCreneauEspaceByCreneau(id: "\(creneau.id)") { result in
             switch result {
             case .success(let creneauEspaces):
-                self.creneauxEspaces.append(contentsOf: creneauEspaces)
+                self.festivalState.creneauxEspaces.append(contentsOf: creneauEspaces)
                 creneauxEspacesByPoste = getCreneauxEspacesByPoste()
             case .failure(let error):
                 print("Failed to fetch creneauEspace: \(error)")
@@ -218,7 +238,7 @@ struct SignupFestivalView: View {
         var creneauxEspacesByPoste: [String: [CreneauEspace]] = [:]
         
         // Parcourir tous les creneauxEspaces
-        for creneauEspace in creneauxEspaces {
+        for creneauEspace in self.festivalState.creneauxEspaces {
             // Récupérer le nom du poste pour cet espace
             let posteName = creneauEspace.espace.name
             

@@ -9,8 +9,10 @@ import Foundation
 import SwiftUI
 
 struct CircularProgressView: View {
+    @State private var tapped: Bool = false
     let current: Int
     let max: Int
+    var onTap: (() -> Void)?
     
     var body: some View {
         let color: Color
@@ -30,8 +32,13 @@ struct CircularProgressView: View {
                     .stroke(lineWidth: 10.0)
                     .opacity(0.3)
                     .foregroundColor(.gray)
+                    .onTapGesture {
+                        tapped.toggle()
+                        onTap?()
+                    }
                 
                 Circle()
+                    //.trim(from: 0.0, to: tapped ? CGFloat(current) / CGFloat(max) : 0.0)
                     .trim(from: 0.0, to: CGFloat(current) / CGFloat(max))
                     .stroke(style: StrokeStyle(lineWidth: 10.0, lineCap: .round, lineJoin: .round))
                     .foregroundColor(color) // Set color based on logic
