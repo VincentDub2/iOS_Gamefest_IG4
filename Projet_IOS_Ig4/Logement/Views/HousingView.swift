@@ -1,59 +1,57 @@
-//
-//  HousingView.swift
-//  Projet_IOS_Ig4
-//
-//  Created by vincent DUBUC on 20/03/2024.
-//
-
-import Foundation
 import SwiftUI
 
 struct HousingView: View {
-    @ObservedObject var viewModel: HousingViewModel
-    @State private var searchText: String = ""
+    // ViewModel instance.
+    @ObservedObject var viewModel = HousingViewModel()
+
+    // State for search bar text.
+    @State private var searchQuery: String = ""
+    
+    // State for navigation.
+    @State private var showingAddHousingView = false
+
 
     var body: some View {
         NavigationView {
-            VStack {
-                TextField("Search...", text: $searchText)
-                    .padding()
-                    .onChange(of: searchText) { newValue in
-                        viewModel.searchHousing(withKeyword: newValue)
-                    }
+            List {
+                // Search bar.
+                TextField("Search for housing...", text: $searchQuery, onEditingChanged: { _ in }, onCommit: {
+                    viewModel.searchHousing(withKeyword: searchQuery)
+                })
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
 
-                if viewModel.isLoading {
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle())
-                } else if let errorMessage = viewModel.errorMessage {
-                    Text(errorMessage)
-                        .foregroundColor(.red)
-                } else {
-                    List(viewModel.housings) { housing in
+                // Display each housing in a list.
+                ForEach(viewModel.housings) { housing in
+                    NavigationLink(destination: HousingDetailView(housing: housing)) {
                         HousingCell(housing: housing)
                     }
-                    .listStyle(PlainListStyle())
                 }
             }
-            .navigationTitle("Housing Offers")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        // Trigger adding a new housing offer
-                    }) {
-                        Image(systemName: "plus")
-                    }
-                }
+            .navigationBarTitle("Housing Offers")
+            .navigationBarItems(trailing: Button(action: {
+                showingAddHousingView = true
+            }) {
+                Image(systemName: "plus")
+            })
+            .sheet(isPresented: $showingAddHousingView) {
+                AddHousingOfferView(viewModel: viewModel)
             }
+            .listStyle(PlainListStyle())
+        }
+        .onAppear {
+            viewModel.loadHousings()
         }
     }
 }
 
+// A simple view to display housing details in a list cell.
 struct HousingCell: View {
-    let housing: Housing
-
+    var housing: Housing
+    
     var body: some View {
         VStack(alignment: .leading) {
-            Text(housing.address)
+            Text(housing.city)
                 .font(.headline)
             Text("Availability: \(housing.availability)")
                 .font(.subheadline)
@@ -62,12 +60,13 @@ struct HousingCell: View {
                     .font(.body)
             }
         }
+        .padding()
     }
 }
 
-// A simple preview for SwiftUI Canvas
+// Preview provider for SwiftUI previews in Xcode.
 struct HousingView_Previews: PreviewProvider {
     static var previews: some View {
-        HousingView(viewModel: HousingViewModel())
+        HousingView()
     }
 }
