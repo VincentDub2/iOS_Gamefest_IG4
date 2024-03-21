@@ -6,6 +6,68 @@
 //
 
 import SwiftUI
+import AVFoundation
+
+struct VideoBackgroundView: UIViewRepresentable {
+    var player: AVPlayer
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(player: player)
+    }
+    
+    init(videoName: String, videoType: String) {
+        guard let path = Bundle.main.path(forResource: videoName, ofType: videoType) else {
+            fatalError("Video file not found.")
+        }
+        player = AVPlayer(url: URL(fileURLWithPath: path))
+        player.isMuted = true
+        player.actionAtItemEnd = .none
+        player.play()
+    }
+    
+    func makeUIView(context: Context) -> UIView {
+        let view = UIView()
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.videoGravity = .resizeAspectFill
+        playerLayer.frame = view.bounds
+        view.layer.addSublayer(playerLayer)
+        context.coordinator.startPlayer(player: player)
+        context.coordinator.adjustPlayerLayerFrame(view: view)
+        
+        return view
+    }
+    
+    func updateUIView(_ uiView: UIView, context: Context) {}
+    
+    class Coordinator: NSObject {
+        var player: AVPlayer
+        
+        init(player: AVPlayer) {
+            self.player = player
+        }
+        
+        func startPlayer(player: AVPlayer) {
+            NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(playerItemDidReachEnd),
+                                                   name: .AVPlayerItemDidPlayToEndTime,
+                                                   object: player.currentItem)
+        }
+        
+        @objc func playerItemDidReachEnd(notification: Notification) {
+            if let playerItem = notification.object as? AVPlayerItem {
+                playerItem.seek(to: .zero, completionHandler: nil)
+                player.play()
+            }
+        }
+        func adjustPlayerLayerFrame(view: UIView) {
+            DispatchQueue.main.async {
+                guard let layer = view.layer.sublayers?.first as? AVPlayerLayer else { return }
+                layer.frame = view.bounds
+            }
+        }
+    }
+}
+
 
 struct ContentView: View {
     @State private var showNextView = false
@@ -93,14 +155,12 @@ struct ContentView: View {
 struct BackgroundView: View {
     @Binding var showNextView: Bool
 
-    var body: some View {
-        ZStack {
-            // Background Image
-            Image("backgroundimage")
-                .resizable()
-                .scaledToFill()
-                .edgesIgnoringSafeArea(.all)
-                .opacity(0.8) // Opacity of the background image
+        var body: some View {
+            ZStack {
+                VideoBackgroundView(videoName: "backgroundVideo", videoType: "mp4") // Assurez-vous que le fichier vidéo est dans votre bundle
+                    .edgesIgnoringSafeArea(.all)
+                    .opacity(0.8)
+                // Opacity of the background image
 
             VStack {
                 Spacer()
@@ -109,17 +169,21 @@ struct BackgroundView: View {
                 Button(action: {
                     self.showNextView = true
                 }) {
-                    Text("Entrer")
-                        .font(.title)
+                    Text("C'est parti")
+                        .font(.custom("Pacifico", size: 24)) // Remplacez "Pacifico" par le nom de votre police calligraphique
                         .fontWeight(.bold)
                         .foregroundColor(.white)
-                        .padding()
-                        .background(Color.green) // Green color for the button background
-                        .cornerRadius(10) // Rounded corners for the button
-                        
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 30)
+                        .background(Color.black)
+                        .cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.white, lineWidth: 1)
+                        )
+                        .shadow(radius: 10)
                 }
-                .padding()
-
+                .padding(.bottom, 100)
                
             }
         }

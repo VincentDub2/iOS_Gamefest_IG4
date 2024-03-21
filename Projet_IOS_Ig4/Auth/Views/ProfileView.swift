@@ -20,6 +20,9 @@ struct ProfileView: View {
     @State private var email: String = ""
         @State private var address: String = ""
     
+    @State private var showLogoOverlayView = false
+    @State private var logoImage: UIImage? = nil
+    
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
@@ -81,6 +84,14 @@ struct ProfileView: View {
                             .cornerRadius(10)
                             .font(.system(size: 18, weight: .bold))
                     }
+                    
+                    Button("Prendre une photo avec logo") {
+                                self.showLogoOverlayView = true
+                            }
+                            .sheet(isPresented: $showLogoOverlayView) {
+                                LogoOverlayView()
+                            }
+                    
                 } else {
                     Text("Aucun utilisateur n'est connecté.")
                 }
@@ -223,5 +234,54 @@ struct ProfileView: View {
         }
         
     }
+    
+    
 
 }
+
+
+
+struct LogoView: View {
+    @Binding var imageWithLogo: UIImage?
+    @State private var showingImagePicker = false
+    @State private var inputImage: UIImage?
+    let logo: UIImage = UIImage(named: "yourLogoImage")! // Remplacez par le nom de votre image de logo
+    
+    var body: some View {
+        VStack {
+            if let imageWithLogo = imageWithLogo {
+                Image(uiImage: imageWithLogo)
+                    .resizable()
+                    .scaledToFit()
+            } else {
+                Text("Prendre une photo")
+            }
+        }
+        .onTapGesture {
+            self.showingImagePicker = true
+        }
+        .sheet(isPresented: $showingImagePicker, onDismiss: loadLogo) {
+            ImagePicker(image: self.$inputImage, sourceType: .camera)
+        }
+    }
+    
+    func loadLogo() {
+        guard let inputImage = inputImage else { return }
+        
+        // Créer une nouvelle image en superposant le logo sur l'image d'origine
+        UIGraphicsBeginImageContext(inputImage.size)
+        
+        inputImage.draw(at: CGPoint.zero)
+        
+        let logoSize = CGSize(width: inputImage.size.width / 4, height: inputImage.size.width / 4)
+        let logoOrigin = CGPoint(x: inputImage.size.width - logoSize.width - 20, y: inputImage.size.height - logoSize.height - 20)
+        
+        logo.draw(in: CGRect(origin: logoOrigin, size: logoSize))
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        self.imageWithLogo = newImage
+    }
+}
+
