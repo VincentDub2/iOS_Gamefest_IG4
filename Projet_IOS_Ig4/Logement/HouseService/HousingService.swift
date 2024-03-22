@@ -3,7 +3,7 @@ import Combine
 import Alamofire
 
 class HousingService {
-    let tempoIdUser = "ccfba91c-1ec8-42f8-9962-02bfbd7c1e73"
+    let tempoIdUser = "1"
     // Récupérer tous les posts
        func fetchHousing() -> AnyPublisher<[Housing], Error> {
            let endpoint = "/housings"
@@ -24,7 +24,7 @@ class HousingService {
        
     
     // Créer un post
-    func createHoussing(availibility : String,description:String,city: String,postalCode: String,isOffering : Bool) -> AnyPublisher<Bool, Error> {
+    func createHoussing(availibility : Int,description:String,city: String,postalCode: String,isOffering : Bool) -> AnyPublisher<Bool, Error> {
         let endpoint = "/housings"
         let parameters: Parameters = [
             "availibility": availibility,
@@ -38,8 +38,9 @@ class HousingService {
             return Future<Bool, Error> { promise in
                 APIManager.requestPOST(endpoint: endpoint, parameters: parameters) { (result: Result<ResponseApi, AFError>) in
                     switch result {
-                    case .success(let title):
+                    case .success(_):
                         promise(.success(true))
+                        _ = self.fetchHousing()
                     case .failure(let error):
                         promise(.failure(error))
                     }

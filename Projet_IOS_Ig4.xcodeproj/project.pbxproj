@@ -85,6 +85,7 @@
 		C2BF7A8B2BA9E89900CB30BA /* SoireeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF7A8A2BA9E89900CB30BA /* SoireeCardView.swift */; };
 		C2BF7A8D2BA9E8D700CB30BA /* Soiree.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF7A8C2BA9E8D700CB30BA /* Soiree.swift */; };
 		C2BF7A8F2BA9EAA700CB30BA /* SoireeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF7A8E2BA9EAA700CB30BA /* SoireeViewModel.swift */; };
+		C2E592172BADD6C700DA3136 /* HousingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E592162BADD6C700DA3136 /* HousingCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +183,7 @@
 		C2BF7A8A2BA9E89900CB30BA /* SoireeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoireeCardView.swift; path = ../../../../../iOS_Gamefest_IG4/Projet_IOS_Ig4/Forum/Views/components/SoireeCardView.swift; sourceTree = "<group>"; };
 		C2BF7A8C2BA9E8D700CB30BA /* Soiree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Soiree.swift; sourceTree = "<group>"; };
 		C2BF7A8E2BA9EAA700CB30BA /* SoireeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoireeViewModel.swift; sourceTree = "<group>"; };
+		C2E592162BADD6C700DA3136 /* HousingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 				C222790B2BAB5BCD00B9B55C /* HousingView.swift */,
 				C22279212BAB620400B9B55C /* HousingDetailView.swift */,
 				C22279232BAB629F00B9B55C /* AddHousingOfferView.swift */,
+				C2E592162BADD6C700DA3136 /* HousingCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -769,6 +772,7 @@
 				C289983A2BA226A6005A681E /* Decoration+SwiftUI.swift in Sources */,
 				C2BF7A692BA5D6B900CB30BA /* PostView.swift in Sources */,
 				C28998392BA226A6005A681E /* CalendarView.swift in Sources */,
+				C2E592172BADD6C700DA3136 /* HousingCell.swift in Sources */,
 				C222790A2BAB5B8500B9B55C /* HousingViewModel.swift in Sources */,
 				C222791E2BAB5D0200B9B55C /* AnimateAvatar.swift in Sources */,
 				C28998552BA30554005A681E /* CalendarViewModel.swift in Sources */,

@@ -5,32 +5,46 @@ struct AddHousingOfferView: View {
     @ObservedObject var viewModel: HousingViewModel
 
     // State for form fields
-    @State private var address: String = ""
     @State private var availability: String = ""
     @State private var description: String = ""
-    @State private var city: String = "Paris"
-    @State private var postalCode: String = "75000"
-    @State private var isOffering: Bool = true // Default to offering a housing
+    @State private var city: String = ""
+    @State private var postalCode: String = ""
+    @State private var isOffering: Bool = true // Default to offering housing
+    @State private var showAlert: Bool = false
+    @State private var alertMessage: String = ""
 
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Housing Details")) {
-                    TextField("Address", text: $address)
-                    TextField("Availability", text: $availability)
+                Section(header: Text("Ajouter un logement")) {
+                    TextField("Nombre de personne", text: $availability)
                         .keyboardType(.numberPad)
-                    TextField("Description", text: $description)
+                    TextField("Description de ce vous chercher ou proposé", text: $description)
                     Toggle(isOn: $isOffering) {
-                        Text("Offering")
+                        Text(isOffering ? "Proposition" : "Recherche")
                     }
                 }
                 
+                Section(header: Text("Localisation")) {
+                    TextField("Ville", text: $city)
+                    TextField("Code Postal", text: $postalCode)
+                        .keyboardType(.numberPad)
+                }
+                
                 Button("Submit") {
-                    // Convert availability to Int
-                    if let availabilityInt = Int(availability) {
-                        viewModel.addHousingOffer(availibility : availability,description: description, city: city, postalCode: postalCode, isOffering: isOffering)
-                        presentationMode.wrappedValue.dismiss()
+                    // Validate input before submitting
+                    print(availability)
+                    guard let availabilityInt = Int(availability), !description.isEmpty, !city.isEmpty, !postalCode.isEmpty else {
+                        alertMessage = "Please fill all the fields correctly."
+                        showAlert = true
+                        return
                     }
+                    
+                    viewModel.addHousingOffer(availibility: availabilityInt, description: description, city: city, postalCode: postalCode, isOffering: isOffering)
+                    presentationMode.wrappedValue.dismiss()
+                }
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
                 }
             }
             .navigationBarTitle("Add Housing", displayMode: .inline)
@@ -38,5 +52,11 @@ struct AddHousingOfferView: View {
                 presentationMode.wrappedValue.dismiss()
             })
         }
+    }
+}
+
+struct AddHousingOfferView_Previews: PreviewProvider {
+    static var previews: some View {
+        AddHousingOfferView(viewModel: HousingViewModel())
     }
 }

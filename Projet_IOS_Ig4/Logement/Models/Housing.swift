@@ -49,6 +49,4 @@ struct Housing: Identifiable , Codable{
         case country
     
     }
-    
-    
 }

@@ -15,7 +15,7 @@ struct HousingView: View {
         NavigationView {
             List {
                 // Search bar.
-                TextField("Search for housing...", text: $searchQuery, onEditingChanged: { _ in }, onCommit: {
+                TextField("Rechercher un logement...", text: $searchQuery, onEditingChanged: { _ in }, onCommit: {
                     viewModel.searchHousing(withKeyword: searchQuery)
                 })
                 .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -28,7 +28,7 @@ struct HousingView: View {
                     }
                 }
             }
-            .navigationBarTitle("Housing Offers")
+            .navigationBarTitle("Offres de logement")
             .navigationBarItems(trailing: Button(action: {
                 showingAddHousingView = true
             }) {
@@ -45,24 +45,6 @@ struct HousingView: View {
     }
 }
 
-// A simple view to display housing details in a list cell.
-struct HousingCell: View {
-    var housing: Housing
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(housing.city)
-                .font(.headline)
-            Text("Availability: \(housing.availability)")
-                .font(.subheadline)
-            if let description = housing.description {
-                Text(description)
-                    .font(.body)
-            }
-        }
-        .padding()
-    }
-}
 
 // Preview provider for SwiftUI previews in Xcode.
 struct HousingView_Previews: PreviewProvider {

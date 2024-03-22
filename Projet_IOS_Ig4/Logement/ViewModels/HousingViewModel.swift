@@ -23,21 +23,29 @@ class HousingViewModel: ObservableObject {
     init() {
         loadHousings()
     }
-
-    // Load housing data (mocked for now, can be replaced with real network request).
+    
     func loadHousings() {
         self.isLoading = true
-        // Here you would typically make a network request to fetch the housings.
-        // For demonstration purposes, we're simulating a network request with a delay.
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.housings = [Housing(id: 1, availability: 2, idUser: "1", description: "description", isOffering: true, city: "Paris", postalCode: "75000", country: "France"),
-                             Housing(id: 1, availability: 2, idUser: "1", description: "description", isOffering: true, city: "Paris", postalCode: "75000", country: "France")]
-            self.isLoading = false
-        }
+        housingService.fetchHousing()
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            } receiveValue: { [weak self] posts in
+                self?.housings = posts
+            }
+            .store(in: &cancellables)
+        self.isLoading = false
+    
     }
+    
 
     // Example function to add a housing offer.
-    func addHousingOffer(availibility : String,description:String,city: String,postalCode: String,isOffering : Bool) {
+    func addHousingOffer(availibility : Int,description:String,city: String,postalCode: String,isOffering : Bool) {
         
         housingService.createHoussing(availibility: availibility, description: description, city: city, postalCode: postalCode, isOffering: isOffering)
             .sink { completion in
@@ -53,13 +61,26 @@ class HousingViewModel: ObservableObject {
             .store(in: &cancellables);
     }
 
-    // Example function to search for housing.
-    // This function is basic and can be expanded to include more search parameters.
-    func searchHousing(withKeyword keyword: String) {
-        if keyword.isEmpty {
+    /// Searches for housing based on various optional parameters.
+    ///
+    /// This function allows for a flexible search of housing listings. It supports filtering based on a keyword, city, postal code, and country. All parameters are optional, and when provided, the search results will include housings that match all provided criteria. If no parameters are provided, all housings are returned.
+    ///
+    /// - Parameters:
+    ///   - keyword: A `String` keyword to search in the housing description. Defaults to an empty string, which matches all housings.
+    ///   - city: An optional `String` representing the city to filter the housings. If `nil`, city is not considered in the search.
+    ///   - postalCode: An optional `String` representing the postal code to filter the housings. If `nil`, postal code is not considered in the search.
+    ///   - country: An optional `String` representing the country to filter the housings. If `nil`, country is not considered in the search.
+    func searchHousing(withKeyword keyword: String = "", city: String? = nil, postalCode: String? = nil, country: String? = nil) {
+        if keyword.isEmpty && city == nil && postalCode == nil && country == nil {
             loadHousings() // Reload all if search is cleared
         } else {
-            housings = housings.filter { $0.description?.lowercased().contains(keyword.lowercased()) ?? false }
+            housings = housings.filter { housing in
+                let keywordMatch = keyword.isEmpty || housing.description?.lowercased().contains(keyword.lowercased()) ?? false
+                let cityMatch = city.map { housing.city.lowercased().contains($0.lowercased()) } ?? true
+                let postalCodeMatch = postalCode.map { housing.postalCode.lowercased().contains($0.lowercased()) } ?? true
+                let countryMatch = country.map { housing.country.lowercased().contains($0.lowercased()) } ?? true
+                return keywordMatch && cityMatch && postalCodeMatch && countryMatch
+            }
         }
     }
 }
