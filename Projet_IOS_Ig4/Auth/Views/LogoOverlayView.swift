@@ -12,22 +12,34 @@ import SwiftUI
 struct LogoOverlayView: View {
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
-    @State private var imageWithLogo: UIImage? // Utilisez cet état pour stocker l'image avec le logo
-    let logoImage: UIImage = UIImage(named: "Logo")! // Assurez-vous que le nom de l'image est correct
+    @State private var imageWithLogo: UIImage? //  pour stocker l'image avec le logo
+    @State private var showingActivityView = false
+    let logoImage: UIImage = UIImage(named: "Logo")!
 
     var body: some View {
         VStack {
-            if let imageWithLogo = imageWithLogo {
-                // Afficher l'image avec le logo
-                Image(uiImage: imageWithLogo)
-                    .resizable()
-                    .scaledToFit()
-                
-                // Bouton pour sauvegarder l'image
-                Button("Sauvegarder l'image") {
-                    saveImageToPhotoAlbum(image: imageWithLogo)
-                }
-            } else {
+                    if let imageWithLogo = imageWithLogo {
+                        Image(uiImage: imageWithLogo)
+                            .resizable()
+                            .scaledToFit()
+                        
+                        HStack {
+                            // Bouton pour sauvegarder l'image
+                            Button("Sauvegarder l'image") {
+                                saveImageToPhotoAlbum(image: imageWithLogo)
+                            }
+                            
+                            // Bouton pour partager l'image
+                            Button("Partager") {
+                                showingActivityView = true
+                            }
+                            .sheet(isPresented: $showingActivityView, onDismiss: {
+                                showingActivityView = false
+                            }) {
+                                ActivityView(activityItems: [imageWithLogo as Any])
+                            }
+                        }
+                    } else {
                 Text("Prendre une photo")
                     .onTapGesture {
                         self.showingImagePicker = true
@@ -62,4 +74,19 @@ struct LogoOverlayView: View {
         guard let imageToSave = image else { return }
         UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
     }
+    
 }
+
+struct ActivityView: UIViewControllerRepresentable {
+    var activityItems: [Any]
+    var applicationActivities: [UIActivity]? = nil
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ActivityView>) -> UIActivityViewController {
+        let controller = UIActivityViewController(activityItems: activityItems, applicationActivities: applicationActivities)
+        return controller
+    }
+
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: UIViewControllerRepresentableContext<ActivityView>) {}
+}
+
+
