@@ -82,7 +82,6 @@
 		C2BF7A6C2BA5ED2600CB30BA /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF7A6B2BA5ED2600CB30BA /* CommentView.swift */; };
 		C2BF7A6E2BA5F57200CB30BA /* CommentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF7A6D2BA5F57200CB30BA /* CommentInputView.swift */; };
 		C2BF7A722BA5F7E400CB30BA /* new_file.riv in Resources */ = {isa = PBXBuildFile; fileRef = C2BF7A712BA5F7E400CB30BA /* new_file.riv */; };
-		C2BF7A8B2BA9E89900CB30BA /* SoireeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF7A8A2BA9E89900CB30BA /* SoireeCardView.swift */; };
 		C2BF7A8D2BA9E8D700CB30BA /* Soiree.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF7A8C2BA9E8D700CB30BA /* Soiree.swift */; };
 		C2BF7A8F2BA9EAA700CB30BA /* SoireeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF7A8E2BA9EAA700CB30BA /* SoireeViewModel.swift */; };
 		C2E592172BADD6C700DA3136 /* HousingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E592162BADD6C700DA3136 /* HousingCell.swift */; };
@@ -115,7 +114,7 @@
 		C22279132BAB5C7E00B9B55C /* noonnap.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = noonnap.riv; sourceTree = "<group>"; };
 		C22279142BAB5C7E00B9B55C /* sith_de_mayo.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = sith_de_mayo.riv; sourceTree = "<group>"; };
 		C22279152BAB5C7E00B9B55C /* skin_demo_2.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = skin_demo_2.riv; sourceTree = "<group>"; };
-		C222791D2BAB5D0200B9B55C /* AnimateAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimateAvatar.swift; path = ../../../../../../iOS_Gamefest_IG4/Projet_IOS_Ig4/Forum/Views/components/AnimateAvatar.swift; sourceTree = "<group>"; };
+		C222791D2BAB5D0200B9B55C /* AnimateAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimateAvatar.swift; path = ../../../../../../../Documents/iOS_Gamefest_IG4/Projet_IOS_Ig4/Forum/Views/components/AnimateAvatar.swift; sourceTree = "<group>"; };
 		C222791F2BAB5F2500B9B55C /* avatar_pack_use_case.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = avatar_pack_use_case.riv; sourceTree = "<group>"; };
 		C22279212BAB620400B9B55C /* HousingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingDetailView.swift; sourceTree = "<group>"; };
 		C22279232BAB629F00B9B55C /* AddHousingOfferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHousingOfferView.swift; sourceTree = "<group>"; };
@@ -180,7 +179,6 @@
 		C2BF7A6B2BA5ED2600CB30BA /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		C2BF7A6D2BA5F57200CB30BA /* CommentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputView.swift; sourceTree = "<group>"; };
 		C2BF7A712BA5F7E400CB30BA /* new_file.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = new_file.riv; sourceTree = "<group>"; };
-		C2BF7A8A2BA9E89900CB30BA /* SoireeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoireeCardView.swift; path = ../../../../../iOS_Gamefest_IG4/Projet_IOS_Ig4/Forum/Views/components/SoireeCardView.swift; sourceTree = "<group>"; };
 		C2BF7A8C2BA9E8D700CB30BA /* Soiree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Soiree.swift; sourceTree = "<group>"; };
 		C2BF7A8E2BA9EAA700CB30BA /* SoireeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoireeViewModel.swift; sourceTree = "<group>"; };
 		C2E592162BADD6C700DA3136 /* HousingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingCell.swift; sourceTree = "<group>"; };
@@ -265,7 +263,7 @@
 				C22279152BAB5C7E00B9B55C /* skin_demo_2.riv */,
 			);
 			name = avatar;
-			path = ../../../../iOS_Gamefest_IG4/Projet_IOS_Ig4/RiveAsset/avatar;
+			path = ../../../../../Documents/iOS_Gamefest_IG4/Projet_IOS_Ig4/RiveAsset/avatar;
 			sourceTree = "<group>";
 		};
 		C22279252BAB63DB00B9B55C /* HouseService */ = {
@@ -557,9 +555,7 @@
 		C2BF7A852BA9E72800CB30BA /* Soirée */ = {
 			isa = PBXGroup;
 			children = (
-				C2BF7A892BA9E82200CB30BA /* Networking */,
 				C2BF7A882BA9E81900CB30BA /* ViewModels */,
-				C2BF7A872BA9E81100CB30BA /* Views */,
 				C2BF7A862BA9E77F00CB30BA /* Models */,
 			);
 			name = "Soirée";
@@ -574,27 +570,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		C2BF7A872BA9E81100CB30BA /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				C2BF7A8A2BA9E89900CB30BA /* SoireeCardView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		C2BF7A882BA9E81900CB30BA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				C2BF7A8E2BA9EAA700CB30BA /* SoireeViewModel.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		C2BF7A892BA9E82200CB30BA /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -767,7 +748,6 @@
 				C28998212BA09B3C005A681E /* RegisterView.swift in Sources */,
 				C28998482BA2F022005A681E /* SessionManager.swift in Sources */,
 				C28998512BA2FCAC005A681E /* PlanningService.swift in Sources */,
-				C2BF7A8B2BA9E89900CB30BA /* SoireeCardView.swift in Sources */,
 				C22279242BAB629F00B9B55C /* AddHousingOfferView.swift in Sources */,
 				C289983A2BA226A6005A681E /* Decoration+SwiftUI.swift in Sources */,
 				C2BF7A692BA5D6B900CB30BA /* PostView.swift in Sources */,
@@ -980,6 +960,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1009,6 +990,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
