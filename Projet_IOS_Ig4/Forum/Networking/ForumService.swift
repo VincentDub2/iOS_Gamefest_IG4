@@ -32,7 +32,7 @@ struct ForumService {
             return Future<Bool, Error> { promise in
                 APIManager.requestPOST(endpoint: endpoint, parameters: parameters) { (result: Result<ResponseApi, AFError>) in
                     switch result {
-                    case .success(let title):
+                    case .success(_):
                         promise(.success(true))
                     case .failure(let error):
                         promise(.failure(error))

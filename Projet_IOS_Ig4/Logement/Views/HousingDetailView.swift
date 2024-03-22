@@ -92,7 +92,7 @@ struct HousingDetailView: View {
 
 struct HousingDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        var house1 = Housing(id: 1, availability: 2, idUser: "1", description: """
+        let house1 = Housing(id: 1, availability: 2, idUser: "1", description: """
                              Maison situé au centre de Montpellier, proche de toutes commodités.
                              """, isOffering: true, city: "Montpellier", postalCode: "34160", country: "France")
         HousingDetailView(housing: house1)
