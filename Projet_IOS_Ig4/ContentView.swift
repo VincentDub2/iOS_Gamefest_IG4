@@ -169,7 +169,7 @@ struct BackgroundView: View {
                 Button(action: {
                     self.showNextView = true
                 }) {
-                    Text("C'est parti")
+                    Text("C'est parti !")
                         .font(.custom("Pacifico", size: 24)) // Remplacez "Pacifico" par le nom de votre police calligraphique
                         .fontWeight(.bold)
                         .foregroundColor(.white)

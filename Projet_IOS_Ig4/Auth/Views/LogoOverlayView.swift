@@ -45,15 +45,16 @@ struct LogoOverlayView: View {
         UIGraphicsBeginImageContextWithOptions(inputImage.size, false, 0)
         inputImage.draw(at: CGPoint.zero)
 
-        let logoSize = CGSize(width: inputImage.size.width / 4, height: inputImage.size.width / 4)
-        let logoOrigin = CGPoint(x: (inputImage.size.width - logoSize.width) / 2, y: inputImage.size.height - logoSize.height - 20)
+        // Définir la taille du logo pour qu'elle soit égale à celle de l'image
+        let logoSize = CGSize(width: inputImage.size.width, height: inputImage.size.height)
+        // Placer le logo pour qu'il couvre toute l'image
+        let logoOrigin = CGPoint(x: 0, y: 0)
 
         logoImage.draw(in: CGRect(origin: logoOrigin, size: logoSize))
 
         let newImageWithLogo = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
 
-        // Stockez la nouvelle image avec le logo dans l'état pour l'afficher
         self.imageWithLogo = newImageWithLogo
     }
 
