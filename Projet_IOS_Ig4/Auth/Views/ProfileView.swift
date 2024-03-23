@@ -58,11 +58,6 @@ struct ProfileView: View {
                         .keyboardType(.emailAddress)
                         .autocapitalization(.none)
                     
-                    TextField("Adresse", text: $address)
-                        .padding()
-                        .background(Color(UIColor.systemGray6))
-                        .cornerRadius(10)
-                        .shadow(radius: 1)
                     
                     Button(action: updateUserDetails) {
                         Text("Sauvegarder les modifications")
