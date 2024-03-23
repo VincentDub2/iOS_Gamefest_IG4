@@ -18,18 +18,17 @@ struct ProfileView: View {
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
     @State private var email: String = ""
-        @State private var address: String = ""
+    @State private var address: String = ""
     
     @State private var showLogoOverlayView = false
     @State private var logoImage: UIImage? = nil
-    
+    @State private var showNeedHelpView = false
+
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                if let user = sessionManager.user {
+                if sessionManager.user != nil {
                     ProfileImageView(inputImage: $inputImage)
-                    
-                    
                         .padding(.vertical, 50)
                     
                     TextField("Prénom", text: $firstName)
@@ -37,11 +36,13 @@ struct ProfileView: View {
                         .background(Color(UIColor.systemGray6))
                         .cornerRadius(10)
                         .shadow(radius: 1)
+                    
                     TextField("Nom", text: $lastName)
                         .padding()
                         .background(Color(UIColor.systemGray6))
                         .cornerRadius(10)
                         .shadow(radius: 1)
+                    
                     TextField("Email", text: $email)
                         .padding()
                         .background(Color(UIColor.systemGray6))
@@ -50,17 +51,13 @@ struct ProfileView: View {
                         .keyboardType(.emailAddress)
                         .autocapitalization(.none)
                     
-                    
                     TextField("Adresse", text: $address)
                         .padding()
                         .background(Color(UIColor.systemGray6))
                         .cornerRadius(10)
                         .shadow(radius: 1)
                     
-                    
-                    Button(action: {
-                        updateUserDetails()
-                    }) {
+                    Button(action: updateUserDetails) {
                         Text("Sauvegarder les modifications")
                             .frame(minWidth: 0, maxWidth: .infinity)
                             .frame(height: 50)
@@ -73,9 +70,7 @@ struct ProfileView: View {
                         Alert(title: Text("Mise à jour"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
                     }
                     
-                    Button(action: {
-                        sessionManager.logout()
-                    }) {
+                    Button(action: sessionManager.logout) {
                         Text("Déconnexion")
                             .frame(minWidth: 0, maxWidth: .infinity)
                             .frame(height: 50)
@@ -86,21 +81,37 @@ struct ProfileView: View {
                     }
                     
                     Button("Prendre une photo avec logo") {
-                                self.showLogoOverlayView = true
-                            }
-                            .sheet(isPresented: $showLogoOverlayView) {
-                                LogoOverlayView()
-                            }
+                        showLogoOverlayView = true
+                    }
+                    .sheet(isPresented: $showLogoOverlayView) {
+                        LogoOverlayView()
+                    }
                     
+                    Button(action: {
+                        showNeedHelpView = true
+                    }) {
+                        Text("Besoin d'aide")
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .frame(height: 50)
+                            .foregroundColor(.white)
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                            .font(.system(size: 18, weight: .bold))
+                    }
+                    .sheet(isPresented: $showNeedHelpView) {
+                        NeedHelpView()
+                    }
+                    
+                    // Un espace supplémentaire en bas
+                    Color.clear.frame(height: 100) // Vous pouvez augmenter cette valeur si plus d'espace est nécessaire
                 } else {
                     Text("Aucun utilisateur n'est connecté.")
                 }
             }
             .padding(.horizontal)
-            
         }
-            .navigationTitle("Profil")
-            .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Profil")
+        .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 firstName = sessionManager.user?.firstName ?? ""
                 lastName = sessionManager.user?.lastName ?? ""
@@ -203,6 +214,7 @@ struct ProfileView: View {
                                 ImagePicker(image: self.$inputImage, sourceType: self.sourceType)
                             }
                         }
+            .padding()
                     }
         
         private func loadImage() {
@@ -282,6 +294,13 @@ struct LogoView: View {
         UIGraphicsEndImageContext()
         
         self.imageWithLogo = newImage
+    }
+}
+
+struct NeedHelpView: View {
+    var body: some View {
+        Text("Contenu de la page d'aide")
+            .padding()
     }
 }
 
