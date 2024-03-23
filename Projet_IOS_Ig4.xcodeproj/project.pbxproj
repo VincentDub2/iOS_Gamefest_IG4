@@ -85,9 +85,10 @@
 		C2BF7A8D2BA9E8D700CB30BA /* Soiree.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF7A8C2BA9E8D700CB30BA /* Soiree.swift */; };
 		C2BF7A8F2BA9EAA700CB30BA /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF7A8E2BA9EAA700CB30BA /* EventViewModel.swift */; };
 		C2E592172BADD6C700DA3136 /* HousingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E592162BADD6C700DA3136 /* HousingCell.swift */; };
-		C2E5921E2BADF7C500DA3136 /* EventsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E5921D2BADF7C500DA3136 /* EventsListView.swift */; };
+		C2E5921E2BADF7C500DA3136 /* SoireesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E5921D2BADF7C500DA3136 /* SoireesListView.swift */; };
 		C2E592212BADF85800DA3136 /* EventDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E592202BADF85800DA3136 /* EventDataService.swift */; };
 		C2E592232BADFD5200DA3136 /* SoireeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E592222BADFD5200DA3136 /* SoireeView.swift */; };
+		C2E592252BAEC96200DA3136 /* SoireeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E592242BAEC96200DA3136 /* SoireeDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,9 +186,10 @@
 		C2BF7A8C2BA9E8D700CB30BA /* Soiree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Soiree.swift; sourceTree = "<group>"; };
 		C2BF7A8E2BA9EAA700CB30BA /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		C2E592162BADD6C700DA3136 /* HousingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingCell.swift; sourceTree = "<group>"; };
-		C2E5921D2BADF7C500DA3136 /* EventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListView.swift; sourceTree = "<group>"; };
+		C2E5921D2BADF7C500DA3136 /* SoireesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoireesListView.swift; sourceTree = "<group>"; };
 		C2E592202BADF85800DA3136 /* EventDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataService.swift; sourceTree = "<group>"; };
 		C2E592222BADFD5200DA3136 /* SoireeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoireeView.swift; sourceTree = "<group>"; };
+		C2E592242BAEC96200DA3136 /* SoireeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoireeDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -589,8 +591,9 @@
 		C2E5921C2BADF79B00DA3136 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C2E5921D2BADF7C500DA3136 /* EventsListView.swift */,
+				C2E5921D2BADF7C500DA3136 /* SoireesListView.swift */,
 				C2E592222BADFD5200DA3136 /* SoireeView.swift */,
+				C2E592242BAEC96200DA3136 /* SoireeDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -795,7 +798,7 @@
 				C28998632BA48AA0005A681E /* Like.swift in Sources */,
 				C289981A2BA09901005A681E /* LoginViewModel.swift in Sources */,
 				C22279082BAB5B6000B9B55C /* Housing.swift in Sources */,
-				C2E5921E2BADF7C500DA3136 /* EventsListView.swift in Sources */,
+				C2E5921E2BADF7C500DA3136 /* SoireesListView.swift in Sources */,
 				C28998172BA0989C005A681E /* AuthService.swift in Sources */,
 				C28998762BA4986D005A681E /* VCard.swift in Sources */,
 				C28997E02BA0974D005A681E /* Projet_IOS_Ig4App.swift in Sources */,
@@ -806,6 +809,7 @@
 				C2BF7A8F2BA9EAA700CB30BA /* EventViewModel.swift in Sources */,
 				C2BF7A8D2BA9E8D700CB30BA /* Soiree.swift in Sources */,
 				C28998672BA48C2C005A681E /* ForumViewModel.swift in Sources */,
+				C2E592252BAEC96200DA3136 /* SoireeDetailView.swift in Sources */,
 				C28998322BA2235E005A681E /* CalendarKitView.swift in Sources */,
 				C289983C2BA229F9005A681E /* CalendarContainerView.swift in Sources */,
 				C289986C2BA48D76005A681E /* FormView.swift in Sources */,

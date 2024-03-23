@@ -17,7 +17,9 @@ struct EventsListView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 10) {
                     ForEach(viewModel.events) { event in
-                        SoireeView(event: event)
+                        NavigationLink(destination: EventDetailView(event: event)) {
+                            SoireeView(event: event)
+                        }
                     }
                 }
                 .padding()
@@ -30,7 +32,7 @@ struct EventsListView: View {
     }
 }
 
-struct EventsListView_Previews: PreviewProvider {
+struct SoireesListView_Previews: PreviewProvider {
     static var previews: some View {
         EventsListView()
     }

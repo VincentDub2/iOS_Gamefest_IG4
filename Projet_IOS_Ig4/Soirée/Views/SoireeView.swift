@@ -60,19 +60,23 @@ struct SoireeView : View {
 }
 
 
-
+/// Format the date
+/// - Parameter date: date to format (String)
+/// - Returns: the formatted date
 private func formatDate(date: String) -> Date {
     let formatter = DateFormatter()
-    formatter.dateFormat = "dd/MM/yyyy"
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+    formatter.timeZone = TimeZone(identifier: "Europe/Paris")
     guard let date = formatter.date(from: date) else {
         return Date()
     }
     return date
 }
 
+
+/// Formatter for the event date
+/// - Returns: formatted date
 private let itemFormatter: DateFormatter = {
-    
-    
     let formatter = DateFormatter()
     formatter.dateStyle = .short
     formatter.timeStyle = .short
