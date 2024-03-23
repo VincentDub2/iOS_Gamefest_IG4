@@ -7,10 +7,11 @@
 
 import Foundation
 import SwiftUI
+import Combine
+import UIKit
 
 struct SoireeView : View {
     let event: Soiree
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(event.name)
@@ -21,7 +22,7 @@ struct SoireeView : View {
             HStack {
                 Image(systemName: "calendar")
                     .foregroundColor(.secondary) // Uses system image for date
-                Text("\(event.dateEvent, formatter: itemFormatter)")
+                Text("\(formatDate(date : event.dateEvent), formatter: itemFormatter)")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
@@ -41,7 +42,7 @@ struct SoireeView : View {
         .overlay(
             // Optional: Add a tag or indicator for special events
             VStack {
-                if event.postalCode == "34160" {
+                if event.postalCode == "34165" {
                     Text("SPECIAL")
                         .font(.caption)
                         .fontWeight(.bold)
@@ -59,7 +60,19 @@ struct SoireeView : View {
 }
 
 
+
+private func formatDate(date: String) -> Date {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "dd/MM/yyyy"
+    guard let date = formatter.date(from: date) else {
+        return Date()
+    }
+    return date
+}
+
 private let itemFormatter: DateFormatter = {
+    
+    
     let formatter = DateFormatter()
     formatter.dateStyle = .short
     formatter.timeStyle = .short

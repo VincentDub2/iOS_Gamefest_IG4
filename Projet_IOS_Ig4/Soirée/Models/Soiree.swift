@@ -10,7 +10,7 @@ import Foundation
 
 struct Soiree: Identifiable, Decodable{
     let id: Int
-    let dateEvent: Date
+    let dateEvent: String
     let duration: Int
     let address: String
     let city: String
