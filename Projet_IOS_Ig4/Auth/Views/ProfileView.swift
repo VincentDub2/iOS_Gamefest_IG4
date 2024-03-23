@@ -70,15 +70,8 @@ struct ProfileView: View {
                         Alert(title: Text("Mise à jour"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
                     }
                     
-                    Button(action: sessionManager.logout) {
-                        Text("Déconnexion")
-                            .frame(minWidth: 0, maxWidth: .infinity)
-                            .frame(height: 50)
-                            .foregroundColor(.white)
-                            .background(Color.black)
-                            .cornerRadius(10)
-                            .font(.system(size: 18, weight: .bold))
-                    }
+                    
+                    
                     
                     Button("Prendre une photo avec logo") {
                         showLogoOverlayView = true
@@ -100,6 +93,16 @@ struct ProfileView: View {
                     }
                     .sheet(isPresented: $showNeedHelpView) {
                         NeedHelpView()
+                    }
+                    
+                    Button(action: sessionManager.logout) {
+                        Text("Déconnexion")
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .frame(height: 50)
+                            .foregroundColor(.white)
+                            .background(Color.black)
+                            .cornerRadius(10)
+                            .font(.system(size: 18, weight: .bold))
                     }
                     
                     // Un espace supplémentaire en bas
@@ -299,8 +302,37 @@ struct LogoView: View {
 
 struct NeedHelpView: View {
     var body: some View {
-        Text("Contenu de la page d'aide")
-            .padding()
+        NavigationView {
+            List {
+                NavigationLink(destination: FAQView()) {
+                    Text("FAQ")
+                }
+                
+                NavigationLink(destination: ContactUsView()) {
+                    Text("Contactez-nous")
+                }
+            }
+            .navigationBarTitle("Besoin d'aide", displayMode: .inline)
+        }
     }
 }
+
+// La vue pour la FAQ.
+struct FAQView: View {
+    var body: some View {
+        Text("Contenu de la FAQ")
+            .padding()
+            .navigationBarTitle("FAQ", displayMode: .inline)
+    }
+}
+
+// La vue pour Contactez-nous.
+struct ContactUsView: View {
+    var body: some View {
+        Text("Contenu pour nous contacter")
+            .padding()
+            .navigationBarTitle("Contactez-nous", displayMode: .inline)
+    }
+}
+
 
