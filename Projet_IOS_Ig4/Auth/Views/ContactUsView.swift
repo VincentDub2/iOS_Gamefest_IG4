@@ -45,25 +45,33 @@ struct DeveloperBioView: View {
 
 struct ContactUsView: View {
     let developers: [DeveloperProfile] = [
-        DeveloperProfile(name: "Lucas Leroy", bio: "Élève ingénieur à Polytech Montpellier en école d'ingénieur en informatique et gestion, passionné par le développement mobile.", imageTEST: "developerImage1", email: "Lucas.leroy.pro@gmail.com"),
-        // Ajoutez les autres profils de développeur ici
+        DeveloperProfile(name: "Lucas Leroy", bio: "Élève ingénieur à Polytech Montpellier en école d'ingénieur en informatique et gestion", imageTEST: "imageTEST", email: "leroy.lucas.pro@gmail.com"),
+        DeveloperProfile(name: "Vincent Dubuc", bio: "Élève ingénieur à Polytech Montpellier en école d'ingénieur en informatique et gestion", imageTEST: "developerImage1", email: "vincentdubuc2@gmail.com"),
+        DeveloperProfile(name: "Bastian Albaut", bio: "Élève ingénieur à Polytech Montpellier en école d'ingénieur en informatique et gestion", imageTEST: "developerImage1", email: "laguerre.tribale1@gmail.com"),
     ]
 
     var body: some View {
-        ScrollView {
-            VStack {
-                Text("Rencontrez l'équipe")
-                    .font(.largeTitle)
-                    .padding()
+            ScrollView {
+                VStack {
+                    Text("Rencontrez l'équipe")
+                        .font(.largeTitle)
+                        .padding()
 
-                ForEach(developers, id: \.name) { developer in
-                    DeveloperBioView(profile: developer)
+                    Text("N'hésitez pas à nous contacter, nous nous ferons un plaisir de répondre à vos questions.")
+                        .font(.body)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
+                        .padding(.bottom)
+
+                    ForEach(developers, id: \.name) { developer in
+                        DeveloperBioView(profile: developer)
+                    }
                 }
             }
+            .navigationBarTitle("Contactez-nous", displayMode: .inline)
         }
-        .navigationBarTitle("Contactez-nous", displayMode: .inline)
     }
-}
+
 
 struct ContactUsView_Previews: PreviewProvider {
     static var previews: some View {
