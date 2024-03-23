@@ -4,7 +4,10 @@ import Alamofire
 
 class HousingService {
     let tempoIdUser = "1"
-    // Récupérer tous les posts
+    
+    /// Récupérer tous les logements
+    /// - Throws: Error
+    /// - Returns: AnyPublisher<[Housing], Error>
        func fetchHousing() -> AnyPublisher<[Housing], Error> {
            let endpoint = "/housings"
            
@@ -23,11 +26,14 @@ class HousingService {
        }
        
     
-    // Créer un post
-    func createHoussing(availibility : Int,description:String,city: String,postalCode: String,isOffering : Bool) -> AnyPublisher<Bool, Error> {
+    /// Créer un post
+    /// - Parameters: availibility, description, city, postalCode, isOffering
+    /// - Returns: Bool
+    /// - Throws: Error
+    func createHousing(availability : Int,description:String,city: String,postalCode: String,isOffering : Bool) -> AnyPublisher<Bool, Error> {
         let endpoint = "/housings"
         let parameters: Parameters = [
-            "availibility": availibility,
+            "availibility": availability,
             "description": description,
             "city": city,
             "postalCode": postalCode,
@@ -36,11 +42,10 @@ class HousingService {
         ]
             
             return Future<Bool, Error> { promise in
-                APIManager.requestPOST(endpoint: endpoint, parameters: parameters) { (result: Result<ResponseApi, AFError>) in
+                APIManager.requestPOST(endpoint: endpoint, parameters: parameters) { (result: Result<Housing, AFError>) in
                     switch result {
                     case .success(_):
                         promise(.success(true))
-                        _ = self.fetchHousing()
                     case .failure(let error):
                         promise(.failure(error))
                     }
@@ -48,5 +53,25 @@ class HousingService {
             }
             .eraseToAnyPublisher()
         }
+    
+    
+    /// Supprimer un post
+    /// - Parameter id: id du post à supprimer
+    /// - Returns: Bool
+    /// - Throws: Error
+    func deleteHousing(id: Int) -> AnyPublisher<Bool, Error> {
+        let endpoint = "/housings/\(id)"
+        return Future<Bool, Error> { promise in
+            APIManager.requestDELETE(endpoint: endpoint) { (result: Result<Housing, AFError>) in
+                switch result {
+                case .success(_):
+                    promise(.success(true))
+                case .failure(let error):
+                    promise(.failure(error))
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
     
 }
