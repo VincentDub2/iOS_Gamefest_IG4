@@ -319,13 +319,5 @@ struct NeedHelpView: View {
 
 
 
-// La vue pour Contactez-nous.
-struct ContactUsView: View {
-    var body: some View {
-        Text("Contenu pour nous contacter")
-            .padding()
-            .navigationBarTitle("Contactez-nous", displayMode: .inline)
-    }
-}
 
 

@@ -10,6 +10,7 @@
 		3227326A2BA49D8D007BEC36 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 322732692BA49D8D007BEC36 /* Alamofire */; };
 		3288EA712BA4D9D4003AA73F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3288EA702BA4D9D4003AA73F /* ProfileView.swift */; };
 		329DDE092BAEE7CD00712BA6 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329DDE082BAEE7CD00712BA6 /* FAQView.swift */; };
+		329DDE0B2BAEF4B200712BA6 /* ContactUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329DDE0A2BAEF4B200712BA6 /* ContactUsView.swift */; };
 		32C089B52BAB48FD00A17518 /* LogoOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C089B42BAB48FD00A17518 /* LogoOverlayView.swift */; };
 		32C089C52BADB30A00A17518 /* backgroundVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 32C089C42BADB30A00A17518 /* backgroundVideo.mp4 */; };
 		32C298822BA6DD1F001C13C7 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C298812BA6DD1F001C13C7 /* ImagePicker.swift */; };
@@ -63,6 +64,7 @@
 /* Begin PBXFileReference section */
 		3288EA702BA4D9D4003AA73F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		329DDE082BAEE7CD00712BA6 /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
+		329DDE0A2BAEF4B200712BA6 /* ContactUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsView.swift; sourceTree = "<group>"; };
 		32C089B42BAB48FD00A17518 /* LogoOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoOverlayView.swift; sourceTree = "<group>"; };
 		32C089C42BADB30A00A17518 /* backgroundVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = backgroundVideo.mp4; sourceTree = "<group>"; };
 		32C298812BA6DD1F001C13C7 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				32C089B42BAB48FD00A17518 /* LogoOverlayView.swift */,
 				C28998202BA09B3C005A681E /* RegisterView.swift */,
 				32C298812BA6DD1F001C13C7 /* ImagePicker.swift */,
+				329DDE0A2BAEF4B200712BA6 /* ContactUsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				C28998172BA0989C005A681E /* AuthService.swift in Sources */,
 				C28997E02BA0974D005A681E /* Projet_IOS_Ig4App.swift in Sources */,
 				C28998452BA2E961005A681E /* APIManager.swift in Sources */,
+				329DDE0B2BAEF4B200712BA6 /* ContactUsView.swift in Sources */,
 				C289982E2BA22128005A681E /* DatePickerController.swift in Sources */,
 				C28998322BA2235E005A681E /* CalendarKitView.swift in Sources */,
 				C289983C2BA229F9005A681E /* CalendarContainerView.swift in Sources */,
