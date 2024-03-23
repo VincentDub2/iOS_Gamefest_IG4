@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3227326A2BA49D8D007BEC36 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 322732692BA49D8D007BEC36 /* Alamofire */; };
 		3288EA712BA4D9D4003AA73F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3288EA702BA4D9D4003AA73F /* ProfileView.swift */; };
+		329DDE092BAEE7CD00712BA6 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329DDE082BAEE7CD00712BA6 /* FAQView.swift */; };
 		32C089B52BAB48FD00A17518 /* LogoOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C089B42BAB48FD00A17518 /* LogoOverlayView.swift */; };
 		32C089C52BADB30A00A17518 /* backgroundVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 32C089C42BADB30A00A17518 /* backgroundVideo.mp4 */; };
 		32C298822BA6DD1F001C13C7 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C298812BA6DD1F001C13C7 /* ImagePicker.swift */; };
@@ -61,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		3288EA702BA4D9D4003AA73F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		329DDE082BAEE7CD00712BA6 /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
 		32C089B42BAB48FD00A17518 /* LogoOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoOverlayView.swift; sourceTree = "<group>"; };
 		32C089C42BADB30A00A17518 /* backgroundVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = backgroundVideo.mp4; sourceTree = "<group>"; };
 		32C298812BA6DD1F001C13C7 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				C289981C2BA0994D005A681E /* LoginView.swift */,
 				3288EA702BA4D9D4003AA73F /* ProfileView.swift */,
+				329DDE082BAEE7CD00712BA6 /* FAQView.swift */,
 				32C089B42BAB48FD00A17518 /* LogoOverlayView.swift */,
 				C28998202BA09B3C005A681E /* RegisterView.swift */,
 				32C298812BA6DD1F001C13C7 /* ImagePicker.swift */,
@@ -465,6 +468,7 @@
 				C28998392BA226A6005A681E /* CalendarView.swift in Sources */,
 				C28998552BA30554005A681E /* CalendarViewModel.swift in Sources */,
 				C28997E22BA0974D005A681E /* ContentView.swift in Sources */,
+				329DDE092BAEE7CD00712BA6 /* FAQView.swift in Sources */,
 				C289981D2BA0994D005A681E /* LoginView.swift in Sources */,
 				C28998142BA09804005A681E /* AuthToken.swift in Sources */,
 				C28998242BA1A22D005A681E /* CustomButton.swift in Sources */,

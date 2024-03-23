@@ -312,19 +312,12 @@ struct NeedHelpView: View {
                     Text("Contactez-nous")
                 }
             }
-            .navigationBarTitle("Besoin d'aide", displayMode: .inline)
+            .navigationBarTitle("Besoin d'aide ? ", displayMode: .inline)
         }
     }
 }
 
-// La vue pour la FAQ.
-struct FAQView: View {
-    var body: some View {
-        Text("Contenu de la FAQ")
-            .padding()
-            .navigationBarTitle("FAQ", displayMode: .inline)
-    }
-}
+
 
 // La vue pour Contactez-nous.
 struct ContactUsView: View {
