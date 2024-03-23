@@ -29,7 +29,14 @@ struct ProfileView: View {
             VStack(spacing: 20) {
                 if sessionManager.user != nil {
                     ProfileImageView(inputImage: $inputImage)
-                        .padding(.vertical, 50)
+                        .padding(.vertical, 10)
+                    
+                    Button("Prendre une photo exclusive !") {
+                        showLogoOverlayView = true
+                    }
+                    .sheet(isPresented: $showLogoOverlayView) {
+                        LogoOverlayView()
+                    }
                     
                     TextField("Prénom", text: $firstName)
                         .padding()
@@ -70,15 +77,7 @@ struct ProfileView: View {
                         Alert(title: Text("Mise à jour"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
                     }
                     
-                    
-                    
-                    
-                    Button("Prendre une photo avec logo") {
-                        showLogoOverlayView = true
-                    }
-                    .sheet(isPresented: $showLogoOverlayView) {
-                        LogoOverlayView()
-                    }
+    
                     
                     Button(action: {
                         showNeedHelpView = true
@@ -87,7 +86,7 @@ struct ProfileView: View {
                             .frame(minWidth: 0, maxWidth: .infinity)
                             .frame(height: 50)
                             .foregroundColor(.white)
-                            .background(Color.blue)
+                            .background(Color.black)
                             .cornerRadius(10)
                             .font(.system(size: 18, weight: .bold))
                     }
@@ -305,15 +304,34 @@ struct NeedHelpView: View {
         NavigationView {
             List {
                 NavigationLink(destination: FAQView()) {
-                    Text("FAQ")
+                    HStack {
+                        Image("FAQIcon") // Assurez-vous que cette image est dans vos Assets
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 50)
+                        Text("FAQ")
+                    }
                 }
                 
                 NavigationLink(destination: ContactUsView()) {
-                    Text("Contactez-nous")
+                    HStack {
+                        Image("ContactIcon") // Assurez-vous que cette image est dans vos Assets
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 50)
+                        Text("Contacter-nous")
+                    }
                 }
+                
             }
-            .navigationBarTitle("Besoin d'aide ? ", displayMode: .inline)
+            .navigationBarTitle("Besoin d'aide ?", displayMode: .inline)
         }
+    }
+}
+
+struct NeedHelpView_Previews: PreviewProvider {
+    static var previews: some View {
+        NeedHelpView()
     }
 }
 

@@ -40,7 +40,7 @@ struct LogoOverlayView: View {
                             }
                         }
                     } else {
-                Text("Prendre une photo")
+                Text("Découvrez notre filtre unique pour les Bénévoles")
                     .onTapGesture {
                         self.showingImagePicker = true
                     }
