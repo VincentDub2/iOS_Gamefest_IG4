@@ -140,11 +140,14 @@ struct SignupFestivalView: View {
                                         Spacer()
                                         
                                         ForEach(creneauxForDay, id: \.id) { creneau in
+                                            let isSelected = festivalViewModel.isSelected(poste: poste, forCreneau: creneau.id)
+                                            let isAnyPosteSelected = festivalViewModel.userSelections[creneau.id] != nil
                                             let binding = festivalViewModel.bindingForCurrentCapacity(creneau: creneau, poste: poste)
                                             CircularProgressView(current: binding, max: poste.capacityPoste) {
                                                 handleTapForCreneau(creneau, poste)
                                             }
                                             .padding()
+                                            .opacity(isSelected || !isAnyPosteSelected ? 1.0 : 0.5)
                                             .frame(width: columnWidths[1])
                                             Spacer()
                                         }
@@ -180,6 +183,12 @@ struct SignupFestivalView: View {
     }
     
     func handleTapForCreneau(_ creneau: Creneau, _ poste: Poste) {
+        // Check if this poste is already selected for the creneau.
+        if festivalViewModel.isSelected(poste: poste, forCreneau: creneau.id) {
+            print("\(poste.name) is already selected for this creneau.")
+            return
+        }
+        
         // Identifier l'espace associé au poste.
         let espaceId = festivalViewModel.creneauxEspaces.first(where: { $0.espace.name == poste.name })?.idEspace
         
@@ -193,8 +202,9 @@ struct SignupFestivalView: View {
         if let index = festivalViewModel.creneauxEspaces.firstIndex(where: { $0.idCreneau == creneau.id && $0.idEspace == espaceId }) {
             // Vérifier si l'incrément dépasse la capacité maximale
             if festivalViewModel.creneauxEspaces[index].currentCapacity < poste.capacityPoste {
+                festivalViewModel.handlePreviousAndNewSelection(forCreneau: creneau.id, withPoste: poste)
                 festivalViewModel.creneauxEspaces[index].currentCapacity += 1
-                print("Inscription réussie : \(poste.name) pour le créneau de \(creneau.timeStart) à \(creneau.timeEnd).")
+                                print("Inscription réussie : \(poste.name) pour le créneau de \(creneau.timeStart) à \(creneau.timeEnd).")
             } else {
                 // Gérer le cas où la capacité maximale est atteinte
                 print("Capacité maximale atteinte pour \(poste.name) dans le créneau de \(creneau.timeStart) à \(creneau.timeEnd).")
