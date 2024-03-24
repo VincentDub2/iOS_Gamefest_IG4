@@ -7,9 +7,11 @@
 
 import Foundation
 import Alamofire
+import SwiftUI
 
 class FestivalViewModel: ObservableObject {
     @Published var festival: FestivalModel?
+    @Published var creneauxEspaces: [CreneauEspace] = []
     private let festivalService = FestivalService()
 
     func fetchFestival() {
@@ -24,5 +26,21 @@ class FestivalViewModel: ObservableObject {
                 }
             }
         }
+    }
+
+    func bindingForCurrentCapacity(creneau: Creneau, poste: Poste) -> Binding<Int> {
+        Binding<Int>(
+            get: { [weak self] in
+                return self?.creneauxEspaces.first { $0.idCreneau == creneau.id && $0.espace.name == poste.name }?.currentCapacity ?? 0
+            },
+            set: { [weak self] newValue in
+                // Find the index of the CreneauEspace to update its currentCapacity
+                if let index = self?.creneauxEspaces.firstIndex(where: { $0.idCreneau == creneau.id && $0.espace.name == poste.name }) {
+                    DispatchQueue.main.async {
+                        self?.creneauxEspaces[index].currentCapacity = newValue
+                    }
+                }
+            }
+        )
     }
 }
