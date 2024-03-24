@@ -95,6 +95,9 @@ struct ContentView: View {
                     CalendarView()
                 } else if selected == "loupe" {
                     CalendarContainerView()
+                } else if selected == "house" {
+                    // Ici on appelle HouseView pour l'onglet "house"
+                    HouseView()
                 }
 
                 navBar
