@@ -141,13 +141,12 @@ struct SignupFestivalView: View {
                                         
                                         ForEach(creneauxForDay, id: \.id) { creneau in
                                             let isSelected = festivalViewModel.isSelected(poste: poste, forCreneau: creneau.id)
-                                            let isAnyPosteSelected = festivalViewModel.userSelections[creneau.id] != nil
                                             let binding = festivalViewModel.bindingForCurrentCapacity(creneau: creneau, poste: poste)
                                             CircularProgressView(current: binding, max: poste.capacityPoste) {
                                                 handleTapForCreneau(creneau, poste)
                                             }
                                             .padding()
-                                            .opacity(isSelected || !isAnyPosteSelected ? 1.0 : 0.5)
+                                            .opacity(isSelected ? 1.0 : 0.5)
                                             .frame(width: columnWidths[1])
                                             Spacer()
                                         }
