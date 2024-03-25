@@ -14,6 +14,8 @@ struct ContentView: View {
     var images : [String] = ["house","pencil.and.list.clipboard","calendar","message","person"]
     @State var selected = "house"
     @Namespace private var namespace
+    @ObservedObject private var sessionManager = SessionManager.shared
+
     var window: UIWindow?
     var body: some View {
         ZStack{
@@ -21,19 +23,23 @@ struct ContentView: View {
                            // Background Image with Enter Button
                            BackgroundView(showNextView: $showNextView)
             } else {
-                //Switch Content Here
-                if selected == "person" {
+                if let _ = sessionManager.user {
+                    // If user is connected, show the main view
+                    if selected == "person" {
+                        ProfileView()
+                    }else if selected == "calendar" {
+                        CalendarKitView()
+                    }else if selected == "pencil.and.list.clipboard" {
+                        HousingView()
+                    }else if selected == "message" {
+                        ForumView()
+                    }else{
+                        HousingView()
+                    }
+                        navBar
+                } else {
                     LoginView()
-                }else if selected == "calendar" {
-                    CalendarKitView()
-                }else if selected == "pencil.and.list.clipboard" {
-                    CalendarView()
-                }else if selected == "message" {
-                    ForumView()
-                }else{
-                    HousingView()
                 }
-                
             }
         }.edgesIgnoringSafeArea(.bottom)
         

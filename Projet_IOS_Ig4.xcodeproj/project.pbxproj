@@ -22,7 +22,6 @@
 		C22279242BAB629F00B9B55C /* AddHousingOfferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22279232BAB629F00B9B55C /* AddHousingOfferView.swift */; };
 		C22279272BAB63FA00B9B55C /* HousingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22279262BAB63FA00B9B55C /* HousingService.swift */; };
 		C22ED51D2BB228AD00106C44 /* backgroundVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C22ED51C2BB228AD00106C44 /* backgroundVideo.mp4 */; };
-		C22ED51F2BB228C700106C44 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED51E2BB228C700106C44 /* MailView.swift */; };
 		C22ED5262BB2291700106C44 /* LogoOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5202BB2291700106C44 /* LogoOverlayView.swift */; };
 		C22ED5272BB2291700106C44 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5212BB2291700106C44 /* ProfileView.swift */; };
 		C22ED5282BB2291700106C44 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5222BB2291700106C44 /* ImagePicker.swift */; };
@@ -31,6 +30,7 @@
 		C22ED52B2BB2291700106C44 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5252BB2291700106C44 /* FAQView.swift */; };
 		C22ED52D2BB22A4900106C44 /* VideoBackGroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED52C2BB22A4900106C44 /* VideoBackGroundView.swift */; };
 		C22ED52F2BB22ABC00106C44 /* BackGroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED52E2BB22ABC00106C44 /* BackGroundView.swift */; };
+		C22ED5312BB22BD600106C44 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5302BB22BD600106C44 /* MailView.swift */; };
 		C28997E02BA0974D005A681E /* Projet_IOS_Ig4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997DF2BA0974D005A681E /* Projet_IOS_Ig4App.swift */; };
 		C28997E22BA0974D005A681E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997E12BA0974D005A681E /* ContentView.swift */; };
 		C28997E42BA0974E005A681E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C28997E32BA0974E005A681E /* Assets.xcassets */; };
@@ -134,7 +134,6 @@
 		C22279232BAB629F00B9B55C /* AddHousingOfferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHousingOfferView.swift; sourceTree = "<group>"; };
 		C22279262BAB63FA00B9B55C /* HousingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingService.swift; sourceTree = "<group>"; };
 		C22ED51C2BB228AD00106C44 /* backgroundVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = backgroundVideo.mp4; sourceTree = "<group>"; };
-		C22ED51E2BB228C700106C44 /* MailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		C22ED5202BB2291700106C44 /* LogoOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogoOverlayView.swift; path = Projet_IOS_Ig4/Auth/Views/LogoOverlayView.swift; sourceTree = SOURCE_ROOT; };
 		C22ED5212BB2291700106C44 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = Projet_IOS_Ig4/Auth/Views/ProfileView.swift; sourceTree = SOURCE_ROOT; };
 		C22ED5222BB2291700106C44 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePicker.swift; path = Projet_IOS_Ig4/Auth/Views/ImagePicker.swift; sourceTree = SOURCE_ROOT; };
@@ -143,6 +142,7 @@
 		C22ED5252BB2291700106C44 /* FAQView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FAQView.swift; path = Projet_IOS_Ig4/Auth/Views/FAQView.swift; sourceTree = SOURCE_ROOT; };
 		C22ED52C2BB22A4900106C44 /* VideoBackGroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoBackGroundView.swift; sourceTree = "<group>"; };
 		C22ED52E2BB22ABC00106C44 /* BackGroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackGroundView.swift; sourceTree = "<group>"; };
+		C22ED5302BB22BD600106C44 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		C28997DC2BA0974D005A681E /* Projet_IOS_Ig4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Projet_IOS_Ig4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C28997DF2BA0974D005A681E /* Projet_IOS_Ig4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projet_IOS_Ig4App.swift; sourceTree = "<group>"; };
 		C28997E12BA0974D005A681E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -275,7 +275,7 @@
 				C22279212BAB620400B9B55C /* HousingDetailView.swift */,
 				C22279232BAB629F00B9B55C /* AddHousingOfferView.swift */,
 				C2E592162BADD6C700DA3136 /* HousingCell.swift */,
-				C22ED51E2BB228C700106C44 /* MailView.swift */,
+				C22ED5302BB22BD600106C44 /* MailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -816,7 +816,6 @@
 				C28998392BA226A6005A681E /* CalendarView.swift in Sources */,
 				C22ED5272BB2291700106C44 /* ProfileView.swift in Sources */,
 				C2E592172BADD6C700DA3136 /* HousingCell.swift in Sources */,
-				C22ED51F2BB228C700106C44 /* MailView.swift in Sources */,
 				C222790A2BAB5B8500B9B55C /* HousingViewModel.swift in Sources */,
 				C222791E2BAB5D0200B9B55C /* AnimateAvatar.swift in Sources */,
 				C28998552BA30554005A681E /* CalendarViewModel.swift in Sources */,
@@ -855,6 +854,7 @@
 				C289986C2BA48D76005A681E /* FormView.swift in Sources */,
 				C22279272BAB63FA00B9B55C /* HousingService.swift in Sources */,
 				C28998122BA097EE005A681E /* User.swift in Sources */,
+				C22ED5312BB22BD600106C44 /* MailView.swift in Sources */,
 				C28998702BA48DE2005A681E /* NewPostView.swift in Sources */,
 				C289988C2BA4DACF005A681E /* AccueilView.swift in Sources */,
 				C22279222BAB620400B9B55C /* HousingDetailView.swift in Sources */,
