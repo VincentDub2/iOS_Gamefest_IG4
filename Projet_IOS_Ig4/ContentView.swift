@@ -6,38 +6,35 @@
 //
 
 import SwiftUI
+import AVFoundation
 
-//
-//  ContentView.swift
-//  Projet_IOS_Ig4
-//
-//  Created by vincent DUBUC on 12/03/2024.
-//
-
-import SwiftUI
 
 struct ContentView: View {
+    @State private var showNextView = false
     var images : [String] = ["house","pencil.and.list.clipboard","calendar","message","person"]
     @State var selected = "house"
     @Namespace private var namespace
     var window: UIWindow?
     var body: some View {
         ZStack{
-            //Switch Content Here
-            if selected == "person" {
-                LoginView()
-            }else if selected == "calendar" {
-                CalendarKitView()
-            }else if selected == "pencil.and.list.clipboard" {
-                CalendarView()
-            }else if selected == "message" {
-               ForumView()
-            }else{
-                HousingView()
+            if !showNextView {
+                           // Background Image with Enter Button
+                           BackgroundView(showNextView: $showNextView)
+            } else {
+                //Switch Content Here
+                if selected == "person" {
+                    LoginView()
+                }else if selected == "calendar" {
+                    CalendarKitView()
+                }else if selected == "pencil.and.list.clipboard" {
+                    CalendarView()
+                }else if selected == "message" {
+                    ForumView()
+                }else{
+                    HousingView()
+                }
+                
             }
-
-            navBar
-
         }.edgesIgnoringSafeArea(.bottom)
         
     }

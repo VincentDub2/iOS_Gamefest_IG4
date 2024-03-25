@@ -29,6 +29,8 @@
 		C22ED5292BB2291700106C44 /* HouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5232BB2291700106C44 /* HouseView.swift */; };
 		C22ED52A2BB2291700106C44 /* ContactUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5242BB2291700106C44 /* ContactUsView.swift */; };
 		C22ED52B2BB2291700106C44 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5252BB2291700106C44 /* FAQView.swift */; };
+		C22ED52D2BB22A4900106C44 /* VideoBackGroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED52C2BB22A4900106C44 /* VideoBackGroundView.swift */; };
+		C22ED52F2BB22ABC00106C44 /* BackGroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED52E2BB22ABC00106C44 /* BackGroundView.swift */; };
 		C28997E02BA0974D005A681E /* Projet_IOS_Ig4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997DF2BA0974D005A681E /* Projet_IOS_Ig4App.swift */; };
 		C28997E22BA0974D005A681E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997E12BA0974D005A681E /* ContentView.swift */; };
 		C28997E42BA0974E005A681E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C28997E32BA0974E005A681E /* Assets.xcassets */; };
@@ -139,6 +141,8 @@
 		C22ED5232BB2291700106C44 /* HouseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HouseView.swift; path = Projet_IOS_Ig4/Auth/Views/HouseView.swift; sourceTree = SOURCE_ROOT; };
 		C22ED5242BB2291700106C44 /* ContactUsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactUsView.swift; path = Projet_IOS_Ig4/Auth/Views/ContactUsView.swift; sourceTree = SOURCE_ROOT; };
 		C22ED5252BB2291700106C44 /* FAQView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FAQView.swift; path = Projet_IOS_Ig4/Auth/Views/FAQView.swift; sourceTree = SOURCE_ROOT; };
+		C22ED52C2BB22A4900106C44 /* VideoBackGroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoBackGroundView.swift; sourceTree = "<group>"; };
+		C22ED52E2BB22ABC00106C44 /* BackGroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackGroundView.swift; sourceTree = "<group>"; };
 		C28997DC2BA0974D005A681E /* Projet_IOS_Ig4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Projet_IOS_Ig4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C28997DF2BA0974D005A681E /* Projet_IOS_Ig4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projet_IOS_Ig4App.swift; sourceTree = "<group>"; };
 		C28997E12BA0974D005A681E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -425,6 +429,8 @@
 				C28998802BA4C8E0005A681E /* testRive.swift */,
 				C28998862BA4D40E005A681E /* ZombieWalking.swift */,
 				C289988B2BA4DACF005A681E /* AccueilView.swift */,
+				C22ED52C2BB22A4900106C44 /* VideoBackGroundView.swift */,
+				C22ED52E2BB22ABC00106C44 /* BackGroundView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -818,6 +824,7 @@
 				C28997E22BA0974D005A681E /* ContentView.swift in Sources */,
 				C289981D2BA0994D005A681E /* LoginView.swift in Sources */,
 				C22ED5262BB2291700106C44 /* LogoOverlayView.swift in Sources */,
+				C22ED52D2BB22A4900106C44 /* VideoBackGroundView.swift in Sources */,
 				C28998142BA09804005A681E /* AuthToken.swift in Sources */,
 				C2BF7A6E2BA5F57200CB30BA /* CommentInputView.swift in Sources */,
 				C222790C2BAB5BCD00B9B55C /* HousingView.swift in Sources */,
@@ -835,6 +842,7 @@
 				C28998762BA4986D005A681E /* VCard.swift in Sources */,
 				C28997E02BA0974D005A681E /* Projet_IOS_Ig4App.swift in Sources */,
 				C28998452BA2E961005A681E /* APIManager.swift in Sources */,
+				C22ED52F2BB22ABC00106C44 /* BackGroundView.swift in Sources */,
 				C289982E2BA22128005A681E /* DatePickerController.swift in Sources */,
 				C289986A2BA48C74005A681E /* ForumService.swift in Sources */,
 				C28998652BA48AC2005A681E /* Comment.swift in Sources */,
