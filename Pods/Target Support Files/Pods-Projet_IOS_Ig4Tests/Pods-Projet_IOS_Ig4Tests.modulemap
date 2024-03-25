@@ -1,6 +1,0 @@
-framework module Pods_Projet_IOS_Ig4Tests {
-  umbrella header "Pods-Projet_IOS_Ig4Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}
