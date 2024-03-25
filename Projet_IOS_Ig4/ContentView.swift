@@ -32,6 +32,8 @@ struct ContentView: View {
                 CalendarView()
             }else if selected == "message" {
                ForumView()
+            }else{
+                HousingView()
             }
 
             navBar

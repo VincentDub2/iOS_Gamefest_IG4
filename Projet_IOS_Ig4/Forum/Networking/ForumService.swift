@@ -19,7 +19,7 @@ struct ResponseApi : Codable {
 
 struct ForumService {
     
-    let tempoIdUser = "ccfba91c-1ec8-42f8-9962-02bfbd7c1e73"
+    let tempoIdUser = "1"
     // Créer un post
     func createPost(title: String, body: String) -> AnyPublisher<Bool, Error> {
         let endpoint = "/forum"
@@ -32,7 +32,7 @@ struct ForumService {
             return Future<Bool, Error> { promise in
                 APIManager.requestPOST(endpoint: endpoint, parameters: parameters) { (result: Result<ResponseApi, AFError>) in
                     switch result {
-                    case .success(let title):
+                    case .success(_):
                         promise(.success(true))
                     case .failure(let error):
                         promise(.failure(error))

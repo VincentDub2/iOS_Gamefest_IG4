@@ -30,6 +30,6 @@ struct User: Codable {
     let isGod: Bool
     let createdAt: String
     let updatedAt: String
-    let emailVerified: Bool
-    let emailVerificationToken: String
+    let emailVerified: Bool?
+    let emailVerificationToken: String?
 }

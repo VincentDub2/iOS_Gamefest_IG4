@@ -28,7 +28,7 @@ struct PostDetailView: View {
 
                 Divider()
 
-                Text("Comments")
+                Text("Commentaire")
                     .font(.headline)
 
                 // Amélioration de l'affichage des commentaires

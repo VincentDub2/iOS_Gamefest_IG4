@@ -8,12 +8,26 @@
 import Foundation
 import SwiftUI
 import MapKit
+import MessageUI
 
 struct HousingDetailView: View {
     var housing: Housing
-    // Example property, replace with actual coordinate if available
+    // ViewModel instance.
+    @ObservedObject var viewModel = HousingViewModel()
+    @State private var showingMailView = false
+    
+    @State private var showAlert: Bool = false
+    @State private var alertMessage: String = ""
+    
+    @Environment(\.presentationMode) var presentationMode
+
+    
+    let currentUserId = "1"
 
     var body: some View {
+        if viewModel.isLoading {
+            ProgressView()
+        }
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 Text(housing.city)
@@ -46,16 +60,36 @@ struct HousingDetailView: View {
                         .font(.body)
                 }
                 
-                Button(action: {
-                    // Implement contact action
-                }) {
-                    Text("Conctater l'utilisateur")
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(10)
+                CustomButton(
+                    title: "Conctater l'utilisateur",
+                    action: {
+                        self.showingMailView = true
+                }).sheet(isPresented: $showingMailView) {
+                    // Replace "user@example.com" with the actual user's email address you want to use
+                    MailView(subject: "Inquiry about your housing offer", recipients: ["user@example.com"], messageBody: "I am interested in your housing offer.")
                 }
+                if housing.idUser == currentUserId {
+                    VStack{
+                        Button("Supprimer"){
+                            self.viewModel.deleteHousing(housing.id){ success in
+                                if success {
+                                    // Only dismiss the view if the addition was successful
+                                    DispatchQueue.main.async {
+                                        self.presentationMode.wrappedValue.dismiss()
+                                    }
+                                } else {
+                                    // Handle failure, e.g., by showing an alert to the user
+                                    DispatchQueue.main.async {
+                                        self.alertMessage = "Failed to add the housing offer."
+                                        self.showAlert = true
+                                    }
+                                }
+                                
+                            }
+                        }.foregroundColor(.red).padding(.vertical, 4).padding(.horizontal).background(Color.red.opacity(0.2)).clipShape(Capsule())
+                    }
+                }
+                    
             }
             .padding()
         }
@@ -92,7 +126,7 @@ struct HousingDetailView: View {
 
 struct HousingDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        var house1 = Housing(id: 1, availability: 2, idUser: "1", description: """
+        let house1 = Housing(id: 1, availability: 2, idUser: "1", description: """
                              Maison situé au centre de Montpellier, proche de toutes commodités.
                              """, isOffering: true, city: "Montpellier", postalCode: "34160", country: "France")
         HousingDetailView(housing: house1)

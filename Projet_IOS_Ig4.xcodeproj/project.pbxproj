@@ -74,6 +74,7 @@
 		C28998A42BA4DF1B005A681E /* nqueens.riv in Resources */ = {isa = PBXBuildFile; fileRef = C28998A22BA4DE6D005A681E /* nqueens.riv */; };
 		C28998A62BA4EA03005A681E /* chess.riv in Resources */ = {isa = PBXBuildFile; fileRef = C28998A52BA4EA03005A681E /* chess.riv */; };
 		C28998A82BA4EE9D005A681E /* chess2.riv in Resources */ = {isa = PBXBuildFile; fileRef = C28998A72BA4EE84005A681E /* chess2.riv */; };
+		C28A08172BB091A0000DF7E2 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28A08162BB091A0000DF7E2 /* MailView.swift */; };
 		C2BF7A4D2BA58C1400CB30BA /* chessactiontest.riv in Resources */ = {isa = PBXBuildFile; fileRef = C2BF7A4C2BA58C1400CB30BA /* chessactiontest.riv */; };
 		C2BF7A512BA58CB000CB30BA /* start_button.riv in Resources */ = {isa = PBXBuildFile; fileRef = C2BF7A502BA58CB000CB30BA /* start_button.riv */; };
 		C2BF7A602BA5A21600CB30BA /* light_like.riv in Resources */ = {isa = PBXBuildFile; fileRef = C2BF7A5F2BA5A21600CB30BA /* light_like.riv */; };
@@ -83,8 +84,12 @@
 		C2BF7A6E2BA5F57200CB30BA /* CommentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF7A6D2BA5F57200CB30BA /* CommentInputView.swift */; };
 		C2BF7A722BA5F7E400CB30BA /* new_file.riv in Resources */ = {isa = PBXBuildFile; fileRef = C2BF7A712BA5F7E400CB30BA /* new_file.riv */; };
 		C2BF7A8D2BA9E8D700CB30BA /* Soiree.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF7A8C2BA9E8D700CB30BA /* Soiree.swift */; };
-		C2BF7A8F2BA9EAA700CB30BA /* SoireeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF7A8E2BA9EAA700CB30BA /* SoireeViewModel.swift */; };
+		C2BF7A8F2BA9EAA700CB30BA /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF7A8E2BA9EAA700CB30BA /* EventViewModel.swift */; };
 		C2E592172BADD6C700DA3136 /* HousingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E592162BADD6C700DA3136 /* HousingCell.swift */; };
+		C2E5921E2BADF7C500DA3136 /* SoireesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E5921D2BADF7C500DA3136 /* SoireesListView.swift */; };
+		C2E592212BADF85800DA3136 /* EventDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E592202BADF85800DA3136 /* EventDataService.swift */; };
+		C2E592232BADFD5200DA3136 /* SoireeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E592222BADFD5200DA3136 /* SoireeView.swift */; };
+		C2E592252BAEC96200DA3136 /* SoireeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E592242BAEC96200DA3136 /* SoireeDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +176,7 @@
 		C28998A22BA4DE6D005A681E /* nqueens.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = nqueens.riv; sourceTree = "<group>"; };
 		C28998A52BA4EA03005A681E /* chess.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = chess.riv; sourceTree = "<group>"; };
 		C28998A72BA4EE84005A681E /* chess2.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = chess2.riv; sourceTree = "<group>"; };
+		C28A08162BB091A0000DF7E2 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		C2BF7A4C2BA58C1400CB30BA /* chessactiontest.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = chessactiontest.riv; sourceTree = "<group>"; };
 		C2BF7A502BA58CB000CB30BA /* start_button.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = start_button.riv; path = ../../../../../Downloads/start_button.riv; sourceTree = "<group>"; };
 		C2BF7A5F2BA5A21600CB30BA /* light_like.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = light_like.riv; sourceTree = "<group>"; };
@@ -180,8 +186,12 @@
 		C2BF7A6D2BA5F57200CB30BA /* CommentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputView.swift; sourceTree = "<group>"; };
 		C2BF7A712BA5F7E400CB30BA /* new_file.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = new_file.riv; sourceTree = "<group>"; };
 		C2BF7A8C2BA9E8D700CB30BA /* Soiree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Soiree.swift; sourceTree = "<group>"; };
-		C2BF7A8E2BA9EAA700CB30BA /* SoireeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoireeViewModel.swift; sourceTree = "<group>"; };
+		C2BF7A8E2BA9EAA700CB30BA /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		C2E592162BADD6C700DA3136 /* HousingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingCell.swift; sourceTree = "<group>"; };
+		C2E5921D2BADF7C500DA3136 /* SoireesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoireesListView.swift; sourceTree = "<group>"; };
+		C2E592202BADF85800DA3136 /* EventDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataService.swift; sourceTree = "<group>"; };
+		C2E592222BADFD5200DA3136 /* SoireeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoireeView.swift; sourceTree = "<group>"; };
+		C2E592242BAEC96200DA3136 /* SoireeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoireeDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +257,7 @@
 				C22279212BAB620400B9B55C /* HousingDetailView.swift */,
 				C22279232BAB629F00B9B55C /* AddHousingOfferView.swift */,
 				C2E592162BADD6C700DA3136 /* HousingCell.swift */,
+				C28A08162BB091A0000DF7E2 /* MailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,7 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				C22279032BAB5AF900B9B55C /* Logement */,
-				C2BF7A852BA9E72800CB30BA /* Soirée */,
+				C2BF7A852BA9E72800CB30BA /* Event */,
 				C28998882BA4D55A005A681E /* RiveAsset */,
 				C28998592BA48985005A681E /* Forum */,
 				C289983E2BA2E827005A681E /* Utils */,
@@ -552,13 +563,15 @@
 			path = components;
 			sourceTree = "<group>";
 		};
-		C2BF7A852BA9E72800CB30BA /* Soirée */ = {
+		C2BF7A852BA9E72800CB30BA /* Event */ = {
 			isa = PBXGroup;
 			children = (
+				C2E5921F2BADF82E00DA3136 /* Networking */,
+				C2E5921C2BADF79B00DA3136 /* Views */,
 				C2BF7A882BA9E81900CB30BA /* ViewModels */,
 				C2BF7A862BA9E77F00CB30BA /* Models */,
 			);
-			name = "Soirée";
+			name = Event;
 			path = "Soirée";
 			sourceTree = "<group>";
 		};
@@ -573,9 +586,27 @@
 		C2BF7A882BA9E81900CB30BA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				C2BF7A8E2BA9EAA700CB30BA /* SoireeViewModel.swift */,
+				C2BF7A8E2BA9EAA700CB30BA /* EventViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C2E5921C2BADF79B00DA3136 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C2E5921D2BADF7C500DA3136 /* SoireesListView.swift */,
+				C2E592222BADFD5200DA3136 /* SoireeView.swift */,
+				C2E592242BAEC96200DA3136 /* SoireeDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C2E5921F2BADF82E00DA3136 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C2E592202BADF85800DA3136 /* EventDataService.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -744,6 +775,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C289982D2BA22128005A681E /* CustomCalendarExampleController.swift in Sources */,
+				C2E592232BADFD5200DA3136 /* SoireeView.swift in Sources */,
 				C28998612BA48A88005A681E /* Post.swift in Sources */,
 				C28998212BA09B3C005A681E /* RegisterView.swift in Sources */,
 				C28998482BA2F022005A681E /* SessionManager.swift in Sources */,
@@ -769,6 +801,7 @@
 				C28998632BA48AA0005A681E /* Like.swift in Sources */,
 				C289981A2BA09901005A681E /* LoginViewModel.swift in Sources */,
 				C22279082BAB5B6000B9B55C /* Housing.swift in Sources */,
+				C2E5921E2BADF7C500DA3136 /* SoireesListView.swift in Sources */,
 				C28998172BA0989C005A681E /* AuthService.swift in Sources */,
 				C28998762BA4986D005A681E /* VCard.swift in Sources */,
 				C28997E02BA0974D005A681E /* Projet_IOS_Ig4App.swift in Sources */,
@@ -776,10 +809,12 @@
 				C289982E2BA22128005A681E /* DatePickerController.swift in Sources */,
 				C289986A2BA48C74005A681E /* ForumService.swift in Sources */,
 				C28998652BA48AC2005A681E /* Comment.swift in Sources */,
-				C2BF7A8F2BA9EAA700CB30BA /* SoireeViewModel.swift in Sources */,
+				C2BF7A8F2BA9EAA700CB30BA /* EventViewModel.swift in Sources */,
 				C2BF7A8D2BA9E8D700CB30BA /* Soiree.swift in Sources */,
 				C28998672BA48C2C005A681E /* ForumViewModel.swift in Sources */,
+				C2E592252BAEC96200DA3136 /* SoireeDetailView.swift in Sources */,
 				C28998322BA2235E005A681E /* CalendarKitView.swift in Sources */,
+				C28A08172BB091A0000DF7E2 /* MailView.swift in Sources */,
 				C289983C2BA229F9005A681E /* CalendarContainerView.swift in Sources */,
 				C289986C2BA48D76005A681E /* FormView.swift in Sources */,
 				C22279272BAB63FA00B9B55C /* HousingService.swift in Sources */,
@@ -788,6 +823,7 @@
 				C289988C2BA4DACF005A681E /* AccueilView.swift in Sources */,
 				C22279222BAB620400B9B55C /* HousingDetailView.swift in Sources */,
 				C28998532BA3016C005A681E /* Creneau.swift in Sources */,
+				C2E592212BADF85800DA3136 /* EventDataService.swift in Sources */,
 				C28998812BA4C8E0005A681E /* testRive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

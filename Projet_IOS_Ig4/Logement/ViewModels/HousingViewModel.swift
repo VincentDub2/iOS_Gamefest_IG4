@@ -24,6 +24,8 @@ class HousingViewModel: ObservableObject {
         loadHousings()
     }
     
+    /// Load the housing offers from the database.
+    /// - Returns: Void
     func loadHousings() {
         self.isLoading = true
         housingService.fetchHousing()
@@ -44,23 +46,33 @@ class HousingViewModel: ObservableObject {
     }
     
 
-    // Example function to add a housing offer.
-    func addHousingOffer(availibility : Int,description:String,city: String,postalCode: String,isOffering : Bool) {
-        
-        housingService.createHoussing(availibility: availibility, description: description, city: city, postalCode: postalCode, isOffering: isOffering)
-            .sink { completion in
-                switch completion {
+    /// Adds a new housing offer to the database.
+    /// - Parameters:
+    ///  - availibility: An `Int` representing the number of available rooms in the housing.
+    ///  - description: A `String` description of the housing.
+    ///  - city: A `String` representing the city where the housing is located.
+    ///  - postalCode: A `String` representing the postal code of the housing.
+    ///  - isOffering: A `Bool` indicating whether the housing is being offered or requested.
+    ///  - Returns: Void
+    func addHousingOffer(availability: Int, description: String, city: String, postalCode: String, isOffering: Bool, completion: @escaping (Bool) -> Void) {
+        // Start your loading process
+        housingService.createHousing(availability: availability, description: description, city: city, postalCode: postalCode, isOffering: isOffering)
+            .sink(receiveCompletion: { completionStatus in
+                switch completionStatus {
                 case .finished:
-                    break
+                    // If the operation finishes successfully, call the completion handler with true
+                    completion(true)
                 case .failure(let error):
                     self.errorMessage = error.localizedDescription
+                    // In case of an error, call the completion handler with false
+                    completion(false)
                 }
-            } receiveValue: { _ in
+                self.isLoading = false
+            }, receiveValue: { _ in
                 self.loadHousings()
-            }
-            .store(in: &cancellables);
+            })
+            .store(in: &cancellables)
     }
-
     /// Searches for housing based on various optional parameters.
     ///
     /// This function allows for a flexible search of housing listings. It supports filtering based on a keyword, city, postal code, and country. All parameters are optional, and when provided, the search results will include housings that match all provided criteria. If no parameters are provided, all housings are returned.
@@ -82,5 +94,26 @@ class HousingViewModel: ObservableObject {
                 return keywordMatch && cityMatch && postalCodeMatch && countryMatch
             }
         }
+    }
+    
+    /// Deletes a housing offer from the database.
+    /// - Parameter housing: The id of the housing to delete.
+    /// - Returns: Void
+    func deleteHousing(_ id: Int, completion: @escaping (Bool) -> Void) {
+        self.isLoading = true
+        housingService.deleteHousing(id: id)
+            .sink { completionStatus in
+                switch completionStatus {
+                case .finished:
+                   completion(true)
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
+                    completion(false)
+                }
+                self.isLoading = false
+            } receiveValue: { _ in
+                self.loadHousings()
+            }
+            .store(in: &cancellables)
     }
 }
