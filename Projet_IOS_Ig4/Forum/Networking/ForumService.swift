@@ -19,14 +19,13 @@ struct ResponseApi : Codable {
 
 struct ForumService {
     
-    let tempoIdUser = "1"
     // Créer un post
     func createPost(title: String, body: String) -> AnyPublisher<Bool, Error> {
         let endpoint = "/forum"
         let parameters: Parameters = [
             "title": title,
             "message": body,
-            "idUser": tempoIdUser,
+            "idUser": SessionManager.shared.user!.id,
         ]
             
             return Future<Bool, Error> { promise in
@@ -65,7 +64,7 @@ struct ForumService {
     func addLike(postId: String) -> AnyPublisher<Like, Error> {
         let endpoint = "/forum/\(postId)/like"
         let parameters: Parameters = [
-            "idUser": tempoIdUser,
+            "idUser": SessionManager.shared.user!.id,
         ]
         
         return Future<Like, Error> { promise in
@@ -86,7 +85,7 @@ struct ForumService {
             let endpoint = "/forum/\(postId)/comment"
             let parameters: Parameters = [
                 "message": "body",
-                "idUser": tempoIdUser,
+                "idUser": SessionManager.shared.user!.id,
         
             ]
             

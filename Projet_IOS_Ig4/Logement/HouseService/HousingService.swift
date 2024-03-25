@@ -3,7 +3,6 @@ import Combine
 import Alamofire
 
 class HousingService {
-    let tempoIdUser = "1"
     
     /// Récupérer tous les logements
     /// - Throws: Error
@@ -38,7 +37,7 @@ class HousingService {
             "city": city,
             "postalCode": postalCode,
             "isOffering": isOffering,
-            "idUser": tempoIdUser,
+            "idUser": SessionManager.shared.user!.id,
         ]
             
             return Future<Bool, Error> { promise in
