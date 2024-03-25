@@ -13,7 +13,6 @@ struct ForumView: View {
     @ObservedObject var viewModel: ForumViewModel = ForumViewModel.shared
     @State private var showingNewPostView = false
     
-    
     // Définition de la configuration de la grille pour deux colonnes avec un espacement flexible
     var gridItems: [GridItem] = Array(repeating: .init(.flexible(), spacing: 20), count: 1)
 

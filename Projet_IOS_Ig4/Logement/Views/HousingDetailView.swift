@@ -8,11 +8,14 @@
 import Foundation
 import SwiftUI
 import MapKit
+import MessageUI
 
 struct HousingDetailView: View {
     var housing: Housing
     // ViewModel instance.
     @ObservedObject var viewModel = HousingViewModel()
+    @State private var showingMailView = false
+    
     @State private var showAlert: Bool = false
     @State private var alertMessage: String = ""
     
@@ -60,8 +63,11 @@ struct HousingDetailView: View {
                 CustomButton(
                     title: "Conctater l'utilisateur",
                     action: {
-                    // Implement contact action
-                })
+                        self.showingMailView = true
+                }).sheet(isPresented: $showingMailView) {
+                    // Replace "user@example.com" with the actual user's email address you want to use
+                    MailView(subject: "Inquiry about your housing offer", recipients: ["user@example.com"], messageBody: "I am interested in your housing offer.")
+                }
                 if housing.idUser == currentUserId {
                     VStack{
                         Button("Supprimer"){

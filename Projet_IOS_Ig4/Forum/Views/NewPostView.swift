@@ -57,6 +57,7 @@ struct NewPostView: View {
                 presentationMode.wrappedValue.dismiss()
             }, trailing: Button("Post") {
                 viewModel.addPost(title: title, body: content)
+                print("Post added")
                 presentationMode.wrappedValue.dismiss()
             }.disabled(title.isEmpty || content.isEmpty))
         }
