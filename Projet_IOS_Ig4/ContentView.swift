@@ -115,10 +115,3 @@ extension ContentView{
 #Preview {
     ContentView().preferredColorScheme(.light)
 }
-
-
-
-#Preview {
-    ContentView().preferredColorScheme(.light)
-}
-
