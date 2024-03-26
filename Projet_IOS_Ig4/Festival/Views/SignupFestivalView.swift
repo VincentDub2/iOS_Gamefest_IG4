@@ -54,7 +54,7 @@ class FestivalState: ObservableObject {
 struct SignupFestivalView: View {
     @ObservedObject var festivalViewModel = FestivalViewModel()
     @State private var postes: [Poste] = []
-    @State private var creneaux: [Creneau] = []
+    @State private var creneaux: [CreneauFestivalModel] = []
     @State private var creneauxEspacesByPoste: [String : [CreneauEspace]] = [:]
     @State private var teeShirtSize: String = "XS"
     @State private var isVegetarian: Bool = false
@@ -67,8 +67,8 @@ struct SignupFestivalView: View {
     // Custom widths for each column
     let columnWidths: [CGFloat] = [200, 150]
     
-    private var creneauxSeparated: [(String, [Creneau])] {
-        var result: [(String, [Creneau])] = []
+    private var creneauxSeparated: [(String, [CreneauFestivalModel])] {
+        var result: [(String, [CreneauFestivalModel])] = []
         for creneau in creneaux {
             let date = DateUtils.formatDate(creneau.timeStart) ?? "Unknown"
             let existingIndex = result.firstIndex { $0.0 == date }
@@ -244,7 +244,7 @@ struct SignupFestivalView: View {
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     }
-                    .padding(.all, 20)
+                    .padding(.top, 20)
                 }
                 .padding()
             }
@@ -258,7 +258,7 @@ struct SignupFestivalView: View {
         }
     }
     
-    func handleTapForCreneau(_ creneau: Creneau, _ poste: Poste) {
+    func handleTapForCreneau(_ creneau: CreneauFestivalModel, _ poste: Poste) {
         // Check if this poste is already selected for the creneau.
         if festivalViewModel.isSelected(poste: poste, forCreneau: creneau.id) {
             print("\(poste.name) is already selected for this creneau.")
@@ -317,7 +317,7 @@ struct SignupFestivalView: View {
             }
         }
     
-    func fetchCreneauEspace(creneau: Creneau) {
+    func fetchCreneauEspace(creneau: CreneauFestivalModel) {
         FestivalService().fetchCreneauEspaceByCreneau(id: "\(creneau.id)") { result in
             switch result {
             case .success(let creneauEspaces):

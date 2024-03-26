@@ -8,6 +8,20 @@
 import Foundation
 import Alamofire
 
+struct CreneauFestivalModel: Codable, Hashable {
+    var id: Int
+    var timeStart: String
+    var timeEnd: String
+    var idFestival: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "idCreneau"
+        case timeStart = "timeStart"
+        case timeEnd = "timeEnd"
+        case idFestival = "idFestival"
+    }
+}
+
 class FestivalService {
     
     func fetchFestival(completion: @escaping (Result<FestivalModel, Error>) -> Void) {
@@ -40,10 +54,11 @@ class FestivalService {
         }
     }
 
-    func fetchCreneauxByFestival(id: String, completion: @escaping (Result<[Creneau], Error>) -> Void) {
+    func fetchCreneauxByFestival(id: String, completion: @escaping (Result<[CreneauFestivalModel], Error>) -> Void) {
         let endpoint = "/festivals/\(id)/creneaux"
         
-        APIManager.requestGET(endpoint: endpoint) { (result: Result<[Creneau], AFError>) in
+        APIManager.requestGET(endpoint: endpoint) { (result: Result<[CreneauFestivalModel], AFError>) in
+            print(result)
             DispatchQueue.main.async {
                 switch result {
                 case .success(let creneaux):

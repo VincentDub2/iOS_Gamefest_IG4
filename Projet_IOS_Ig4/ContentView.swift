@@ -27,14 +27,19 @@ struct ContentView: View {
                     // If user is connected, show the main view
                     if selected == "person" {
                         ProfileView()
+                            .padding(.bottom, 120)
                     }else if selected == "calendar" {
                         CalendarKitView()
+                            .padding(.bottom, 120)
                     }else if selected == "pencil.and.list.clipboard" {
                         HousingView()
+                            .padding(.bottom, 120)
                     }else if selected == "message" {
                         ForumView()
+                            .padding(.bottom, 120)
                     }else{
-                        HousingView()
+                        SignupFestivalView(festivalName: "Sample festival", startDate: "01/01/2024", endDate: "03/01/2024")
+                            .padding(.bottom, 120)
                     }
                         navBar
                 } else {

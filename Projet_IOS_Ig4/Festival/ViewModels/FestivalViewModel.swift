@@ -30,7 +30,7 @@ class FestivalViewModel: ObservableObject {
         }
     }
 
-    func bindingForCurrentCapacity(creneau: Creneau, poste: Poste) -> Binding<Int> {
+    func bindingForCurrentCapacity(creneau: CreneauFestivalModel, poste: Poste) -> Binding<Int> {
         Binding<Int>(
             get: { [weak self] in
                 return self?.creneauxEspaces.first { $0.idCreneau == creneau.id && $0.espace.name == poste.name }?.currentCapacity ?? 0
