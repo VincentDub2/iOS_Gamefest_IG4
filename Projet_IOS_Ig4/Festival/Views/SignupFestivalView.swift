@@ -51,6 +51,8 @@ struct SignupFestivalView: View {
     @State private var creneauxEspacesByPoste: [String : [CreneauEspace]] = [:]
     @State private var teeShirtSize: String = "XS"
     @State private var isVegetarian: Bool = false
+    @State private var lunchChoices: [String: Bool] = [:]
+    @State private var dinnerChoices: [String: Bool] = [:]
     let festivalName: String
     let startDate: String
     let endDate: String
@@ -99,6 +101,37 @@ struct SignupFestivalView: View {
                     // Vegetarian selection
                     Toggle("Vegetarien", isOn: $isVegetarian)
                     
+                    // Meal selection
+                    Text("Choix des repas")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                    
+                    ForEach(creneauxSeparated.indices, id: \.self) { index in
+                        let tuple = creneauxSeparated[index]
+                        let day = tuple.0 // Extracting the day string from the tuple
+                        
+                        VStack(alignment: .leading) {
+                            Text(day)
+                                .font(.title3)
+                                .fontWeight(.bold)
+                            
+                            Toggle(isOn: Binding<Bool>(
+                                get: { self.lunchChoices[day, default: false] },
+                                set: { self.lunchChoices[day] = $0 }
+                            )) {
+                                Text("Déjeuner")
+                            }
+                            
+                            Toggle(isOn: Binding<Bool>(
+                                get: { self.dinnerChoices[day, default: false] },
+                                set: { self.dinnerChoices[day] = $0 }
+                            )) {
+                                Text("Dîner")
+                            }
+                        }
+                        .padding(.vertical)
+                    }
+
                     // Postes selection
                     Text("Choix des postes")
                         .font(.title2)
@@ -110,9 +143,9 @@ struct SignupFestivalView: View {
                         let creneauxForDay = tuple.1 // Extracting the array of creneaux for this day
                         
                         // Display the day of the matrix
-                        //Text(day)
-                          //  .font(.title3)
-                            //.fontWeight(.bold)
+                        Text(day)
+                            .font(.title3)
+                            .fontWeight(.bold)
                         
                         ScrollView(.horizontal) {
                             VStack {
