@@ -15,6 +15,8 @@ class HousingViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
     
+    static let shared = HousingViewModel()
+    
     private var housingService = HousingService()
 
 

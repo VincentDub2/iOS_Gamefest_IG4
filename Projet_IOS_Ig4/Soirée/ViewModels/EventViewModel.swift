@@ -10,6 +10,8 @@ import Combine
 import Foundation
 
 class EventViewModel: ObservableObject {
+    static let shared = EventViewModel()
+    
     @Published var events: [Soiree] = []
     @Published var isLoading = false
     
@@ -18,9 +20,12 @@ class EventViewModel: ObservableObject {
     // lorsque l'objet EventViewModel sera détruit, évitant ainsi les fuites de mémoire.
     private var cancellables: Set<AnyCancellable> = []
     
+    
     private var eventDataService = EventDataService()
     
-    
+    init() {
+        loadUpcomingEvents()
+    }
     // Fonction pour charger les événements
     func loadUpcomingEvents() {
         self.isLoading = true

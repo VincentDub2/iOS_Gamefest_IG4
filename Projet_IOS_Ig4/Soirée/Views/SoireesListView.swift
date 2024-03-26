@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 struct EventsListView: View {
-    @ObservedObject var viewModel = EventViewModel()
+    @ObservedObject var viewModel = EventViewModel.shared
     
     var body: some View {
         NavigationView {

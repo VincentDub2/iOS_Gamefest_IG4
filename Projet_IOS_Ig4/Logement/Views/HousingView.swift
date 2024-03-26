@@ -2,7 +2,7 @@ import SwiftUI
 
 struct HousingView: View {
     // ViewModel instance.
-    @ObservedObject var viewModel = HousingViewModel()
+    @ObservedObject var viewModel = HousingViewModel.shared
 
     // State for search bar text.
     @State private var searchQuery: String = ""
