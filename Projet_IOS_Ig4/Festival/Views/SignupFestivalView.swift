@@ -83,170 +83,173 @@ struct SignupFestivalView: View {
     
     var body: some View {
         if let festival = festivalViewModel.festival, !postes.isEmpty && !creneaux.isEmpty {
-            ScrollView(.vertical) {
-                VStack(alignment: .leading, spacing: 10) {
-                    // Festival information
-                    Text(festival.name)
-                        .font(.title)
-                        .fontWeight(.bold)
-                    Text("Du \(DateUtils.formatDate(festival.dateDebut)!) au \(DateUtils.formatDate(festival.dateFin)!)")
-                    
-                    Divider()
-                        .padding(.vertical, 20)
-                    
-                    // Personnal informations
-                    HStack {
-                        Spacer()
-                        Text("Informations personnelles")
-                            .font(.title2)
+            NavigationView {
+                ScrollView(.vertical) {
+                    VStack(alignment: .leading, spacing: 10) {
+                        // Festival information
+                        Text(festival.name)
+                            .font(.title)
                             .fontWeight(.bold)
-                            .padding(.bottom, 15)
-                        Spacer()
-                    }
-                    
-                    // Tee shirt size selection
-                    HStack() {
-                        Text("Taille de t-shirt")
-                        Spacer()
-                        Picker("Tee Shirt Size", selection: $teeShirtSize) {
-                            Text("XS").tag("XS")
-                            Text("S").tag("S")
-                            Text("M").tag("M")
-                            Text("L").tag("L")
-                            Text("XL").tag("XL")
-                        }
-                        .pickerStyle(MenuPickerStyle())
-                    }
-                    
-                    // Vegetarian selection
-                    Toggle("Vegetarien", isOn: $isVegetarian)
-                    
-                    Divider()
-                        .padding(.vertical, 20)
-                    
-                    // Meal selection
-                    HStack {
-                        Spacer()
-                        Text("Choix des repas")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                        Spacer()
-                    }
-                    
-                    ForEach(creneauxSeparated.indices, id: \.self) { index in
-                        let tuple = creneauxSeparated[index]
-                        let day = tuple.0 // Extracting the day string from the tuple
+                        Text("Du \(DateUtils.formatDate(festival.dateDebut)!) au \(DateUtils.formatDate(festival.dateFin)!)")
                         
-                        VStack(alignment: .leading) {
+                        Divider()
+                            .padding(.vertical, 20)
+                        
+                        // Personnal informations
+                        HStack {
+                            Spacer()
+                            Text("Informations personnelles")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .padding(.bottom, 15)
+                            Spacer()
+                        }
+                        
+                        // Tee shirt size selection
+                        HStack() {
+                            Text("Taille de t-shirt")
+                            Spacer()
+                            Picker("Tee Shirt Size", selection: $teeShirtSize) {
+                                Text("XS").tag("XS")
+                                Text("S").tag("S")
+                                Text("M").tag("M")
+                                Text("L").tag("L")
+                                Text("XL").tag("XL")
+                            }
+                            .pickerStyle(MenuPickerStyle())
+                        }
+                        
+                        // Vegetarian selection
+                        Toggle("Vegetarien", isOn: $isVegetarian)
+                        
+                        Divider()
+                            .padding(.vertical, 20)
+                        
+                        // Meal selection
+                        HStack {
+                            Spacer()
+                            Text("Choix des repas")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                            Spacer()
+                        }
+                        
+                        ForEach(creneauxSeparated.indices, id: \.self) { index in
+                            let tuple = creneauxSeparated[index]
+                            let day = tuple.0 // Extracting the day string from the tuple
+                            
+                            VStack(alignment: .leading) {
+                                Text(day)
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                
+                                Toggle(isOn: Binding<Bool>(
+                                    get: { self.lunchChoices[day, default: false] },
+                                    set: { self.lunchChoices[day] = $0 }
+                                )) {
+                                    Text("Déjeuner")
+                                }
+                                
+                                Toggle(isOn: Binding<Bool>(
+                                    get: { self.dinnerChoices[day, default: false] },
+                                    set: { self.dinnerChoices[day] = $0 }
+                                )) {
+                                    Text("Dîner")
+                                }
+                            }
+                            .padding(.vertical)
+                        }
+                        
+                        Divider()
+                            .padding(.vertical, 20)
+                        
+                        // Postes selection
+                        HStack {
+                            Spacer()
+                            Text("Choix des postes")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                            Spacer()
+                        }
+                        
+                        ForEach(creneauxSeparated.indices, id: \.self) { index in
+                            let tuple = creneauxSeparated[index]
+                            let day = tuple.0 // Extracting the day string from the tuple
+                            let creneauxForDay = tuple.1 // Extracting the array of creneaux for this day
+                            
+                            // Display the day of the matrix
                             Text(day)
                                 .font(.title3)
                                 .fontWeight(.bold)
+                                .padding(.top, 15)
                             
-                            Toggle(isOn: Binding<Bool>(
-                                get: { self.lunchChoices[day, default: false] },
-                                set: { self.lunchChoices[day] = $0 }
-                            )) {
-                                Text("Déjeuner")
-                            }
-                            
-                            Toggle(isOn: Binding<Bool>(
-                                get: { self.dinnerChoices[day, default: false] },
-                                set: { self.dinnerChoices[day] = $0 }
-                            )) {
-                                Text("Dîner")
-                            }
-                        }
-                        .padding(.vertical)
-                    }
-                    
-                    Divider()
-                        .padding(.vertical, 20)
-                    
-                    // Postes selection
-                    HStack {
-                        Spacer()
-                        Text("Choix des postes")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                        Spacer()
-                    }
-                    
-                    ForEach(creneauxSeparated.indices, id: \.self) { index in
-                        let tuple = creneauxSeparated[index]
-                        let day = tuple.0 // Extracting the day string from the tuple
-                        let creneauxForDay = tuple.1 // Extracting the array of creneaux for this day
-                        
-                        // Display the day of the matrix
-                        Text(day)
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .padding(.top, 15)
-                        
-                        ScrollView(.horizontal) {
-                            VStack {
-                                Text("") // Empty column
-                                    .frame(width: columnWidths[0])
-                                
-                                // Header row with creneaux
-                                HStack {
-                                    Spacer()
-                                    ForEach(creneauxForDay, id: \.id) { creneau in
-                                        Text("\(DateUtils.formatTime(creneau.timeStart) ?? "") - \(DateUtils.formatTime(creneau.timeEnd) ?? "")")
-                                            .font(.headline)
-                                            .frame(width: columnWidths[1], alignment: .center)
-                                    }
-                                }
-                                
-                                ForEach(postes, id: \.idPoste) { poste in
-                                    let creneauxEspaces = creneauxEspacesByPoste[poste.name] ?? []
+                            ScrollView(.horizontal) {
+                                VStack {
+                                    Text("") // Empty column
+                                        .frame(width: columnWidths[0])
                                     
+                                    // Header row with creneaux
                                     HStack {
-                                        Text(poste.name)
-                                            .padding()
-                                            .frame(width: columnWidths[0])
-                                        
                                         Spacer()
-                                        
                                         ForEach(creneauxForDay, id: \.id) { creneau in
-                                            let isSelected = festivalViewModel.isSelected(poste: poste, forCreneau: creneau.id)
-                                            let binding = festivalViewModel.bindingForCurrentCapacity(creneau: creneau, poste: poste)
-                                            CircularProgressView(current: binding, max: poste.capacityPoste) {
-                                                handleTapForCreneau(creneau, poste)
-                                            }
-                                            .padding()
-                                            .opacity(isSelected ? 1.0 : 0.5)
-                                            .frame(width: columnWidths[1])
+                                            Text("\(DateUtils.formatTime(creneau.timeStart) ?? "") - \(DateUtils.formatTime(creneau.timeEnd) ?? "")")
+                                                .font(.headline)
+                                                .frame(width: columnWidths[1], alignment: .center)
+                                        }
+                                    }
+                                    
+                                    ForEach(postes, id: \.idPoste) { poste in
+                                        let creneauxEspaces = creneauxEspacesByPoste[poste.name] ?? []
+                                        
+                                        HStack {
+                                            Text(poste.name)
+                                                .padding()
+                                                .frame(width: columnWidths[0])
+                                            
                                             Spacer()
+                                            
+                                            ForEach(creneauxForDay, id: \.id) { creneau in
+                                                let isSelected = festivalViewModel.isSelected(poste: poste, forCreneau: creneau.id)
+                                                let binding = festivalViewModel.bindingForCurrentCapacity(creneau: creneau, poste: poste)
+                                                CircularProgressView(current: binding, max: poste.capacityPoste) {
+                                                    handleTapForCreneau(creneau, poste)
+                                                }
+                                                .padding()
+                                                .opacity(isSelected ? 1.0 : 0.5)
+                                                .frame(width: columnWidths[1])
+                                                Spacer()
+                                            }
                                         }
                                     }
                                 }
                             }
+                            
                         }
-
-                    }
-                    
-                    // Signup button
-                    Button(action: {
-                        let volunteerData = IsVolunteer(sizeTeeShirt: self.teeShirtSize, isVege: self.isVegetarian, idUser: "3b2b8986-7496-4b06-8474-549c4dd1af47", idFestival: 2)
-                        festivalViewModel.registerVolunteer(data: volunteerData) { success, error in
-                            if success {
-                                print("Inscription réussie")
-                            } else {
-                                print("Erreur à l'inscription")
+                        
+                        // Signup button
+                        Button(action: {
+                            let volunteerData = IsVolunteer(sizeTeeShirt: self.teeShirtSize, isVege: self.isVegetarian, idUser: "3b2b8986-7496-4b06-8474-549c4dd1af47", idFestival: 2)
+                            festivalViewModel.registerVolunteer(data: volunteerData) { success, error in
+                                if success {
+                                    print("Inscription réussie")
+                                } else {
+                                    print("Erreur à l'inscription")
+                                }
                             }
+                        })
+                        {
+                            Text("Je m'inscris au festival")
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
                         }
-                    })
-                    {
-                        Text("Je m'inscris au festival")
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
+                        .padding(.top, 20)
                     }
-                    .padding(.top, 20)
+                    .padding()
                 }
-                .padding()
+                .navigationTitle("Inscription à un festival")
             }
         } else {
             ProgressView("Chargement du festival...")
