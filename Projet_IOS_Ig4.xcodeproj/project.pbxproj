@@ -7,18 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF51A91F2BA4897100D6188B /* Festival.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A91E2BA4897100D6188B /* Festival.swift */; };
-		BF51A9212BA48B0B00D6188B /* FestivalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9202BA48B0B00D6188B /* FestivalViewModel.swift */; };
-		BF51A9232BA48B5B00D6188B /* FestivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9222BA48B5B00D6188B /* FestivalView.swift */; };
-		BF51A9262BA4900600D6188B /* FestivalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9252BA4900600D6188B /* FestivalService.swift */; };
-		BF51A9292BA4AB6100D6188B /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = BF51A9282BA4AB6100D6188B /* CalendarKit */; };
-		BF51A92D2BA4AFC300D6188B /* PosteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A92C2BA4AFC300D6188B /* PosteService.swift */; };
-		BF51A9322BA4B00A00D6188B /* Poste.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9312BA4B00A00D6188B /* Poste.swift */; };
-		BF51A9342BA4B02000D6188B /* PosteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9332BA4B02000D6188B /* PosteViewModel.swift */; };
-		BF51A9362BA4B03100D6188B /* PosteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51A9352BA4B03100D6188B /* PosteView.swift */; };
-		BFB04CEF2BA9DF8900055D58 /* SignupFestivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB04CEE2BA9DF8800055D58 /* SignupFestivalView.swift */; };
-		BFB04CF12BA9E8FF00055D58 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB04CF02BA9E8FF00055D58 /* CircularProgressView.swift */; };
-		BFB04CF32BA9F6F500055D58 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB04CF22BA9F6F500055D58 /* DateUtils.swift */; };
 		C22279082BAB5B6000B9B55C /* Housing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22279072BAB5B6000B9B55C /* Housing.swift */; };
 		C222790A2BAB5B8500B9B55C /* HousingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22279092BAB5B8500B9B55C /* HousingViewModel.swift */; };
 		C222790C2BAB5BCD00B9B55C /* HousingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C222790B2BAB5BCD00B9B55C /* HousingView.swift */; };
@@ -58,6 +46,16 @@
 		C22ED5682BB3003D00106C44 /* start_button.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5512BB3000000106C44 /* start_button.riv */; };
 		C22ED5692BB3003D00106C44 /* switch.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5522BB3000000106C44 /* switch.riv */; };
 		C22ED56A2BB3003D00106C44 /* walking_working.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5532BB3000000106C44 /* walking_working.riv */; };
+		C22ED5762BB37E7300106C44 /* Festival.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED56B2BB37E7300106C44 /* Festival.swift */; };
+		C22ED5772BB37E7300106C44 /* FestivalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED56D2BB37E7300106C44 /* FestivalService.swift */; };
+		C22ED5782BB37E7300106C44 /* FestivalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED56F2BB37E7300106C44 /* FestivalViewModel.swift */; };
+		C22ED5792BB37E7300106C44 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5712BB37E7300106C44 /* CircularProgressView.swift */; };
+		C22ED57A2BB37E7300106C44 /* FestivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5722BB37E7300106C44 /* FestivalView.swift */; };
+		C22ED57B2BB37E7300106C44 /* SignupFestivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5732BB37E7300106C44 /* SignupFestivalView.swift */; };
+		C22ED5852BB37E8000106C44 /* Poste.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED57C2BB37E8000106C44 /* Poste.swift */; };
+		C22ED5862BB37E8000106C44 /* PosteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED57E2BB37E8000106C44 /* PosteService.swift */; };
+		C22ED5872BB37E8000106C44 /* PosteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5802BB37E8000106C44 /* PosteViewModel.swift */; };
+		C22ED5882BB37E8000106C44 /* PosteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5822BB37E8000106C44 /* PosteView.swift */; };
 		C28997E02BA0974D005A681E /* Projet_IOS_Ig4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997DF2BA0974D005A681E /* Projet_IOS_Ig4App.swift */; };
 		C28997E22BA0974D005A681E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997E12BA0974D005A681E /* ContentView.swift */; };
 		C28997E42BA0974E005A681E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C28997E32BA0974E005A681E /* Assets.xcassets */; };
@@ -75,6 +73,7 @@
 		C28998242BA1A22D005A681E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998232BA1A22D005A681E /* CustomButton.swift */; };
 		C289982D2BA22128005A681E /* CustomCalendarExampleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C289982A2BA22128005A681E /* CustomCalendarExampleController.swift */; };
 		C289982E2BA22128005A681E /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C289982B2BA22128005A681E /* DatePickerController.swift */; };
+		C28998302BA22258005A681E /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = C289982F2BA22258005A681E /* CalendarKit */; };
 		C28998322BA2235E005A681E /* CalendarKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998312BA2235E005A681E /* CalendarKitView.swift */; };
 		C28998392BA226A6005A681E /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998372BA226A6005A681E /* CalendarView.swift */; };
 		C289983A2BA226A6005A681E /* Decoration+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998382BA226A6005A681E /* Decoration+SwiftUI.swift */; };
@@ -129,17 +128,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BF51A91E2BA4897100D6188B /* Festival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Festival.swift; sourceTree = "<group>"; };
-		BF51A9202BA48B0B00D6188B /* FestivalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalViewModel.swift; sourceTree = "<group>"; };
-		BF51A9222BA48B5B00D6188B /* FestivalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalView.swift; sourceTree = "<group>"; };
-		BF51A9252BA4900600D6188B /* FestivalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalService.swift; sourceTree = "<group>"; };
-		BF51A92C2BA4AFC300D6188B /* PosteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosteService.swift; sourceTree = "<group>"; };
-		BF51A9312BA4B00A00D6188B /* Poste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poste.swift; sourceTree = "<group>"; };
-		BF51A9332BA4B02000D6188B /* PosteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosteViewModel.swift; sourceTree = "<group>"; };
-		BF51A9352BA4B03100D6188B /* PosteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosteView.swift; sourceTree = "<group>"; };
-		BFB04CEE2BA9DF8800055D58 /* SignupFestivalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFestivalView.swift; sourceTree = "<group>"; };
-		BFB04CF02BA9E8FF00055D58 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
-		BFB04CF22BA9F6F500055D58 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		C22279072BAB5B6000B9B55C /* Housing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Housing.swift; sourceTree = "<group>"; };
 		C22279092BAB5B8500B9B55C /* HousingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingViewModel.swift; sourceTree = "<group>"; };
 		C222790B2BAB5BCD00B9B55C /* HousingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingView.swift; sourceTree = "<group>"; };
@@ -179,6 +167,16 @@
 		C22ED5512BB3000000106C44 /* start_button.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = start_button.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/start_button.riv; sourceTree = SOURCE_ROOT; };
 		C22ED5522BB3000000106C44 /* switch.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = switch.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/switch.riv; sourceTree = SOURCE_ROOT; };
 		C22ED5532BB3000000106C44 /* walking_working.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = walking_working.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/walking_working.riv; sourceTree = SOURCE_ROOT; };
+		C22ED56B2BB37E7300106C44 /* Festival.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Festival.swift; sourceTree = "<group>"; };
+		C22ED56D2BB37E7300106C44 /* FestivalService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FestivalService.swift; sourceTree = "<group>"; };
+		C22ED56F2BB37E7300106C44 /* FestivalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FestivalViewModel.swift; sourceTree = "<group>"; };
+		C22ED5712BB37E7300106C44 /* CircularProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		C22ED5722BB37E7300106C44 /* FestivalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FestivalView.swift; sourceTree = "<group>"; };
+		C22ED5732BB37E7300106C44 /* SignupFestivalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupFestivalView.swift; sourceTree = "<group>"; };
+		C22ED57C2BB37E8000106C44 /* Poste.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poste.swift; sourceTree = "<group>"; };
+		C22ED57E2BB37E8000106C44 /* PosteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosteService.swift; sourceTree = "<group>"; };
+		C22ED5802BB37E8000106C44 /* PosteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosteViewModel.swift; sourceTree = "<group>"; };
+		C22ED5822BB37E8000106C44 /* PosteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosteView.swift; sourceTree = "<group>"; };
 		C28997DC2BA0974D005A681E /* Projet_IOS_Ig4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Projet_IOS_Ig4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C28997DF2BA0974D005A681E /* Projet_IOS_Ig4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projet_IOS_Ig4App.swift; sourceTree = "<group>"; };
 		C28997E12BA0974D005A681E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -237,7 +235,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF51A9292BA4AB6100D6188B /* CalendarKit in Frameworks */,
 				C28998792BA49B29005A681E /* Alamofire in Frameworks */,
 				C289987F2BA4C8BE005A681E /* RiveRuntime in Frameworks */,
 				C28998302BA22258005A681E /* CalendarKit in Frameworks */,
@@ -262,43 +259,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BF51A91A2BA488FF00D6188B /* Festival */ = {
-			isa = PBXGroup;
-			children = (
-				BF51A9242BA48FDE00D6188B /* Networking */,
-				BF51A91D2BA4892500D6188B /* Models */,
-				BF51A91C2BA4891400D6188B /* ViewModels */,
-				BF51A91B2BA4890B00D6188B /* Views */,
-			);
-			path = Festival;
-			sourceTree = "<group>";
-		};
-		BF51A91B2BA4890B00D6188B /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				BF51A9222BA48B5B00D6188B /* FestivalView.swift */,
-				BFB04CEE2BA9DF8800055D58 /* SignupFestivalView.swift */,
-				BFB04CF02BA9E8FF00055D58 /* CircularProgressView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		BF51A91C2BA4891400D6188B /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				BF51A9202BA48B0B00D6188B /* FestivalViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		BF51A91D2BA4892500D6188B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				BF51A91E2BA4897100D6188B /* Festival.swift */,
 		C22279032BAB5AF900B9B55C /* Logement */ = {
 			isa = PBXGroup;
 			children = (
-				C22ED5542BB3000000106C44 /* RiveAsset */,
 				C22279252BAB63DB00B9B55C /* HouseService */,
 				C22279062BAB5B2400B9B55C /* Views */,
 				C22279052BAB5B1800B9B55C /* ViewModels */,
@@ -315,45 +278,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		BF51A9242BA48FDE00D6188B /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				BF51A9252BA4900600D6188B /* FestivalService.swift */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
-		BF51A92A2BA4AED600D6188B /* Poste */ = {
-			isa = PBXGroup;
-			children = (
-				BF51A9302BA4AFF300D6188B /* Views */,
-				BF51A92F2BA4AFE500D6188B /* ViewModels */,
-				BF51A92E2BA4AFD500D6188B /* Models */,
-				BF51A92B2BA4AF9400D6188B /* Networking */,
-			);
-			path = Poste;
-			sourceTree = "<group>";
-		};
-		BF51A92B2BA4AF9400D6188B /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				BF51A92C2BA4AFC300D6188B /* PosteService.swift */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
-		BF51A92E2BA4AFD500D6188B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				BF51A9312BA4B00A00D6188B /* Poste.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		BF51A92F2BA4AFE500D6188B /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				BF51A9332BA4B02000D6188B /* PosteViewModel.swift */,
 		C22279052BAB5B1800B9B55C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,10 +286,6 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		BF51A9302BA4AFF300D6188B /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				BF51A9352BA4B03100D6188B /* PosteView.swift */,
 		C22279062BAB5B2400B9B55C /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -423,6 +343,96 @@
 			path = RiveAsset;
 			sourceTree = "<group>";
 		};
+		C22ED56C2BB37E7300106C44 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED56B2BB37E7300106C44 /* Festival.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C22ED56E2BB37E7300106C44 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED56D2BB37E7300106C44 /* FestivalService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		C22ED5702BB37E7300106C44 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED56F2BB37E7300106C44 /* FestivalViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C22ED5742BB37E7300106C44 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED5712BB37E7300106C44 /* CircularProgressView.swift */,
+				C22ED5722BB37E7300106C44 /* FestivalView.swift */,
+				C22ED5732BB37E7300106C44 /* SignupFestivalView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C22ED5752BB37E7300106C44 /* Festival */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED56C2BB37E7300106C44 /* Models */,
+				C22ED56E2BB37E7300106C44 /* Networking */,
+				C22ED5702BB37E7300106C44 /* ViewModels */,
+				C22ED5742BB37E7300106C44 /* Views */,
+			);
+			name = Festival;
+			path = Projet_IOS_Ig4/Festival;
+			sourceTree = SOURCE_ROOT;
+		};
+		C22ED57D2BB37E8000106C44 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED57C2BB37E8000106C44 /* Poste.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C22ED57F2BB37E8000106C44 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED57E2BB37E8000106C44 /* PosteService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		C22ED5812BB37E8000106C44 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED5802BB37E8000106C44 /* PosteViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C22ED5832BB37E8000106C44 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED5822BB37E8000106C44 /* PosteView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C22ED5842BB37E8000106C44 /* Poste */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED57D2BB37E8000106C44 /* Models */,
+				C22ED57F2BB37E8000106C44 /* Networking */,
+				C22ED5812BB37E8000106C44 /* ViewModels */,
+				C22ED5832BB37E8000106C44 /* Views */,
+			);
+			name = Poste;
+			path = Projet_IOS_Ig4/Poste;
+			sourceTree = SOURCE_ROOT;
+		};
 		C28997D32BA0974D005A681E = {
 			isa = PBXGroup;
 			children = (
@@ -446,8 +456,9 @@
 		C28997DE2BA0974D005A681E /* Projet_IOS_Ig4 */ = {
 			isa = PBXGroup;
 			children = (
-				BF51A92A2BA4AED600D6188B /* Poste */,
-				BF51A91A2BA488FF00D6188B /* Festival */,
+				C22ED5752BB37E7300106C44 /* Festival */,
+				C22ED5542BB3000000106C44 /* RiveAsset */,
+				C22ED5842BB37E8000106C44 /* Poste */,
 				C22ED51C2BB228AD00106C44 /* backgroundVideo.mp4 */,
 				C22279032BAB5AF900B9B55C /* Logement */,
 				C2BF7A852BA9E72800CB30BA /* Event */,
@@ -583,7 +594,6 @@
 			isa = PBXGroup;
 			children = (
 				C28998442BA2E961005A681E /* APIManager.swift */,
-				BFB04CF22BA9F6F500055D58 /* DateUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -751,9 +761,9 @@
 			);
 			name = Projet_IOS_Ig4;
 			packageProductDependencies = (
-				C28998402BA2E895005A681E /* Alamofire */,
+				C289982F2BA22258005A681E /* CalendarKit */,
 				C289984A2BA2F106005A681E /* KeychainSwift */,
-				BF51A9282BA4AB6100D6188B /* CalendarKit */,
+				C28998782BA49B29005A681E /* Alamofire */,
 				C289987E2BA4C8BE005A681E /* RiveRuntime */,
 			);
 			productName = Projet_IOS_Ig4;
@@ -829,9 +839,9 @@
 			);
 			mainGroup = C28997D32BA0974D005A681E;
 			packageReferences = (
-				C289983F2BA2E895005A681E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				C28998272BA2208E005A681E /* XCRemoteSwiftPackageReference "CalendarKit" */,
 				C28998492BA2F106005A681E /* XCRemoteSwiftPackageReference "keychain-swift" */,
-				BF51A9272BA4AAF000D6188B /* XCRemoteSwiftPackageReference "CalendarKit" */,
+				C28998772BA49B29005A681E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				C289987D2BA4C8BE005A681E /* XCRemoteSwiftPackageReference "rive-ios" */,
 			);
 			productRefGroup = C28997DD2BA0974D005A681E /* Products */;
@@ -905,36 +915,34 @@
 				C22ED5282BB2291700106C44 /* ImagePicker.swift in Sources */,
 				C28998212BA09B3C005A681E /* RegisterView.swift in Sources */,
 				C28998482BA2F022005A681E /* SessionManager.swift in Sources */,
-				BFB04CF32BA9F6F500055D58 /* DateUtils.swift in Sources */,
-				BF51A92D2BA4AFC300D6188B /* PosteService.swift in Sources */,
+				C22ED57A2BB37E7300106C44 /* FestivalView.swift in Sources */,
 				C28998512BA2FCAC005A681E /* PlanningService.swift in Sources */,
 				C22279242BAB629F00B9B55C /* AddHousingOfferView.swift in Sources */,
 				C22ED5322BB2FBA400106C44 /* AnimateAvatar.swift in Sources */,
 				C289983A2BA226A6005A681E /* Decoration+SwiftUI.swift in Sources */,
-				BFB04CEF2BA9DF8900055D58 /* SignupFestivalView.swift in Sources */,
+				C22ED5862BB37E8000106C44 /* PosteService.swift in Sources */,
+				C22ED5792BB37E7300106C44 /* CircularProgressView.swift in Sources */,
 				C2BF7A692BA5D6B900CB30BA /* PostView.swift in Sources */,
 				C22ED52B2BB2291700106C44 /* FAQView.swift in Sources */,
 				C28998392BA226A6005A681E /* CalendarView.swift in Sources */,
 				C22ED5272BB2291700106C44 /* ProfileView.swift in Sources */,
 				C2E592172BADD6C700DA3136 /* HousingCell.swift in Sources */,
 				C222790A2BAB5B8500B9B55C /* HousingViewModel.swift in Sources */,
+				C22ED5772BB37E7300106C44 /* FestivalService.swift in Sources */,
 				C28998552BA30554005A681E /* CalendarViewModel.swift in Sources */,
-				BF51A9262BA4900600D6188B /* FestivalService.swift in Sources */,
 				C2BF7A6C2BA5ED2600CB30BA /* CommentView.swift in Sources */,
 				C28997E22BA0974D005A681E /* ContentView.swift in Sources */,
 				C289981D2BA0994D005A681E /* LoginView.swift in Sources */,
 				C22ED5262BB2291700106C44 /* LogoOverlayView.swift in Sources */,
 				C22ED52D2BB22A4900106C44 /* VideoBackGroundView.swift in Sources */,
 				C28998142BA09804005A681E /* AuthToken.swift in Sources */,
+				C22ED5762BB37E7300106C44 /* Festival.swift in Sources */,
 				C2BF7A6E2BA5F57200CB30BA /* CommentInputView.swift in Sources */,
+				C22ED5782BB37E7300106C44 /* FestivalViewModel.swift in Sources */,
 				C222790C2BAB5BCD00B9B55C /* HousingView.swift in Sources */,
 				C289986E2BA48DC8005A681E /* PostDetailView.swift in Sources */,
 				C22ED5292BB2291700106C44 /* HouseView.swift in Sources */,
 				C28998242BA1A22D005A681E /* CustomButton.swift in Sources */,
-				BF51A9212BA48B0B00D6188B /* FestivalViewModel.swift in Sources */,
-				BFB04CF12BA9E8FF00055D58 /* CircularProgressView.swift in Sources */,
-				BF51A9342BA4B02000D6188B /* PosteViewModel.swift in Sources */,
-				BF51A91F2BA4897100D6188B /* Festival.swift in Sources */,
 				C289981F2BA09B25005A681E /* RegisterViewModel.swift in Sources */,
 				C28998872BA4D40E005A681E /* ZombieWalking.swift in Sources */,
 				C22ED52A2BB2291700106C44 /* ContactUsView.swift in Sources */,
@@ -943,13 +951,16 @@
 				C22279082BAB5B6000B9B55C /* Housing.swift in Sources */,
 				C2E5921E2BADF7C500DA3136 /* SoireesListView.swift in Sources */,
 				C28998172BA0989C005A681E /* AuthService.swift in Sources */,
+				C22ED5852BB37E8000106C44 /* Poste.swift in Sources */,
+				C22ED57B2BB37E7300106C44 /* SignupFestivalView.swift in Sources */,
 				C28998762BA4986D005A681E /* VCard.swift in Sources */,
 				C28997E02BA0974D005A681E /* Projet_IOS_Ig4App.swift in Sources */,
+				C22ED5872BB37E8000106C44 /* PosteViewModel.swift in Sources */,
 				C28998452BA2E961005A681E /* APIManager.swift in Sources */,
-				BF51A9322BA4B00A00D6188B /* Poste.swift in Sources */,
 				C22ED52F2BB22ABC00106C44 /* BackGroundView.swift in Sources */,
 				C289982E2BA22128005A681E /* DatePickerController.swift in Sources */,
 				C289986A2BA48C74005A681E /* ForumService.swift in Sources */,
+				C22ED5882BB37E8000106C44 /* PosteView.swift in Sources */,
 				C28998652BA48AC2005A681E /* Comment.swift in Sources */,
 				C2BF7A8F2BA9EAA700CB30BA /* EventViewModel.swift in Sources */,
 				C2BF7A8D2BA9E8D700CB30BA /* Soiree.swift in Sources */,
@@ -960,8 +971,6 @@
 				C289986C2BA48D76005A681E /* FormView.swift in Sources */,
 				C22279272BAB63FA00B9B55C /* HousingService.swift in Sources */,
 				C28998122BA097EE005A681E /* User.swift in Sources */,
-				BF51A9362BA4B03100D6188B /* PosteView.swift in Sources */,
-				BF51A9232BA48B5B00D6188B /* FestivalView.swift in Sources */,
 				C22ED5312BB22BD600106C44 /* MailView.swift in Sources */,
 				C28998702BA48DE2005A681E /* NewPostView.swift in Sources */,
 				C289988C2BA4DACF005A681E /* AccueilView.swift in Sources */,
@@ -1129,10 +1138,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Projet_IOS_Ig4/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Z3AQFUWRS9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1148,7 +1157,6 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "vincent.Projet-IOS-Ig4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1160,10 +1168,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Projet_IOS_Ig4/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Z3AQFUWRS9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1179,7 +1187,6 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "vincent.Projet-IOS-Ig4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1304,7 +1311,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BF51A9272BA4AAF000D6188B /* XCRemoteSwiftPackageReference "CalendarKit" */ = {
+		C28998272BA2208E005A681E /* XCRemoteSwiftPackageReference "CalendarKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/richardtop/CalendarKit.git";
 			requirement = {
@@ -1339,9 +1346,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BF51A9282BA4AB6100D6188B /* CalendarKit */ = {
+		C289982F2BA22258005A681E /* CalendarKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BF51A9272BA4AAF000D6188B /* XCRemoteSwiftPackageReference "CalendarKit" */;
+			package = C28998272BA2208E005A681E /* XCRemoteSwiftPackageReference "CalendarKit" */;
 			productName = CalendarKit;
 		};
 		C289984A2BA2F106005A681E /* KeychainSwift */ = {
