@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct Projet_IOS_Ig4App: App {
+    init(){
+        _ = ForumViewModel.shared
+        _ = CalendarViewModel.shared
+        _ = HousingViewModel.shared
+        _ = EventViewModel.shared
+        
+        SessionManager.shared.refreshUserDetails()
+    }
     var body: some Scene {
         WindowGroup {
-            SignupFestivalView(festivalName: "Sample Festival", startDate: "01/01/2024", endDate: "03/01/2024")
+            ContentView()
         }
     }
 }

@@ -6,27 +6,41 @@
 //
 
 import SwiftUI
+import AVFoundation
+
 
 struct ContentView: View {
-    var images : [String] = ["house","magnifyingglass","plus","person","loupe"]
+    @State private var showNextView = false
+    var images : [String] = ["house","pencil.and.list.clipboard","calendar","message","person"]
     @State var selected = "house"
     @Namespace private var namespace
+    @ObservedObject private var sessionManager = SessionManager.shared
+
     var window: UIWindow?
     var body: some View {
         ZStack{
-            //Switch Content Here
-            if selected == "person" {
-                LoginView()
-            }else if selected == "plus" {
-                CalendarKitView()
-            }else if selected == "magnifyingglass" {
-                CalendarView()
-            }else if selected == "loupe" {
-                CalendarContainerView()
+            if !showNextView {
+                           // Background Image with Enter Button
+                           BackgroundView(showNextView: $showNextView)
+            } else {
+                if let _ = sessionManager.user {
+                    // If user is connected, show the main view
+                    if selected == "person" {
+                        ProfileView()
+                    }else if selected == "calendar" {
+                        CalendarKitView()
+                    }else if selected == "pencil.and.list.clipboard" {
+                        HousingView()
+                    }else if selected == "message" {
+                        ForumView()
+                    }else{
+                        HousingView()
+                    }
+                        navBar
+                } else {
+                    LoginView()
+                }
             }
-
-            navBar
-
         }.edgesIgnoringSafeArea(.bottom)
         
     }
@@ -104,5 +118,3 @@ extension ContentView{
 #Preview {
     ContentView().preferredColorScheme(.light)
 }
-
-

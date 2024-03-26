@@ -22,8 +22,11 @@ struct LoginView: View {
         NavigationStack {
             VStack {
                 if isLoading {
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle())
+                    ZombieWalkingAnimationView()
+                        .frame(width: 500, height: 500)
+                        .padding()
+                    //ProgressView()
+                       // .progressViewStyle(CircularProgressViewStyle())
                         .padding()
                 } else {
                     TextField("Email", text: $viewModel.email)
@@ -46,14 +49,22 @@ struct LoginView: View {
                     Alert(title: Text("Message"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
                 }.onAppear {
                     viewModel.onLoginSuccess = {
-                        isLoading = false // Arrête le chargement
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                        // Ce code est exécuté après un délai de 2 secondes
+                            isLoading = false // Arrête le chargement
+                            }
+                    
                         alertMessage = "Connexion réussie"
                         showingAlert = true
                         // Naviguez vers l'écran suivant ou mettez à jour l'état de l'interface utilisateur ici
                     }
                     
                     viewModel.onLoginFailure = { error in
-                        isLoading = false // Arrête le chargement
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                        // Ce code est exécuté après un délai de 2 secondes
+                            isLoading = false // Arrête le chargement
+                            }
+        
                         alertMessage = "Erreur de connexion: \(error.localizedDescription)"
                         showingAlert = true
                         // Affichez une alerte ou mettez à jour l'interface utilisateur en conséquence

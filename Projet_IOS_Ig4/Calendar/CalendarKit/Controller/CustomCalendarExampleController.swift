@@ -5,39 +5,6 @@ import CalendarKit
 final class CustomCalendarExampleController: DayViewController {
     //Example of user triggered event
     //Can be delet
-    var data = [["Zone 4",
-                 "New York, 5th avenue"],
-
-                ["Workout",
-                 "Tufteparken"],
-
-                ["Meeting with Alex",
-                 "Home",
-                 "Oslo, Tjuvholmen"],
-
-                ["Beach Volleyball",
-                 "Ipanema Beach",
-                 "Rio De Janeiro"],
-
-                ["WWDC",
-                 "Moscone West Convention Center",
-                 "747 Howard St"],
-
-                ["Google I/O",
-                 "Shoreline Amphitheatre",
-                 "One Amphitheatre Parkway"],
-
-                ["✈️️ to Svalbard ❄️️❄️️❄️️❤️️",
-                 "Oslo Gardermoen"],
-
-                ["💻📲 Developing CalendarKit",
-                 "🌍 Worldwide"],
-
-                ["Software Development Lecture",
-                 "Mikpoli MB310",
-                 "Craig Federighi"],
-
-    ]
     var creneaux: [Creneau] = []
 
     
@@ -106,64 +73,36 @@ final class CustomCalendarExampleController: DayViewController {
                 }
             case .failure(let error):
                 print("Erreur lors de la récupération des créneaux: \(error)")
+                print("voici les creneaux ")
+                print(PlanningService.shared.creneau)
             }
         }
     }
     
-    func transformCreneauToEvent(_ creneau: Creneau) -> Event {
+    func transformCreneauToEvent(_ creneau: Creneau) -> Event? {
         let event = Event()
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" // Assurez-vous que ce format correspond à celui de vos créneaux
         dateFormatter.timeZone = TimeZone(identifier: "Europe/Paris") // Ajustez selon le fuseau horaire des créneaux
         
-        if let start = dateFormatter.date(from: creneau.timeStart),
-           let end = dateFormatter.date(from: creneau.timeEnd) {
-            event.dateInterval = DateInterval(start: start, end: end)
-        }
-        
+
+        guard let start = dateFormatter.date(from: creneau.timeStart),
+                  let end = dateFormatter.date(from: creneau.timeEnd),
+                  start < end else {
+                print("Erreur: Les dates de début et de fin sont invalides ou la date de début est après la date de fin.")
+                return nil // Retourne nil si les dates ne sont pas valides
+            }
+            
+        event.dateInterval = DateInterval(start: start.addingTimeInterval(30), end: end)
         // Personnalisez ici avec les détails de votre créneau
-        event.text = "Creneau: \(creneau.id)\nDebut: \(creneau.timeStart)\nFin: \(creneau.timeEnd)"
+        event.text = creneau.name
         event.color = colors.randomElement() ?? .gray // Choisissez une couleur par défaut ou selon une logique spécifique
         event.isAllDay = false // Ou true si c'est un événement sur toute la journée
+        event.lineBreakMode = .byTruncatingTail
         // event.lineBreakMode et event.userInfo peuvent être configurés si nécessaire
         
         return event
-    }
-
-    
-    // Crée aléatoirement un ensemble d'événements pour une date spécifique
-    // Can be delete
-    private func generateEventsForDate(_ date: Date) -> [EventDescriptor] {
-        var workingDate = Calendar.current.date(byAdding: .hour, value: Int.random(in: 1...15), to: date)!
-        var events = [Event]()
-
-        for i in 0...4 {
-            let event = Event()
-
-            let duration = Int.random(in: 60 ... 160)
-            event.dateInterval = DateInterval(start: workingDate, duration: TimeInterval(duration * 60))
-
-            var info = data.randomElement() ?? []
-
-            let timezone = dayView.calendar.timeZone
-            print(timezone)
-
-            info.append(dateIntervalFormatter.string(from: event.dateInterval.start, to: event.dateInterval.end))
-            event.text = info.reduce("", {$0 + $1 + "\n"})
-            event.color = colors.randomElement() ?? .red
-            event.isAllDay = Bool.random()
-            event.lineBreakMode = .byTruncatingTail
-
-            events.append(event)
-
-            let nextOffset = Int.random(in: 40 ... 250)
-            workingDate = Calendar.current.date(byAdding: .minute, value: nextOffset, to: workingDate)!
-            event.userInfo = String(i)
-        }
-
-        print("Events for \(date)")
-        return events
     }
 
     // MARK: DayViewDelegate
@@ -225,31 +164,12 @@ final class CustomCalendarExampleController: DayViewController {
         print("Did long press timeline at date \(date)")
         // Cancel editing current event and start creating a new one
         endEventEditing()
-        let event = generateEventNearDate(date)
         print("Creating a new event")
-        create(event: event, animated: true)
-        createdEvent = event
+        //create(event: event, animated: true)
+        //createdEvent = event
     }
     
     
-    // Génère un nouvel événement près d'une date spécifiée.
-    private func generateEventNearDate(_ date: Date) -> EventDescriptor {
-        let duration = (60...220).randomElement()!
-        let startDate = Calendar.current.date(byAdding: .minute, value: -Int(Double(duration) / 2), to: date)!
-        let event = Event()
-
-        event.dateInterval = DateInterval(start: startDate, duration: TimeInterval(duration * 60))
-
-        var info = data.randomElement()!
-
-        info.append(dateIntervalFormatter.string(from: event.dateInterval)!)
-        event.text = info.reduce("", {$0 + $1 + "\n"})
-        event.color = colors.randomElement()!
-        event.editedEvent = event
-
-        return event
-    }
-
     
     override func dayView(dayView: DayView, didUpdate event: EventDescriptor) {
         print("did finish editing \(event)")

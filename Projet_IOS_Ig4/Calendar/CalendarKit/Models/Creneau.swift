@@ -20,15 +20,24 @@ struct Creneau: Codable, Hashable {
     var id: Int
     var timeStart: String
     var timeEnd: String
+    var name: String
     var idFestival: Int
+    var description: String
+    var isReferent: Bool?
+    var jeu:String?
     
     enum CodingKeys: String, CodingKey {
         case id = "idCreneau"
         case timeStart = "timeStart"
         case timeEnd = "timeEnd"
         case idFestival = "idFestival"
+        case name = "name"
+        case description = "description"
+        case isReferent = "isReferent"
+        case jeu = "Jeux"
     }
     
     
     
 }
+
