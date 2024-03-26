@@ -77,12 +77,25 @@ struct SignupFestivalView: View {
     var body: some View {
         if let festival = festivalViewModel.festival, !postes.isEmpty && !creneaux.isEmpty {
             ScrollView(.vertical) {
-                VStack(alignment: .leading, spacing: 20) {
+                VStack(alignment: .leading, spacing: 10) {
                     // Festival information
                     Text(festival.name)
                         .font(.title)
                         .fontWeight(.bold)
                     Text("Du \(DateUtils.formatDate(festival.dateDebut)!) au \(DateUtils.formatDate(festival.dateFin)!)")
+                    
+                    Divider()
+                        .padding(.vertical, 20)
+                    
+                    // Personnal informations
+                    HStack {
+                        Spacer()
+                        Text("Informations personnelles")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .padding(.bottom, 15)
+                        Spacer()
+                    }
                     
                     // Tee shirt size selection
                     HStack() {
@@ -101,10 +114,17 @@ struct SignupFestivalView: View {
                     // Vegetarian selection
                     Toggle("Vegetarien", isOn: $isVegetarian)
                     
+                    Divider()
+                        .padding(.vertical, 20)
+                    
                     // Meal selection
-                    Text("Choix des repas")
-                        .font(.title2)
-                        .fontWeight(.bold)
+                    HStack {
+                        Spacer()
+                        Text("Choix des repas")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                        Spacer()
+                    }
                     
                     ForEach(creneauxSeparated.indices, id: \.self) { index in
                         let tuple = creneauxSeparated[index]
@@ -131,11 +151,18 @@ struct SignupFestivalView: View {
                         }
                         .padding(.vertical)
                     }
-
+                    
+                    Divider()
+                        .padding(.vertical, 20)
+                    
                     // Postes selection
-                    Text("Choix des postes")
-                        .font(.title2)
-                        .fontWeight(.bold)
+                    HStack {
+                        Spacer()
+                        Text("Choix des postes")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                        Spacer()
+                    }
                     
                     ForEach(creneauxSeparated.indices, id: \.self) { index in
                         let tuple = creneauxSeparated[index]
@@ -146,6 +173,7 @@ struct SignupFestivalView: View {
                         Text(day)
                             .font(.title3)
                             .fontWeight(.bold)
+                            .padding(.top, 15)
                         
                         ScrollView(.horizontal) {
                             VStack {
@@ -201,6 +229,7 @@ struct SignupFestivalView: View {
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     }
+                    .padding(.all, 20)
                 }
                 .padding()
             }
