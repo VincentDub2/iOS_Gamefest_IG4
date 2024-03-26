@@ -69,5 +69,21 @@ class FestivalService {
             }
         }
     }
+    
+    func addVolunteer(data: IsVolunteer, completion: @escaping (Result<IsVolunteer, Error>) -> Void) {
+        let endpoint = "/festivals/\(data.idFestival)/volunteers"
+        
+        APIManager.requestPOST(endpoint: endpoint, parameters: data.dictionary!) { (result: Result<IsVolunteer, AFError>) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let response):
+                    completion(.success(response))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
+
 
 }

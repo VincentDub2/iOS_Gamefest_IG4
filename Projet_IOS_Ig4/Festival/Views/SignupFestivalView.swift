@@ -40,6 +40,13 @@ struct EspaceInfo: Decodable {
 struct InscriptionInfo: Decodable {
 }
 
+struct IsVolunteer: Encodable, Decodable {
+    var sizeTeeShirt: String
+    var isVege: Bool
+    var idUser: String
+    var idFestival: Int
+}
+
 class FestivalState: ObservableObject {
     @Published var creneauxEspaces: [CreneauEspace] = []
 }
@@ -220,8 +227,16 @@ struct SignupFestivalView: View {
                     
                     // Signup button
                     Button(action: {
-                        print("Signup button tapped")
-                    }) {
+                        let volunteerData = IsVolunteer(sizeTeeShirt: self.teeShirtSize, isVege: self.isVegetarian, idUser: "3b2b8986-7496-4b06-8474-549c4dd1af47", idFestival: 2)
+                        festivalViewModel.registerVolunteer(data: volunteerData) { success, error in
+                            if success {
+                                print("Inscription réussie")
+                            } else {
+                                print("Erreur à l'inscription")
+                            }
+                        }
+                    })
+                    {
                         Text("Je m'inscris au festival")
                             .padding()
                             .frame(maxWidth: .infinity)

@@ -67,4 +67,17 @@ class FestivalViewModel: ObservableObject {
         // Check if the given poste is selected for the creneau.
         return userSelections[creneauId]?.idPoste == poste.idPoste
     }
+    
+    func registerVolunteer(data: IsVolunteer, completion: @escaping (Bool, Error?) -> Void) {
+        festivalService.addVolunteer(data: data) { result in
+            switch result {
+            case .success(_):
+                // Handle success
+                completion(true, nil)
+            case .failure(let error):
+                // Handle error
+                completion(false, error)
+            }
+        }
+    }
 }
