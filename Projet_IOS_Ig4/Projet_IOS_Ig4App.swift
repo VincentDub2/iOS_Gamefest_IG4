@@ -12,6 +12,7 @@ struct Projet_IOS_Ig4App: App {
     init(){
         _ = ForumViewModel.shared
         _ = CalendarViewModel.shared
+        SessionManager.shared.refreshUserDetails()
     }
     var body: some Scene {
         WindowGroup {
