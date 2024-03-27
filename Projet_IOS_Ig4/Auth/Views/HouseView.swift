@@ -126,7 +126,7 @@ struct HouseView: View {
                         }
                         .padding([.horizontal, .bottom])
                     }
-                    .frame(height: 160)
+                    .frame(height: 150)
                     Text("Jeux Disponibles")
                                         .font(.headline)
                                         .padding(.vertical)
@@ -158,7 +158,7 @@ struct HouseView: View {
                                     .frame(height: 120) // Ajuste cette hauteur selon tes besoins
                                 }
                 
-                .navigationTitle("Festivals")
+                .navigationTitle("Accueil")
                 .onAppear {
                     loadFestivals()
                     eventViewModel.loadUpcomingEvents()
