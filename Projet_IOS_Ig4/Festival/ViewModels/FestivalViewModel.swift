@@ -87,9 +87,7 @@ class FestivalViewModel: ObservableObject {
             if let creneauEspace = creneauxEspaces.first(where: { $0.idCreneau == creneauId && $0.espace.name == poste.name }) {
                 group.enter()
                 
-                // Increment the current capacity
-                let newCapacity = creneauEspace.currentCapacity + 1
-                festivalService.updateCreneauEspace(idCreneauEspace: creneauEspace.idCreneauEspace, newCapacity: newCapacity) { [self] success in
+                festivalService.updateCreneauEspace(idCreneauEspace: creneauEspace.idCreneauEspace, newCapacity: creneauEspace.currentCapacity) { [self] success in
                     if success {
                         // Add an inscription for this creneauEspace
                         let inscriptionData = InscriptionRequest(idUser: SessionManager.shared.user!.id, idCreneauEspace: creneauEspace.idCreneauEspace)
