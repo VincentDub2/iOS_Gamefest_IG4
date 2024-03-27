@@ -80,4 +80,42 @@ class FestivalViewModel: ObservableObject {
             }
         }
     }
+    
+    func updateSelectedCreneauxAndRegister(completion: @escaping (Bool, Error?) -> Void) {
+        let group = DispatchGroup()
+        var encounteredError: Error?
+        
+        for (creneauId, poste) in userSelections {
+            if let creneauEspace = creneauxEspaces.first(where: { $0.idCreneau == creneauId && $0.espace.name == poste.name }) {
+                group.enter()
+                
+                // Increment the current capacity
+                let newCapacity = creneauEspace.currentCapacity + 1
+                festivalService.updateCreneauEspace(idCreneauEspace: creneauEspace.idCreneauEspace, newCapacity: newCapacity) { [self] success in
+                    if success {
+                        // Add an inscription for this creneauEspace
+                        let inscriptionData = InscriptionRequest(idUser: SessionManager.shared.user!.id, idCreneauEspace: creneauEspace.idCreneauEspace)
+                        festivalService.addInscription(data: inscriptionData) { success in
+                            if !success {
+                                encounteredError = NSError(domain: "", code: 1, userInfo: [NSLocalizedDescriptionKey: "Failed to add inscription."])
+                            }
+                            group.leave()
+                        }
+                    } else {
+                        encounteredError = NSError(domain: "", code: 1, userInfo: [NSLocalizedDescriptionKey: "Failed to update capacity."])
+                        group.leave()
+                    }
+                }
+            }
+        }
+        
+        group.notify(queue: .main) {
+            if let error = encounteredError {
+                completion(false, error)
+            } else {
+                completion(true, nil)
+            }
+        }
+    }
+
 }

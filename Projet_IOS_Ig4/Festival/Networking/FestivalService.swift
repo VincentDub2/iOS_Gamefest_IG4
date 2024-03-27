@@ -22,6 +22,17 @@ struct CreneauFestivalModel: Codable, Hashable {
     }
 }
 
+struct CreneauEspaceUpdate: Encodable, Decodable {
+    let currentCapacity: Int
+}
+
+struct InscriptionRequest: Encodable, Decodable {
+    let idUser: String
+    let idCreneauEspace: Int
+    var isFlexible: Bool = false
+}
+
+
 class FestivalService {
     
     func fetchFestival(completion: @escaping (Result<FestivalModel, Error>) -> Void) {
@@ -100,5 +111,34 @@ class FestivalService {
         }
     }
 
+    func updateCreneauEspace(idCreneauEspace: Int, newCapacity: Int, completion: @escaping (Bool) -> Void) {
+        let endpoint = "/creneauEspaces/\(idCreneauEspace)"
+        let parameters = CreneauEspaceUpdate(currentCapacity: newCapacity)
+        
+        APIManager.requestPUT(endpoint: endpoint, parameters: parameters.dictionary!) { (result: Result<CreneauEspaceUpdate, AFError>) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    completion(true)
+                case .failure:
+                    completion(false)
+                }
+            }
+        }
+    }
 
+    func addInscription(data: InscriptionRequest, completion: @escaping (Bool) -> Void) {
+        let endpoint = "/inscriptions"
+        
+        APIManager.requestPOST(endpoint: endpoint, parameters: data.dictionary!) { (result: Result<InscriptionRequest, AFError>) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    completion(true)
+                case .failure:
+                    completion(false)
+                }
+            }
+        }
+    }
 }

@@ -228,10 +228,17 @@ struct SignupFestivalView: View {
                         
                         // Signup button
                         Button(action: {
-                            let volunteerData = IsVolunteer(sizeTeeShirt: self.teeShirtSize, isVege: self.isVegetarian, idUser: "3b2b8986-7496-4b06-8474-549c4dd1af47", idFestival: 2)
+                            let volunteerData = IsVolunteer(sizeTeeShirt: self.teeShirtSize, isVege: self.isVegetarian, idUser: SessionManager.shared.user!.id, idFestival: 2)
                             festivalViewModel.registerVolunteer(data: volunteerData) { success, error in
                                 if success {
                                     print("Inscription réussie")
+                                    festivalViewModel.updateSelectedCreneauxAndRegister { success, error in
+                                        if success {
+                                            print("All updates and inscriptions succeeded.")
+                                        } else {
+                                            print("An error occurred: \(error?.localizedDescription ?? "Unknown error")")
+                                        }
+                                    }
                                 } else {
                                     print("Erreur à l'inscription")
                                 }
