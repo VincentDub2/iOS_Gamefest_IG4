@@ -62,6 +62,7 @@ struct SignupFestivalView: View {
     @State private var isVegetarian: Bool = false
     @State private var lunchChoices: [String: Bool] = [:]
     @State private var dinnerChoices: [String: Bool] = [:]
+    @Environment(\.presentationMode) var presentationMode
     
     var festivalId: Int
         
@@ -90,7 +91,6 @@ struct SignupFestivalView: View {
     
     var body: some View {
         if let festival = festivalViewModel.festival, !postes.isEmpty && !creneaux.isEmpty {
-            NavigationView {
                 ScrollView(.vertical) {
                     VStack(alignment: .leading, spacing: 10) {
                         // Festival information
@@ -242,6 +242,7 @@ struct SignupFestivalView: View {
                                     festivalViewModel.updateSelectedCreneauxAndRegister { success, error in
                                         if success {
                                             print("All updates and inscriptions succeeded.")
+                                            self.presentationMode.wrappedValue.dismiss()
                                         } else {
                                             print("An error occurred: \(error?.localizedDescription ?? "Unknown error")")
                                         }
@@ -262,9 +263,6 @@ struct SignupFestivalView: View {
                         .padding(.top, 20)
                     }
                     .padding()
-                }
-                .navigationTitle("Inscription à un festival")
-                .navigationBarTitleDisplayMode(.inline)
             }
         } else {
             ProgressView("Chargement du festival...")
