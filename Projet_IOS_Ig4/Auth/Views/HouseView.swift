@@ -47,6 +47,7 @@ struct HouseView: View {
     @State private var searchQuery = ""
     @State private var festivals = [Festival]()
     @State private var selectedFestivalId: Int? = nil
+    @ObservedObject var eventViewModel = EventViewModel.shared // Pour les événements
     var festivalViewModel = FestivalViewModel.shared
 
     var filteredFestivals: [Festival] {
@@ -98,10 +99,30 @@ struct HouseView: View {
                             }
                         }
                     }
+                    
+                    
+                    Text("Prochaines Soirées")
+                        .font(.headline)
+                        .padding(.vertical)
+
+                    // ScrollView horizontal pour les événements/soirées
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHStack(spacing: 10) {
+                            ForEach(eventViewModel.events) { event in
+                                NavigationLink(destination: EventDetailView(event: event)) {
+                                    SoireeView(event: event)
+                                }
+                            }
+                        }
+                        .padding([.horizontal, .bottom])
+                    }
+                    .frame(height: 200)
+                    
                 }
                 .navigationTitle("Festivals")
                 .onAppear {
                     loadFestivals()
+                    eventViewModel.loadUpcomingEvents()
                 }
             }
         }
