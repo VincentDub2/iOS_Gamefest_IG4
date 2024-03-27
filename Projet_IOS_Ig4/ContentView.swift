@@ -38,7 +38,7 @@ struct ContentView: View {
                         ForumView()
                             .padding(.bottom, 120)
                     }else{
-                        SignupFestivalView(festivalName: "Sample festival", startDate: "01/01/2024", endDate: "03/01/2024")
+                        HouseView()
                             .padding(.bottom, 120)
                     }
                         navBar

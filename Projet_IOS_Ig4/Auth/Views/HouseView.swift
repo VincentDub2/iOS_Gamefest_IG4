@@ -18,6 +18,29 @@ struct Festival: Codable, Identifiable {
     let isActive: Bool
     let dateDebut: Date
     let dateFin: Date
+    var isUserRegistered: Bool = false
+
+    enum CodingKeys: String, CodingKey {
+        case idFestival
+        case name
+        case address
+        case city
+        case postalCode
+        case country
+        case isActive
+        case dateDebut
+        case dateFin
+        // Exclut `isUserRegistered` du décodage et de l'encodage
+    }
+}
+
+struct VolunteersOfFestival: Codable {
+    let idUser: String
+    let user: User
+
+    struct User: Codable {
+        let id: String
+    }
 }
 
 struct HouseView: View {
@@ -58,7 +81,16 @@ struct HouseView: View {
                                 Text(festival.name)
                                     .font(.headline)
                                 Spacer()
+                                if festival.isUserRegistered {
+                                    Text("Inscrit").foregroundColor(.green)
+                                } else {
+                                    Button("S'inscrire") {
+                                        
+                                    }
+                                    .foregroundColor(.blue)
+                                }
                             }
+
                         }
                         if selectedFestivalId == festival.id {
                             VStack(alignment: .leading) {
@@ -101,6 +133,7 @@ struct HouseView: View {
                     let decodedResponse = try decoder.decode([Festival].self, from: data)
                     DispatchQueue.main.async {
                         self.festivals = decodedResponse
+                        self.checkUserRegistration(festivals: self.festivals, userId: SessionManager.shared.user!.id)
                     }
                 } catch {
                     print("Échec du décodage: \(error)")
@@ -120,6 +153,29 @@ struct HouseView: View {
             return formatter.string(from: date)
         }
     }
+
+extension HouseView {
+    func checkUserRegistration(festivals: [Festival], userId: String) {
+        for (index, festival) in festivals.enumerated() {
+            let url = URL(string: "https://montpellier-game-fest-volunteers-api-vincentdub2.vercel.app/festivals/\(festival.idFestival)/volunteers")!
+            
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                if let data = data {
+                    do {
+                        // Décoder la liste des bénévoles
+                        let volunteers = try JSONDecoder().decode([VolunteersOfFestival].self, from: data)
+                        // Vérifier si l'utilisateur courant est dans la liste des bénévoles
+                        DispatchQueue.main.async {
+                            self.festivals[index].isUserRegistered = volunteers.contains(where: { $0.user.id == userId })
+                        }
+                    } catch {
+                        print("Erreur lors du décodage des bénévoles: \(error)")
+                    }
+                }
+            }.resume()
+        }
+    }
+}
 
     struct HouseView_Previews: PreviewProvider {
         static var previews: some View {
