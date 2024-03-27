@@ -16,7 +16,7 @@ import Foundation
      },
  */
 
-struct Creneau: Codable{
+struct Creneau: Codable, Hashable {
     var id: Int
     var timeStart: String
     var timeEnd: String

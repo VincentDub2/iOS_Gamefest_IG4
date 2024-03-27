@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BFD6F4BF2BB3826400CFEA98 /* AnimateAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6F4BE2BB3826400CFEA98 /* AnimateAvatar.swift */; };
 		32C359962BB3FB670098541C /* AnimateAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C359952BB3FB670098541C /* AnimateAvatar.swift */; };
 		C22279082BAB5B6000B9B55C /* Housing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22279072BAB5B6000B9B55C /* Housing.swift */; };
 		C222790A2BAB5B8500B9B55C /* HousingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22279092BAB5B8500B9B55C /* HousingViewModel.swift */; };
@@ -24,6 +25,38 @@
 		C22ED52D2BB22A4900106C44 /* VideoBackGroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED52C2BB22A4900106C44 /* VideoBackGroundView.swift */; };
 		C22ED52F2BB22ABC00106C44 /* BackGroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED52E2BB22ABC00106C44 /* BackGroundView.swift */; };
 		C22ED5312BB22BD600106C44 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5302BB22BD600106C44 /* MailView.swift */; };
+		C22ED5762BB37E7300106C44 /* Festival.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED56B2BB37E7300106C44 /* Festival.swift */; };
+		C22ED5772BB37E7300106C44 /* FestivalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED56D2BB37E7300106C44 /* FestivalService.swift */; };
+		C22ED5782BB37E7300106C44 /* FestivalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED56F2BB37E7300106C44 /* FestivalViewModel.swift */; };
+		C22ED5792BB37E7300106C44 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5712BB37E7300106C44 /* CircularProgressView.swift */; };
+		C22ED57B2BB37E7300106C44 /* SignupFestivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5732BB37E7300106C44 /* SignupFestivalView.swift */; };
+		C22ED5852BB37E8000106C44 /* Poste.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED57C2BB37E8000106C44 /* Poste.swift */; };
+		C22ED5862BB37E8000106C44 /* PosteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED57E2BB37E8000106C44 /* PosteService.swift */; };
+		C22ED5872BB37E8000106C44 /* PosteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5802BB37E8000106C44 /* PosteViewModel.swift */; };
+		C22ED5882BB37E8000106C44 /* PosteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5822BB37E8000106C44 /* PosteView.swift */; };
+		C22ED58A2BB37F4300106C44 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5892BB37F4300106C44 /* DateUtils.swift */; };
+		C22ED5BB2BB3807000106C44 /* 404_cat.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5A32BB3807000106C44 /* 404_cat.riv */; };
+		C22ED5BC2BB3807000106C44 /* avatar_pack_use_case.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5A42BB3807000106C44 /* avatar_pack_use_case.riv */; };
+		C22ED5BD2BB3807000106C44 /* game_charecter.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5A52BB3807000106C44 /* game_charecter.riv */; };
+		C22ED5BE2BB3807000106C44 /* hey_ho_let's_go!.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5A62BB3807000106C44 /* hey_ho_let's_go!.riv */; };
+		C22ED5BF2BB3807000106C44 /* noonnap.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5A72BB3807000106C44 /* noonnap.riv */; };
+		C22ED5C02BB3807000106C44 /* sith_de_mayo.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5A82BB3807000106C44 /* sith_de_mayo.riv */; };
+		C22ED5C12BB3807000106C44 /* skin_demo_2.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5A92BB3807000106C44 /* skin_demo_2.riv */; };
+		C22ED5C22BB3807000106C44 /* button.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5AB2BB3807000106C44 /* button.riv */; };
+		C22ED5C32BB3807000106C44 /* check.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5AC2BB3807000106C44 /* check.riv */; };
+		C22ED5C42BB3807000106C44 /* chess.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5AD2BB3807000106C44 /* chess.riv */; };
+		C22ED5C52BB3807000106C44 /* chess2.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5AE2BB3807000106C44 /* chess2.riv */; };
+		C22ED5C62BB3807000106C44 /* chessactiontest.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5AF2BB3807000106C44 /* chessactiontest.riv */; };
+		C22ED5C72BB3807000106C44 /* confetti.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5B02BB3807000106C44 /* confetti.riv */; };
+		C22ED5C82BB3807000106C44 /* house.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5B12BB3807000106C44 /* house.riv */; };
+		C22ED5C92BB3807000106C44 /* light_like.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5B22BB3807000106C44 /* light_like.riv */; };
+		C22ED5CA2BB3807000106C44 /* menu_button.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5B32BB3807000106C44 /* menu_button.riv */; };
+		C22ED5CB2BB3807000106C44 /* new_file.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5B42BB3807000106C44 /* new_file.riv */; };
+		C22ED5CC2BB3807000106C44 /* nqueens.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5B52BB3807000106C44 /* nqueens.riv */; };
+		C22ED5CD2BB3807000106C44 /* shapes.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5B62BB3807000106C44 /* shapes.riv */; };
+		C22ED5CE2BB3807000106C44 /* start_button.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5B72BB3807000106C44 /* start_button.riv */; };
+		C22ED5CF2BB3807000106C44 /* switch.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5B82BB3807000106C44 /* switch.riv */; };
+		C22ED5D02BB3807000106C44 /* walking_working.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5B92BB3807000106C44 /* walking_working.riv */; };
 		C22ED5552BB3003D00106C44 /* 404_cat.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED53D2BB3000000106C44 /* 404_cat.riv */; };
 		C22ED5562BB3003D00106C44 /* avatar_pack_use_case.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED53E2BB3000000106C44 /* avatar_pack_use_case.riv */; };
 		C22ED5572BB3003D00106C44 /* game_charecter.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED53F2BB3000000106C44 /* game_charecter.riv */; };
@@ -118,6 +151,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BFD6F4BE2BB3826400CFEA98 /* AnimateAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateAvatar.swift; sourceTree = "<group>"; };
 		32C359952BB3FB670098541C /* AnimateAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateAvatar.swift; sourceTree = "<group>"; };
 		C22279072BAB5B6000B9B55C /* Housing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Housing.swift; sourceTree = "<group>"; };
 		C22279092BAB5B8500B9B55C /* HousingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingViewModel.swift; sourceTree = "<group>"; };
@@ -135,28 +169,60 @@
 		C22ED52C2BB22A4900106C44 /* VideoBackGroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoBackGroundView.swift; sourceTree = "<group>"; };
 		C22ED52E2BB22ABC00106C44 /* BackGroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackGroundView.swift; sourceTree = "<group>"; };
 		C22ED5302BB22BD600106C44 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
-		C22ED53D2BB3000000106C44 /* 404_cat.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = 404_cat.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/avatar/404_cat.riv; sourceTree = SOURCE_ROOT; };
-		C22ED53E2BB3000000106C44 /* avatar_pack_use_case.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = avatar_pack_use_case.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/avatar/avatar_pack_use_case.riv; sourceTree = SOURCE_ROOT; };
-		C22ED53F2BB3000000106C44 /* game_charecter.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = game_charecter.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/avatar/game_charecter.riv; sourceTree = SOURCE_ROOT; };
-		C22ED5402BB3000000106C44 /* hey_ho_let's_go!.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = "hey_ho_let's_go!.riv"; path = "Projet_IOS_Ig4/Logement/RiveAsset/avatar/hey_ho_let's_go!.riv"; sourceTree = SOURCE_ROOT; };
-		C22ED5412BB3000000106C44 /* noonnap.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = noonnap.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/avatar/noonnap.riv; sourceTree = SOURCE_ROOT; };
-		C22ED5422BB3000000106C44 /* sith_de_mayo.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = sith_de_mayo.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/avatar/sith_de_mayo.riv; sourceTree = SOURCE_ROOT; };
-		C22ED5432BB3000000106C44 /* skin_demo_2.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = skin_demo_2.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/avatar/skin_demo_2.riv; sourceTree = SOURCE_ROOT; };
-		C22ED5452BB3000000106C44 /* button.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = button.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/button.riv; sourceTree = SOURCE_ROOT; };
-		C22ED5462BB3000000106C44 /* check.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = check.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/check.riv; sourceTree = SOURCE_ROOT; };
-		C22ED5472BB3000000106C44 /* chess.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = chess.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/chess.riv; sourceTree = SOURCE_ROOT; };
-		C22ED5482BB3000000106C44 /* chess2.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = chess2.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/chess2.riv; sourceTree = SOURCE_ROOT; };
-		C22ED5492BB3000000106C44 /* chessactiontest.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = chessactiontest.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/chessactiontest.riv; sourceTree = SOURCE_ROOT; };
-		C22ED54A2BB3000000106C44 /* confetti.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = confetti.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/confetti.riv; sourceTree = SOURCE_ROOT; };
-		C22ED54B2BB3000000106C44 /* house.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = house.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/house.riv; sourceTree = SOURCE_ROOT; };
-		C22ED54C2BB3000000106C44 /* light_like.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = light_like.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/light_like.riv; sourceTree = SOURCE_ROOT; };
-		C22ED54D2BB3000000106C44 /* menu_button.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = menu_button.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/menu_button.riv; sourceTree = SOURCE_ROOT; };
-		C22ED54E2BB3000000106C44 /* new_file.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = new_file.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/new_file.riv; sourceTree = SOURCE_ROOT; };
-		C22ED54F2BB3000000106C44 /* nqueens.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = nqueens.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/nqueens.riv; sourceTree = SOURCE_ROOT; };
-		C22ED5502BB3000000106C44 /* shapes.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = shapes.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/shapes.riv; sourceTree = SOURCE_ROOT; };
-		C22ED5512BB3000000106C44 /* start_button.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = start_button.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/start_button.riv; sourceTree = SOURCE_ROOT; };
-		C22ED5522BB3000000106C44 /* switch.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = switch.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/switch.riv; sourceTree = SOURCE_ROOT; };
-		C22ED5532BB3000000106C44 /* walking_working.riv */ = {isa = PBXFileReference; lastKnownFileType = file; name = walking_working.riv; path = Projet_IOS_Ig4/Logement/RiveAsset/walking_working.riv; sourceTree = SOURCE_ROOT; };
+		C22ED56B2BB37E7300106C44 /* Festival.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Festival.swift; sourceTree = "<group>"; };
+		C22ED56D2BB37E7300106C44 /* FestivalService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FestivalService.swift; sourceTree = "<group>"; };
+		C22ED56F2BB37E7300106C44 /* FestivalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FestivalViewModel.swift; sourceTree = "<group>"; };
+		C22ED5712BB37E7300106C44 /* CircularProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		C22ED5732BB37E7300106C44 /* SignupFestivalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupFestivalView.swift; sourceTree = "<group>"; };
+		C22ED57C2BB37E8000106C44 /* Poste.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poste.swift; sourceTree = "<group>"; };
+		C22ED57E2BB37E8000106C44 /* PosteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosteService.swift; sourceTree = "<group>"; };
+		C22ED5802BB37E8000106C44 /* PosteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosteViewModel.swift; sourceTree = "<group>"; };
+		C22ED5822BB37E8000106C44 /* PosteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosteView.swift; sourceTree = "<group>"; };
+		C22ED5892BB37F4300106C44 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		C22ED58B2BB37FA500106C44 /* 404_cat.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = 404_cat.riv; sourceTree = "<group>"; };
+		C22ED58C2BB37FA500106C44 /* avatar_pack_use_case.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = avatar_pack_use_case.riv; sourceTree = "<group>"; };
+		C22ED58D2BB37FA500106C44 /* game_charecter.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = game_charecter.riv; sourceTree = "<group>"; };
+		C22ED58E2BB37FA500106C44 /* hey_ho_let's_go!.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = "hey_ho_let's_go!.riv"; sourceTree = "<group>"; };
+		C22ED58F2BB37FA500106C44 /* noonnap.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = noonnap.riv; sourceTree = "<group>"; };
+		C22ED5902BB37FA500106C44 /* sith_de_mayo.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = sith_de_mayo.riv; sourceTree = "<group>"; };
+		C22ED5912BB37FA500106C44 /* skin_demo_2.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = skin_demo_2.riv; sourceTree = "<group>"; };
+		C22ED5932BB37FA500106C44 /* button.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = button.riv; sourceTree = "<group>"; };
+		C22ED5942BB37FA500106C44 /* check.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = check.riv; sourceTree = "<group>"; };
+		C22ED5952BB37FA500106C44 /* chess.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = chess.riv; sourceTree = "<group>"; };
+		C22ED5962BB37FA500106C44 /* chess2.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = chess2.riv; sourceTree = "<group>"; };
+		C22ED5972BB37FA500106C44 /* chessactiontest.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = chessactiontest.riv; sourceTree = "<group>"; };
+		C22ED5982BB37FA500106C44 /* confetti.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = confetti.riv; sourceTree = "<group>"; };
+		C22ED5992BB37FA500106C44 /* house.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = house.riv; sourceTree = "<group>"; };
+		C22ED59A2BB37FA500106C44 /* light_like.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = light_like.riv; sourceTree = "<group>"; };
+		C22ED59B2BB37FA500106C44 /* menu_button.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_button.riv; sourceTree = "<group>"; };
+		C22ED59C2BB37FA500106C44 /* new_file.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = new_file.riv; sourceTree = "<group>"; };
+		C22ED59D2BB37FA500106C44 /* nqueens.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = nqueens.riv; sourceTree = "<group>"; };
+		C22ED59E2BB37FA500106C44 /* shapes.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = shapes.riv; sourceTree = "<group>"; };
+		C22ED59F2BB37FA500106C44 /* start_button.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = start_button.riv; sourceTree = "<group>"; };
+		C22ED5A02BB37FA500106C44 /* switch.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = switch.riv; sourceTree = "<group>"; };
+		C22ED5A12BB37FA500106C44 /* walking_working.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = walking_working.riv; sourceTree = "<group>"; };
+		C22ED5A32BB3807000106C44 /* 404_cat.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = 404_cat.riv; sourceTree = "<group>"; };
+		C22ED5A42BB3807000106C44 /* avatar_pack_use_case.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = avatar_pack_use_case.riv; sourceTree = "<group>"; };
+		C22ED5A52BB3807000106C44 /* game_charecter.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = game_charecter.riv; sourceTree = "<group>"; };
+		C22ED5A62BB3807000106C44 /* hey_ho_let's_go!.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = "hey_ho_let's_go!.riv"; sourceTree = "<group>"; };
+		C22ED5A72BB3807000106C44 /* noonnap.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = noonnap.riv; sourceTree = "<group>"; };
+		C22ED5A82BB3807000106C44 /* sith_de_mayo.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = sith_de_mayo.riv; sourceTree = "<group>"; };
+		C22ED5A92BB3807000106C44 /* skin_demo_2.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = skin_demo_2.riv; sourceTree = "<group>"; };
+		C22ED5AB2BB3807000106C44 /* button.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = button.riv; sourceTree = "<group>"; };
+		C22ED5AC2BB3807000106C44 /* check.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = check.riv; sourceTree = "<group>"; };
+		C22ED5AD2BB3807000106C44 /* chess.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = chess.riv; sourceTree = "<group>"; };
+		C22ED5AE2BB3807000106C44 /* chess2.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = chess2.riv; sourceTree = "<group>"; };
+		C22ED5AF2BB3807000106C44 /* chessactiontest.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = chessactiontest.riv; sourceTree = "<group>"; };
+		C22ED5B02BB3807000106C44 /* confetti.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = confetti.riv; sourceTree = "<group>"; };
+		C22ED5B12BB3807000106C44 /* house.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = house.riv; sourceTree = "<group>"; };
+		C22ED5B22BB3807000106C44 /* light_like.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = light_like.riv; sourceTree = "<group>"; };
+		C22ED5B32BB3807000106C44 /* menu_button.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_button.riv; sourceTree = "<group>"; };
+		C22ED5B42BB3807000106C44 /* new_file.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = new_file.riv; sourceTree = "<group>"; };
+		C22ED5B52BB3807000106C44 /* nqueens.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = nqueens.riv; sourceTree = "<group>"; };
+		C22ED5B62BB3807000106C44 /* shapes.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = shapes.riv; sourceTree = "<group>"; };
+		C22ED5B72BB3807000106C44 /* start_button.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = start_button.riv; sourceTree = "<group>"; };
+		C22ED5B82BB3807000106C44 /* switch.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = switch.riv; sourceTree = "<group>"; };
+		C22ED5B92BB3807000106C44 /* walking_working.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = walking_working.riv; sourceTree = "<group>"; };
 		C28997DC2BA0974D005A681E /* Projet_IOS_Ig4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Projet_IOS_Ig4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C28997DF2BA0974D005A681E /* Projet_IOS_Ig4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projet_IOS_Ig4App.swift; sourceTree = "<group>"; };
 		C28997E12BA0974D005A681E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -242,7 +308,6 @@
 		C22279032BAB5AF900B9B55C /* Logement */ = {
 			isa = PBXGroup;
 			children = (
-				C22ED5542BB3000000106C44 /* RiveAsset */,
 				C22279252BAB63DB00B9B55C /* HouseService */,
 				C22279062BAB5B2400B9B55C /* Views */,
 				C22279052BAB5B1800B9B55C /* ViewModels */,
@@ -287,39 +352,166 @@
 			path = HouseService;
 			sourceTree = "<group>";
 		};
-		C22ED5442BB3000000106C44 /* avatar */ = {
+		C22ED56C2BB37E7300106C44 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C22ED53D2BB3000000106C44 /* 404_cat.riv */,
-				C22ED53E2BB3000000106C44 /* avatar_pack_use_case.riv */,
-				C22ED53F2BB3000000106C44 /* game_charecter.riv */,
-				C22ED5402BB3000000106C44 /* hey_ho_let's_go!.riv */,
-				C22ED5412BB3000000106C44 /* noonnap.riv */,
-				C22ED5422BB3000000106C44 /* sith_de_mayo.riv */,
-				C22ED5432BB3000000106C44 /* skin_demo_2.riv */,
+				C22ED56B2BB37E7300106C44 /* Festival.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C22ED56E2BB37E7300106C44 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED56D2BB37E7300106C44 /* FestivalService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		C22ED5702BB37E7300106C44 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED56F2BB37E7300106C44 /* FestivalViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C22ED5742BB37E7300106C44 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED5712BB37E7300106C44 /* CircularProgressView.swift */,
+				C22ED5732BB37E7300106C44 /* SignupFestivalView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C22ED5752BB37E7300106C44 /* Festival */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED56C2BB37E7300106C44 /* Models */,
+				C22ED56E2BB37E7300106C44 /* Networking */,
+				C22ED5702BB37E7300106C44 /* ViewModels */,
+				C22ED5742BB37E7300106C44 /* Views */,
+			);
+			name = Festival;
+			path = Projet_IOS_Ig4/Festival;
+			sourceTree = SOURCE_ROOT;
+		};
+		C22ED57D2BB37E8000106C44 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED57C2BB37E8000106C44 /* Poste.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C22ED57F2BB37E8000106C44 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED57E2BB37E8000106C44 /* PosteService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		C22ED5812BB37E8000106C44 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED5802BB37E8000106C44 /* PosteViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C22ED5832BB37E8000106C44 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED5822BB37E8000106C44 /* PosteView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C22ED5842BB37E8000106C44 /* Poste */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED57D2BB37E8000106C44 /* Models */,
+				C22ED57F2BB37E8000106C44 /* Networking */,
+				C22ED5812BB37E8000106C44 /* ViewModels */,
+				C22ED5832BB37E8000106C44 /* Views */,
+			);
+			name = Poste;
+			path = Projet_IOS_Ig4/Poste;
+			sourceTree = SOURCE_ROOT;
+		};
+		C22ED5922BB37FA500106C44 /* avatar */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED58B2BB37FA500106C44 /* 404_cat.riv */,
+				C22ED58C2BB37FA500106C44 /* avatar_pack_use_case.riv */,
+				C22ED58D2BB37FA500106C44 /* game_charecter.riv */,
+				C22ED58E2BB37FA500106C44 /* hey_ho_let's_go!.riv */,
+				C22ED58F2BB37FA500106C44 /* noonnap.riv */,
+				C22ED5902BB37FA500106C44 /* sith_de_mayo.riv */,
+				C22ED5912BB37FA500106C44 /* skin_demo_2.riv */,
 			);
 			path = avatar;
 			sourceTree = "<group>";
 		};
-		C22ED5542BB3000000106C44 /* RiveAsset */ = {
+		C22ED5A22BB37FA500106C44 /* RiveAsset */ = {
 			isa = PBXGroup;
 			children = (
-				C22ED5442BB3000000106C44 /* avatar */,
-				C22ED5452BB3000000106C44 /* button.riv */,
-				C22ED5462BB3000000106C44 /* check.riv */,
-				C22ED5472BB3000000106C44 /* chess.riv */,
-				C22ED5482BB3000000106C44 /* chess2.riv */,
-				C22ED5492BB3000000106C44 /* chessactiontest.riv */,
-				C22ED54A2BB3000000106C44 /* confetti.riv */,
-				C22ED54B2BB3000000106C44 /* house.riv */,
-				C22ED54C2BB3000000106C44 /* light_like.riv */,
-				C22ED54D2BB3000000106C44 /* menu_button.riv */,
-				C22ED54E2BB3000000106C44 /* new_file.riv */,
-				C22ED54F2BB3000000106C44 /* nqueens.riv */,
-				C22ED5502BB3000000106C44 /* shapes.riv */,
-				C22ED5512BB3000000106C44 /* start_button.riv */,
-				C22ED5522BB3000000106C44 /* switch.riv */,
-				C22ED5532BB3000000106C44 /* walking_working.riv */,
+				C22ED5922BB37FA500106C44 /* avatar */,
+				C22ED5932BB37FA500106C44 /* button.riv */,
+				C22ED5942BB37FA500106C44 /* check.riv */,
+				C22ED5952BB37FA500106C44 /* chess.riv */,
+				C22ED5962BB37FA500106C44 /* chess2.riv */,
+				C22ED5972BB37FA500106C44 /* chessactiontest.riv */,
+				C22ED5982BB37FA500106C44 /* confetti.riv */,
+				C22ED5992BB37FA500106C44 /* house.riv */,
+				C22ED59A2BB37FA500106C44 /* light_like.riv */,
+				C22ED59B2BB37FA500106C44 /* menu_button.riv */,
+				C22ED59C2BB37FA500106C44 /* new_file.riv */,
+				C22ED59D2BB37FA500106C44 /* nqueens.riv */,
+				C22ED59E2BB37FA500106C44 /* shapes.riv */,
+				C22ED59F2BB37FA500106C44 /* start_button.riv */,
+				C22ED5A02BB37FA500106C44 /* switch.riv */,
+				C22ED5A12BB37FA500106C44 /* walking_working.riv */,
+			);
+			name = RiveAsset;
+			path = Projet_IOS_Ig4/RiveAsset;
+			sourceTree = "<group>";
+		};
+		C22ED5AA2BB3807000106C44 /* avatar */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED5A32BB3807000106C44 /* 404_cat.riv */,
+				C22ED5A42BB3807000106C44 /* avatar_pack_use_case.riv */,
+				C22ED5A52BB3807000106C44 /* game_charecter.riv */,
+				C22ED5A62BB3807000106C44 /* hey_ho_let's_go!.riv */,
+				C22ED5A72BB3807000106C44 /* noonnap.riv */,
+				C22ED5A82BB3807000106C44 /* sith_de_mayo.riv */,
+				C22ED5A92BB3807000106C44 /* skin_demo_2.riv */,
+			);
+			path = avatar;
+			sourceTree = "<group>";
+		};
+		C22ED5BA2BB3807000106C44 /* RiveAsset */ = {
+			isa = PBXGroup;
+			children = (
+				C22ED5AA2BB3807000106C44 /* avatar */,
+				C22ED5AB2BB3807000106C44 /* button.riv */,
+				C22ED5AC2BB3807000106C44 /* check.riv */,
+				C22ED5AD2BB3807000106C44 /* chess.riv */,
+				C22ED5AE2BB3807000106C44 /* chess2.riv */,
+				C22ED5AF2BB3807000106C44 /* chessactiontest.riv */,
+				C22ED5B02BB3807000106C44 /* confetti.riv */,
+				C22ED5B12BB3807000106C44 /* house.riv */,
+				C22ED5B22BB3807000106C44 /* light_like.riv */,
+				C22ED5B32BB3807000106C44 /* menu_button.riv */,
+				C22ED5B42BB3807000106C44 /* new_file.riv */,
+				C22ED5B52BB3807000106C44 /* nqueens.riv */,
+				C22ED5B62BB3807000106C44 /* shapes.riv */,
+				C22ED5B72BB3807000106C44 /* start_button.riv */,
+				C22ED5B82BB3807000106C44 /* switch.riv */,
+				C22ED5B92BB3807000106C44 /* walking_working.riv */,
 			);
 			path = RiveAsset;
 			sourceTree = "<group>";
@@ -327,6 +519,7 @@
 		C28997D32BA0974D005A681E = {
 			isa = PBXGroup;
 			children = (
+				C22ED5A22BB37FA500106C44 /* RiveAsset */,
 				C28997DE2BA0974D005A681E /* Projet_IOS_Ig4 */,
 				C28997EF2BA0974F005A681E /* Projet_IOS_Ig4Tests */,
 				C28997F92BA0974F005A681E /* Projet_IOS_Ig4UITests */,
@@ -347,6 +540,9 @@
 		C28997DE2BA0974D005A681E /* Projet_IOS_Ig4 */ = {
 			isa = PBXGroup;
 			children = (
+				C22ED5BA2BB3807000106C44 /* RiveAsset */,
+				C22ED5752BB37E7300106C44 /* Festival */,
+				C22ED5842BB37E8000106C44 /* Poste */,
 				C22ED51C2BB228AD00106C44 /* backgroundVideo.mp4 */,
 				C22279032BAB5AF900B9B55C /* Logement */,
 				C2BF7A852BA9E72800CB30BA /* Event */,
@@ -481,6 +677,7 @@
 		C289983E2BA2E827005A681E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C22ED5892BB37F4300106C44 /* DateUtils.swift */,
 				C28998442BA2E961005A681E /* APIManager.swift */,
 			);
 			path = Utils;
@@ -579,6 +776,7 @@
 		C2BF7A6A2BA5D9F600CB30BA /* components */ = {
 			isa = PBXGroup;
 			children = (
+				BFD6F4BE2BB3826400CFEA98 /* AnimateAvatar.swift */,
 				C2BF7A6B2BA5ED2600CB30BA /* CommentView.swift */,
 				C2BF7A6D2BA5F57200CB30BA /* CommentInputView.swift */,
 				32C359952BB3FB670098541C /* AnimateAvatar.swift */,
@@ -748,31 +946,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C22ED5552BB3003D00106C44 /* 404_cat.riv in Resources */,
-				C22ED5562BB3003D00106C44 /* avatar_pack_use_case.riv in Resources */,
-				C22ED5572BB3003D00106C44 /* game_charecter.riv in Resources */,
-				C22ED5582BB3003D00106C44 /* hey_ho_let's_go!.riv in Resources */,
-				C22ED5592BB3003D00106C44 /* noonnap.riv in Resources */,
-				C22ED55A2BB3003D00106C44 /* sith_de_mayo.riv in Resources */,
-				C22ED55B2BB3003D00106C44 /* skin_demo_2.riv in Resources */,
-				C22ED55C2BB3003D00106C44 /* button.riv in Resources */,
-				C22ED55D2BB3003D00106C44 /* check.riv in Resources */,
-				C22ED55E2BB3003D00106C44 /* chess.riv in Resources */,
-				C22ED55F2BB3003D00106C44 /* chess2.riv in Resources */,
-				C22ED5602BB3003D00106C44 /* chessactiontest.riv in Resources */,
-				C22ED5612BB3003D00106C44 /* confetti.riv in Resources */,
-				C22ED5622BB3003D00106C44 /* house.riv in Resources */,
-				C22ED5632BB3003D00106C44 /* light_like.riv in Resources */,
-				C22ED5642BB3003D00106C44 /* menu_button.riv in Resources */,
-				C22ED5652BB3003D00106C44 /* new_file.riv in Resources */,
-				C22ED5662BB3003D00106C44 /* nqueens.riv in Resources */,
-				C22ED5672BB3003D00106C44 /* shapes.riv in Resources */,
-				C22ED5682BB3003D00106C44 /* start_button.riv in Resources */,
-				C22ED5692BB3003D00106C44 /* switch.riv in Resources */,
-				C22ED56A2BB3003D00106C44 /* walking_working.riv in Resources */,
+				C22ED5D02BB3807000106C44 /* walking_working.riv in Resources */,
 				C28997E72BA0974E005A681E /* Preview Assets.xcassets in Resources */,
+				C22ED5BB2BB3807000106C44 /* 404_cat.riv in Resources */,
+				C22ED5C12BB3807000106C44 /* skin_demo_2.riv in Resources */,
+				C22ED5C42BB3807000106C44 /* chess.riv in Resources */,
+				C22ED5BE2BB3807000106C44 /* hey_ho_let's_go!.riv in Resources */,
+				C22ED5C92BB3807000106C44 /* light_like.riv in Resources */,
+				C22ED5BF2BB3807000106C44 /* noonnap.riv in Resources */,
+				C22ED5BC2BB3807000106C44 /* avatar_pack_use_case.riv in Resources */,
+				C22ED5C72BB3807000106C44 /* confetti.riv in Resources */,
+				C22ED5C32BB3807000106C44 /* check.riv in Resources */,
+				C22ED5BD2BB3807000106C44 /* game_charecter.riv in Resources */,
+				C22ED5CF2BB3807000106C44 /* switch.riv in Resources */,
+				C22ED5C82BB3807000106C44 /* house.riv in Resources */,
+				C22ED5CC2BB3807000106C44 /* nqueens.riv in Resources */,
 				C28997E42BA0974E005A681E /* Assets.xcassets in Resources */,
+				C22ED5C02BB3807000106C44 /* sith_de_mayo.riv in Resources */,
+				C22ED5CD2BB3807000106C44 /* shapes.riv in Resources */,
+				C22ED5C52BB3807000106C44 /* chess2.riv in Resources */,
 				C22ED51D2BB228AD00106C44 /* backgroundVideo.mp4 in Resources */,
+				C22ED5CB2BB3807000106C44 /* new_file.riv in Resources */,
+				C22ED5C22BB3807000106C44 /* button.riv in Resources */,
+				C22ED5CE2BB3807000106C44 /* start_button.riv in Resources */,
+				C22ED5CA2BB3807000106C44 /* menu_button.riv in Resources */,
+				C22ED5C62BB3807000106C44 /* chessactiontest.riv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -807,12 +1005,15 @@
 				C22279242BAB629F00B9B55C /* AddHousingOfferView.swift in Sources */,
 				32C359962BB3FB670098541C /* AnimateAvatar.swift in Sources */,
 				C289983A2BA226A6005A681E /* Decoration+SwiftUI.swift in Sources */,
+				C22ED5862BB37E8000106C44 /* PosteService.swift in Sources */,
+				C22ED5792BB37E7300106C44 /* CircularProgressView.swift in Sources */,
 				C2BF7A692BA5D6B900CB30BA /* PostView.swift in Sources */,
 				C22ED52B2BB2291700106C44 /* FAQView.swift in Sources */,
 				C28998392BA226A6005A681E /* CalendarView.swift in Sources */,
 				C22ED5272BB2291700106C44 /* ProfileView.swift in Sources */,
 				C2E592172BADD6C700DA3136 /* HousingCell.swift in Sources */,
 				C222790A2BAB5B8500B9B55C /* HousingViewModel.swift in Sources */,
+				C22ED5772BB37E7300106C44 /* FestivalService.swift in Sources */,
 				C28998552BA30554005A681E /* CalendarViewModel.swift in Sources */,
 				C2BF7A6C2BA5ED2600CB30BA /* CommentView.swift in Sources */,
 				C28997E22BA0974D005A681E /* ContentView.swift in Sources */,
@@ -820,7 +1021,9 @@
 				C22ED5262BB2291700106C44 /* LogoOverlayView.swift in Sources */,
 				C22ED52D2BB22A4900106C44 /* VideoBackGroundView.swift in Sources */,
 				C28998142BA09804005A681E /* AuthToken.swift in Sources */,
+				C22ED5762BB37E7300106C44 /* Festival.swift in Sources */,
 				C2BF7A6E2BA5F57200CB30BA /* CommentInputView.swift in Sources */,
+				C22ED5782BB37E7300106C44 /* FestivalViewModel.swift in Sources */,
 				C222790C2BAB5BCD00B9B55C /* HousingView.swift in Sources */,
 				C289986E2BA48DC8005A681E /* PostDetailView.swift in Sources */,
 				C22ED5292BB2291700106C44 /* HouseView.swift in Sources */,
@@ -833,12 +1036,17 @@
 				C22279082BAB5B6000B9B55C /* Housing.swift in Sources */,
 				C2E5921E2BADF7C500DA3136 /* SoireesListView.swift in Sources */,
 				C28998172BA0989C005A681E /* AuthService.swift in Sources */,
+				C22ED5852BB37E8000106C44 /* Poste.swift in Sources */,
+				C22ED57B2BB37E7300106C44 /* SignupFestivalView.swift in Sources */,
 				C28998762BA4986D005A681E /* VCard.swift in Sources */,
 				C28997E02BA0974D005A681E /* Projet_IOS_Ig4App.swift in Sources */,
+				C22ED5872BB37E8000106C44 /* PosteViewModel.swift in Sources */,
 				C28998452BA2E961005A681E /* APIManager.swift in Sources */,
 				C22ED52F2BB22ABC00106C44 /* BackGroundView.swift in Sources */,
+				BFD6F4BF2BB3826400CFEA98 /* AnimateAvatar.swift in Sources */,
 				C289982E2BA22128005A681E /* DatePickerController.swift in Sources */,
 				C289986A2BA48C74005A681E /* ForumService.swift in Sources */,
+				C22ED5882BB37E8000106C44 /* PosteView.swift in Sources */,
 				C28998652BA48AC2005A681E /* Comment.swift in Sources */,
 				C2BF7A8F2BA9EAA700CB30BA /* EventViewModel.swift in Sources */,
 				C2BF7A8D2BA9E8D700CB30BA /* Soiree.swift in Sources */,
@@ -854,6 +1062,7 @@
 				C289988C2BA4DACF005A681E /* AccueilView.swift in Sources */,
 				C22279222BAB620400B9B55C /* HousingDetailView.swift in Sources */,
 				C28998532BA3016C005A681E /* Creneau.swift in Sources */,
+				C22ED58A2BB37F4300106C44 /* DateUtils.swift in Sources */,
 				C2E592212BADF85800DA3136 /* EventDataService.swift in Sources */,
 				C28998812BA4C8E0005A681E /* testRive.swift in Sources */,
 			);

@@ -19,7 +19,6 @@ class EventDataService {
         
         return Future<[Soiree], Error> { promise in
             APIManager.requestGET(endpoint: endpoint) { (result: Result<[Soiree], AFError>) in
-                print(result)
                 switch result {
                 case .success(let soirees):
                     promise(.success(soirees))

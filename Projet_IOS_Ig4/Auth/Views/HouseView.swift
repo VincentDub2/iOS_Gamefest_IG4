@@ -18,12 +18,36 @@ struct Festival: Codable, Identifiable {
     let isActive: Bool
     let dateDebut: Date
     let dateFin: Date
+    var isUserRegistered: Bool = false
+
+    enum CodingKeys: String, CodingKey {
+        case idFestival
+        case name
+        case address
+        case city
+        case postalCode
+        case country
+        case isActive
+        case dateDebut
+        case dateFin
+        // Exclut `isUserRegistered` du décodage et de l'encodage
+    }
+}
+
+struct VolunteersOfFestival: Codable {
+    let idUser: String
+    let user: User
+
+    struct User: Codable {
+        let id: String
+    }
 }
 
 struct HouseView: View {
     @State private var searchQuery = ""
     @State private var festivals = [Festival]()
     @State private var selectedFestivalId: Int? = nil
+    var festivalViewModel = FestivalViewModel.shared
 
     var filteredFestivals: [Festival] {
         if searchQuery.isEmpty {
@@ -34,53 +58,54 @@ struct HouseView: View {
     }
 
     var body: some View {
-        NavigationView {
-            VStack {
-                // Barre de recherche
-                TextField("Rechercher un festival", text: $searchQuery)
-                    .padding(7)
-                    .background(Color(.systemGray6))
-                    .cornerRadius(8)
-                    .padding(.horizontal)
-                    .autocapitalization(.none)
-                    .disableAutocorrection(true)
-                
-                List(filteredFestivals) { festival in
-                    VStack {
-                        Button(action: {
-                            if selectedFestivalId == festival.id {
-                                selectedFestivalId = nil
-                            } else {
-                                selectedFestivalId = festival.id
+            NavigationView {
+                VStack {
+                    TextField("Festivals disponibles", text: $searchQuery)
+                        .padding(7)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(8)
+                        .padding(.horizontal)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+                    
+                    List(filteredFestivals) { festival in
+                        VStack(alignment: .leading) {
+                            Text(festival.name)
+                                .font(.headline)
+                                .onTapGesture {
+                                    selectedFestivalId = selectedFestivalId == festival.id ? nil : festival.id
+                                }
+                            if self.selectedFestivalId == festival.id {
+                                // Détails du festival sélectionné ici
+                                VStack(alignment: .leading) {
+                                    Text("Adresse: \(festival.address), \(festival.postalCode)")
+                                    Text("Ville: \(festival.city)")
+                                    Text("Pays: \(festival.country)")
+                                    Text("Statut: \(festival.isActive ? "Actif" : "Inactif")")
+                                    Text("Début: \(formatDate(festival.dateDebut))")
+                                    Text("Fin: \(formatDate(festival.dateFin))")
+                                }
+                                    .padding(.bottom, 20)
+                                    .onTapGesture {
+                                        selectedFestivalId = selectedFestivalId == festival.id ? nil : festival.id
+                                    }
+                                if !festival.isUserRegistered {
+                                    NavigationLink(destination: SignupFestivalView(festivalViewModel: festivalViewModel, festivalId: festival.id)) {
+                                        Text("S'inscrire")
+                                            .foregroundColor(.blue)
+                                    }
+                                }
                             }
-                        }) {
-                            HStack {
-                                Text(festival.name)
-                                    .font(.headline)
-                                Spacer()
-                            }
-                        }
-                        if selectedFestivalId == festival.id {
-                            VStack(alignment: .leading) {
-                                Text("Adresse: \(festival.address), \(festival.postalCode)")
-                                Text("Ville: \(festival.city)")
-                                Text("Pays: \(festival.country)")
-                                Text("Statut: \(festival.isActive ? "Actif" : "Inactif")")
-                                Text("Début: \(formatDate(festival.dateDebut))")
-                                Text("Fin: \(formatDate(festival.dateFin))")
-                            }
-                            .padding(.leading, 20)
-                            .transition(.slide)
                         }
                     }
                 }
-            }
-            .navigationTitle("Festivals")
-            .onAppear {
-                loadFestivals()
+                .navigationTitle("Festivals")
+                .onAppear {
+                    loadFestivals()
+                }
             }
         }
-    }
+
     func loadFestivals() {
         guard let url = URL(string: "https://montpellier-game-fest-volunteers-api-vincentdub2.vercel.app/festivals") else {
             print("URL invalide")
@@ -101,6 +126,7 @@ struct HouseView: View {
                     let decodedResponse = try decoder.decode([Festival].self, from: data)
                     DispatchQueue.main.async {
                         self.festivals = decodedResponse
+                        self.checkUserRegistration(festivals: self.festivals, userId: SessionManager.shared.user!.id)
                     }
                 } catch {
                     print("Échec du décodage: \(error)")
@@ -121,8 +147,25 @@ struct HouseView: View {
         }
     }
 
-    struct HouseView_Previews: PreviewProvider {
-        static var previews: some View {
-            HouseView()
+extension HouseView {
+    func checkUserRegistration(festivals: [Festival], userId: String) {
+        for (index, festival) in festivals.enumerated() {
+            let url = URL(string: "https://montpellier-game-fest-volunteers-api-vincentdub2.vercel.app/festivals/\(festival.idFestival)/volunteers")!
+            
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                if let data = data {
+                    do {
+                        // Décoder la liste des bénévoles
+                        let volunteers = try JSONDecoder().decode([VolunteersOfFestival].self, from: data)
+                        // Vérifier si l'utilisateur courant est dans la liste des bénévoles
+                        DispatchQueue.main.async {
+                            self.festivals[index].isUserRegistered = volunteers.contains(where: { $0.user.id == userId })
+                        }
+                    } catch {
+                        print("Erreur lors du décodage des bénévoles: \(error)")
+                    }
+                }
+            }.resume()
         }
     }
+}

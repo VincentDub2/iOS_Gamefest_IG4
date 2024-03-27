@@ -47,7 +47,6 @@ struct ForumService {
            
            return Future<[Post], Error> { promise in
                APIManager.requestGET(endpoint: endpoint) { (result: Result<[Post], AFError>) in
-                   print(result)
                    switch result {
                    case .success(let posts):
                        promise(.success(posts))
