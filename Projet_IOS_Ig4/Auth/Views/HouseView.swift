@@ -47,7 +47,10 @@ struct HouseView: View {
     @State private var searchQuery = ""
     @State private var festivals = [Festival]()
     @State private var selectedFestivalId: Int? = nil
+    @ObservedObject var eventViewModel = EventViewModel.shared // Pour les événements
+    @ObservedObject var gameViewModel = GameViewModel()
     var festivalViewModel = FestivalViewModel.shared
+    @State private var searchQueryGame: String = ""
 
     var filteredFestivals: [Festival] {
         if searchQuery.isEmpty {
@@ -57,6 +60,14 @@ struct HouseView: View {
         }
     }
 
+    var filteredGames: [Game] {
+        if searchQueryGame.isEmpty {
+            return gameViewModel.games
+        } else {
+            return gameViewModel.games.filter { $0.name.localizedCaseInsensitiveContains(searchQueryGame) }
+        }
+    }
+    
     var body: some View {
             NavigationView {
                 VStack {
@@ -98,10 +109,60 @@ struct HouseView: View {
                             }
                         }
                     }
-                }
+                    
+                    
+                    Text("Prochaines Soirées")
+                        .font(.headline)
+                        .padding(.vertical)
+
+                    // ScrollView horizontal pour les événements/soirées
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHStack(spacing: 10) {
+                            ForEach(eventViewModel.events) { event in
+                                NavigationLink(destination: EventDetailView(event: event)) {
+                                    SoireeView(event: event)
+                                }
+                            }
+                        }
+                        .padding([.horizontal, .bottom])
+                    }
+                    .frame(height: 160)
+                    Text("Jeux Disponibles")
+                                        .font(.headline)
+                                        .padding(.vertical)
+                                    
+                    // Barre de recherche pour les jeux
+                            TextField("Rechercher un jeu", text: $searchQueryGame)
+                                .padding(7)
+                                .background(Color(.systemGray6))
+                                .cornerRadius(8)
+                                .padding(.horizontal)
+                                .onChange(of: searchQueryGame) { newValue in
+                                    gameViewModel.searchGames(with: newValue)
+                                }
+                    
+                                    ScrollView {
+                                        LazyVStack {
+                                            ForEach(gameViewModel.filteredGames) { game in
+                                                NavigationLink(destination: GameDetailView(game: game)) {
+                                                    VStack(alignment: .leading) {
+                                                        Text(game.name)
+                                                            .font(.headline)
+                                                        // Ici, ajoute d'autres détails si nécessaire
+                                                    }
+                                                    .padding()
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .frame(height: 120) // Ajuste cette hauteur selon tes besoins
+                                }
+                
                 .navigationTitle("Festivals")
                 .onAppear {
                     loadFestivals()
+                    eventViewModel.loadUpcomingEvents()
+                    gameViewModel.loadGames()
                 }
             }
         }

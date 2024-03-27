@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BFD6F4BF2BB3826400CFEA98 /* AnimateAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6F4BE2BB3826400CFEA98 /* AnimateAvatar.swift */; };
 		32C359962BB3FB670098541C /* AnimateAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C359952BB3FB670098541C /* AnimateAvatar.swift */; };
+		32E5FED32BB4BCF100CBB346 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E5FED22BB4BCF100CBB346 /* GameViewModel.swift */; };
+		32E5FED82BB4C61600CBB346 /* GameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E5FED72BB4C61600CBB346 /* GameDetailView.swift */; };
+		BFD6F4BF2BB3826400CFEA98 /* AnimateAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6F4BE2BB3826400CFEA98 /* AnimateAvatar.swift */; };
 		C22279082BAB5B6000B9B55C /* Housing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22279072BAB5B6000B9B55C /* Housing.swift */; };
 		C222790A2BAB5B8500B9B55C /* HousingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22279092BAB5B8500B9B55C /* HousingViewModel.swift */; };
 		C222790C2BAB5BCD00B9B55C /* HousingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C222790B2BAB5BCD00B9B55C /* HousingView.swift */; };
@@ -57,28 +59,6 @@
 		C22ED5CE2BB3807000106C44 /* start_button.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5B72BB3807000106C44 /* start_button.riv */; };
 		C22ED5CF2BB3807000106C44 /* switch.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5B82BB3807000106C44 /* switch.riv */; };
 		C22ED5D02BB3807000106C44 /* walking_working.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5B92BB3807000106C44 /* walking_working.riv */; };
-		C22ED5552BB3003D00106C44 /* 404_cat.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED53D2BB3000000106C44 /* 404_cat.riv */; };
-		C22ED5562BB3003D00106C44 /* avatar_pack_use_case.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED53E2BB3000000106C44 /* avatar_pack_use_case.riv */; };
-		C22ED5572BB3003D00106C44 /* game_charecter.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED53F2BB3000000106C44 /* game_charecter.riv */; };
-		C22ED5582BB3003D00106C44 /* hey_ho_let's_go!.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5402BB3000000106C44 /* hey_ho_let's_go!.riv */; };
-		C22ED5592BB3003D00106C44 /* noonnap.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5412BB3000000106C44 /* noonnap.riv */; };
-		C22ED55A2BB3003D00106C44 /* sith_de_mayo.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5422BB3000000106C44 /* sith_de_mayo.riv */; };
-		C22ED55B2BB3003D00106C44 /* skin_demo_2.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5432BB3000000106C44 /* skin_demo_2.riv */; };
-		C22ED55C2BB3003D00106C44 /* button.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5452BB3000000106C44 /* button.riv */; };
-		C22ED55D2BB3003D00106C44 /* check.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5462BB3000000106C44 /* check.riv */; };
-		C22ED55E2BB3003D00106C44 /* chess.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5472BB3000000106C44 /* chess.riv */; };
-		C22ED55F2BB3003D00106C44 /* chess2.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5482BB3000000106C44 /* chess2.riv */; };
-		C22ED5602BB3003D00106C44 /* chessactiontest.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5492BB3000000106C44 /* chessactiontest.riv */; };
-		C22ED5612BB3003D00106C44 /* confetti.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED54A2BB3000000106C44 /* confetti.riv */; };
-		C22ED5622BB3003D00106C44 /* house.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED54B2BB3000000106C44 /* house.riv */; };
-		C22ED5632BB3003D00106C44 /* light_like.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED54C2BB3000000106C44 /* light_like.riv */; };
-		C22ED5642BB3003D00106C44 /* menu_button.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED54D2BB3000000106C44 /* menu_button.riv */; };
-		C22ED5652BB3003D00106C44 /* new_file.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED54E2BB3000000106C44 /* new_file.riv */; };
-		C22ED5662BB3003D00106C44 /* nqueens.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED54F2BB3000000106C44 /* nqueens.riv */; };
-		C22ED5672BB3003D00106C44 /* shapes.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5502BB3000000106C44 /* shapes.riv */; };
-		C22ED5682BB3003D00106C44 /* start_button.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5512BB3000000106C44 /* start_button.riv */; };
-		C22ED5692BB3003D00106C44 /* switch.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5522BB3000000106C44 /* switch.riv */; };
-		C22ED56A2BB3003D00106C44 /* walking_working.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5532BB3000000106C44 /* walking_working.riv */; };
 		C28997E02BA0974D005A681E /* Projet_IOS_Ig4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997DF2BA0974D005A681E /* Projet_IOS_Ig4App.swift */; };
 		C28997E22BA0974D005A681E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997E12BA0974D005A681E /* ContentView.swift */; };
 		C28997E42BA0974E005A681E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C28997E32BA0974E005A681E /* Assets.xcassets */; };
@@ -151,8 +131,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BFD6F4BE2BB3826400CFEA98 /* AnimateAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateAvatar.swift; sourceTree = "<group>"; };
 		32C359952BB3FB670098541C /* AnimateAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateAvatar.swift; sourceTree = "<group>"; };
+		32E5FED22BB4BCF100CBB346 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		32E5FED72BB4C61600CBB346 /* GameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailView.swift; sourceTree = "<group>"; };
+		BFD6F4BE2BB3826400CFEA98 /* AnimateAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateAvatar.swift; sourceTree = "<group>"; };
 		C22279072BAB5B6000B9B55C /* Housing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Housing.swift; sourceTree = "<group>"; };
 		C22279092BAB5B8500B9B55C /* HousingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingViewModel.swift; sourceTree = "<group>"; };
 		C222790B2BAB5BCD00B9B55C /* HousingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingView.swift; sourceTree = "<group>"; };
@@ -305,6 +287,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32E5FED12BB4BCD300CBB346 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				32E5FED62BB4C60200CBB346 /* Views */,
+				32E5FED42BB4BD0500CBB346 /* ViewModels */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		32E5FED42BB4BD0500CBB346 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				32E5FED22BB4BCF100CBB346 /* GameViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		32E5FED62BB4C60200CBB346 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32E5FED72BB4C61600CBB346 /* GameDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C22279032BAB5AF900B9B55C /* Logement */ = {
 			isa = PBXGroup;
 			children = (
@@ -540,6 +547,7 @@
 		C28997DE2BA0974D005A681E /* Projet_IOS_Ig4 */ = {
 			isa = PBXGroup;
 			children = (
+				32E5FED12BB4BCD300CBB346 /* Game */,
 				C22ED5BA2BB3807000106C44 /* RiveAsset */,
 				C22ED5752BB37E7300106C44 /* Festival */,
 				C22ED5842BB37E8000106C44 /* Poste */,
@@ -1010,6 +1018,7 @@
 				C2BF7A692BA5D6B900CB30BA /* PostView.swift in Sources */,
 				C22ED52B2BB2291700106C44 /* FAQView.swift in Sources */,
 				C28998392BA226A6005A681E /* CalendarView.swift in Sources */,
+				32E5FED82BB4C61600CBB346 /* GameDetailView.swift in Sources */,
 				C22ED5272BB2291700106C44 /* ProfileView.swift in Sources */,
 				C2E592172BADD6C700DA3136 /* HousingCell.swift in Sources */,
 				C222790A2BAB5B8500B9B55C /* HousingViewModel.swift in Sources */,
@@ -1060,6 +1069,7 @@
 				C22ED5312BB22BD600106C44 /* MailView.swift in Sources */,
 				C28998702BA48DE2005A681E /* NewPostView.swift in Sources */,
 				C289988C2BA4DACF005A681E /* AccueilView.swift in Sources */,
+				32E5FED32BB4BCF100CBB346 /* GameViewModel.swift in Sources */,
 				C22279222BAB620400B9B55C /* HousingDetailView.swift in Sources */,
 				C28998532BA3016C005A681E /* Creneau.swift in Sources */,
 				C22ED58A2BB37F4300106C44 /* DateUtils.swift in Sources */,
