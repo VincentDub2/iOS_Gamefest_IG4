@@ -235,7 +235,7 @@ struct SignupFestivalView: View {
                         
                         // Signup button
                         Button(action: {
-                            let volunteerData = IsVolunteer(sizeTeeShirt: self.teeShirtSize, isVege: self.isVegetarian, idUser: SessionManager.shared.user!.id, idFestival: 2)
+                            let volunteerData = IsVolunteer(sizeTeeShirt: self.teeShirtSize, isVege: self.isVegetarian, idUser: SessionManager.shared.user!.id, idFestival: festivalId)
                             festivalViewModel.registerVolunteer(data: volunteerData) { success, error in
                                 if success {
                                     print("Inscription réussie")
