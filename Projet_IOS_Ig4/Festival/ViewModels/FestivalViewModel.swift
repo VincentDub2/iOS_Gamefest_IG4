@@ -10,22 +10,20 @@ import Alamofire
 import SwiftUI
 
 class FestivalViewModel: ObservableObject {
+    static let shared = FestivalViewModel()
     @Published var festival: FestivalModel?
     @Published var creneauxEspaces: [CreneauEspace] = []
     // Key: Creneau ID, Value: Poste
     @Published var userSelections: [Int: Poste] = [:]
     private let festivalService = FestivalService()
 
-    func fetchFestival() {
-        festivalService.fetchFestival { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let festival):
-                    self.festival = festival
-                case .failure(let error):
-                    // Handle error
-                    print("Failed to fetch festival: \(error.localizedDescription)")
-                }
+    func fetchFestivalDetails(festivalId: Int) {
+        festivalService.fetchFestival(festivalId: festivalId) { [weak self] result in
+            switch result {
+            case .success(let festival):
+                self?.festival = festival
+            case .failure(let error):
+                print("Erreur lors du chargement des détails du festival: \(error)")
             }
         }
     }

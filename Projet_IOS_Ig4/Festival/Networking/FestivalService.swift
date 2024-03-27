@@ -35,9 +35,10 @@ struct InscriptionRequest: Encodable, Decodable {
 
 class FestivalService {
     
-    func fetchFestival(completion: @escaping (Result<FestivalModel, Error>) -> Void) {
-        let endpoint = "/festivals/2"
-        
+    func fetchFestival(festivalId: Int, completion: @escaping (Result<FestivalModel, Error>) -> Void) {
+        let endpoint = "/festivals/\(festivalId)"
+        print(endpoint)
+
         APIManager.requestGET(endpoint: endpoint) { (result: Result<FestivalModel, AFError>) in
             DispatchQueue.main.async {
                 switch result {

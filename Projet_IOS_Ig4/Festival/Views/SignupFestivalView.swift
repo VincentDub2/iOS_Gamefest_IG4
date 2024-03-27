@@ -52,7 +52,9 @@ class FestivalState: ObservableObject {
 }
 
 struct SignupFestivalView: View {
-    @ObservedObject var festivalViewModel = FestivalViewModel()
+    // var festival: FestivalModel
+    //@ObservedObject var festivalViewModel = FestivalViewModel()
+    @ObservedObject var festivalViewModel: FestivalViewModel
     @State private var postes: [Poste] = []
     @State private var creneaux: [CreneauFestivalModel] = []
     @State private var creneauxEspacesByPoste: [String : [CreneauEspace]] = [:]
@@ -60,9 +62,14 @@ struct SignupFestivalView: View {
     @State private var isVegetarian: Bool = false
     @State private var lunchChoices: [String: Bool] = [:]
     @State private var dinnerChoices: [String: Bool] = [:]
-    let festivalName: String
-    let startDate: String
-    let endDate: String
+    
+    var festivalId: Int
+        
+    init(festivalViewModel: FestivalViewModel, festivalId: Int) {
+        self.festivalViewModel = FestivalViewModel.shared
+        self.festivalId = festivalId
+    }
+
         
     // Custom widths for each column
     let columnWidths: [CGFloat] = [200, 150]
@@ -257,13 +264,14 @@ struct SignupFestivalView: View {
                     .padding()
                 }
                 .navigationTitle("Inscription à un festival")
+                .navigationBarTitleDisplayMode(.inline)
             }
         } else {
             ProgressView("Chargement du festival...")
                 .progressViewStyle(CircularProgressViewStyle())
                 .onAppear {
-                    festivalViewModel.fetchFestival()
                     fetchPostesAndCreneaux()
+                    festivalViewModel.fetchFestivalDetails(festivalId: festivalId)
                 }
         }
     }
@@ -303,7 +311,7 @@ struct SignupFestivalView: View {
 
     
     func fetchPostesAndCreneaux() {
-            FestivalService().fetchPostesByFestival(id: "2") { result in
+            FestivalService().fetchPostesByFestival(id: String(festivalId)) { result in
                 switch result {
                 case .success(let fetchedPostes):
                     postes = fetchedPostes
@@ -312,7 +320,7 @@ struct SignupFestivalView: View {
                 }
             }
                 
-            FestivalService().fetchCreneauxByFestival(id: "2") { result in
+            FestivalService().fetchCreneauxByFestival(id: String(festivalId)) { result in
                 switch result {
                 case .success(let fetchedCreneaux):
                     creneaux = fetchedCreneaux
@@ -360,10 +368,4 @@ struct SignupFestivalView: View {
         return creneauxEspacesByPoste
     }
 
-}
-
-struct SignupFestivalView_Previews: PreviewProvider {
-    static var previews: some View {
-        SignupFestivalView(festivalName: "Sample Festival", startDate: "01/01/2024", endDate: "03/01/2024")
-    }
 }

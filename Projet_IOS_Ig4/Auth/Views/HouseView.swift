@@ -47,6 +47,7 @@ struct HouseView: View {
     @State private var searchQuery = ""
     @State private var festivals = [Festival]()
     @State private var selectedFestivalId: Int? = nil
+    var festivalViewModel = FestivalViewModel.shared
 
     var filteredFestivals: [Festival] {
         if searchQuery.isEmpty {
@@ -57,62 +58,54 @@ struct HouseView: View {
     }
 
     var body: some View {
-        NavigationView {
-            VStack {
-                // Barre de recherche
-                TextField("Rechercher un festival", text: $searchQuery)
-                    .padding(7)
-                    .background(Color(.systemGray6))
-                    .cornerRadius(8)
-                    .padding(.horizontal)
-                    .autocapitalization(.none)
-                    .disableAutocorrection(true)
-                
-                List(filteredFestivals) { festival in
-                    VStack {
-                        Button(action: {
-                            if selectedFestivalId == festival.id {
-                                selectedFestivalId = nil
-                            } else {
-                                selectedFestivalId = festival.id
-                            }
-                        }) {
-                            HStack {
-                                Text(festival.name)
-                                    .font(.headline)
-                                Spacer()
-                                if festival.isUserRegistered {
-                                    Text("Inscrit").foregroundColor(.green)
-                                } else {
-                                    Button("S'inscrire") {
-                                        
+            NavigationView {
+                VStack {
+                    TextField("Festivals disponibles", text: $searchQuery)
+                        .padding(7)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(8)
+                        .padding(.horizontal)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+                    
+                    List(filteredFestivals) { festival in
+                        VStack(alignment: .leading) {
+                            Text(festival.name)
+                                .font(.headline)
+                                .onTapGesture {
+                                    selectedFestivalId = selectedFestivalId == festival.id ? nil : festival.id
+                                }
+                            if self.selectedFestivalId == festival.id {
+                                // Détails du festival sélectionné ici
+                                VStack(alignment: .leading) {
+                                    Text("Adresse: \(festival.address), \(festival.postalCode)")
+                                    Text("Ville: \(festival.city)")
+                                    Text("Pays: \(festival.country)")
+                                    Text("Statut: \(festival.isActive ? "Actif" : "Inactif")")
+                                    Text("Début: \(formatDate(festival.dateDebut))")
+                                    Text("Fin: \(formatDate(festival.dateFin))")
+                                }
+                                    .padding(.bottom, 20)
+                                    .onTapGesture {
+                                        selectedFestivalId = selectedFestivalId == festival.id ? nil : festival.id
                                     }
-                                    .foregroundColor(.blue)
+                                if !festival.isUserRegistered {
+                                    NavigationLink(destination: SignupFestivalView(festivalViewModel: festivalViewModel, festivalId: festival.id)) {
+                                        Text("S'inscrire")
+                                            .foregroundColor(.blue)
+                                    }
                                 }
                             }
-
-                        }
-                        if selectedFestivalId == festival.id {
-                            VStack(alignment: .leading) {
-                                Text("Adresse: \(festival.address), \(festival.postalCode)")
-                                Text("Ville: \(festival.city)")
-                                Text("Pays: \(festival.country)")
-                                Text("Statut: \(festival.isActive ? "Actif" : "Inactif")")
-                                Text("Début: \(formatDate(festival.dateDebut))")
-                                Text("Fin: \(formatDate(festival.dateFin))")
-                            }
-                            .padding(.leading, 20)
-                            .transition(.slide)
                         }
                     }
                 }
-            }
-            .navigationTitle("Festivals")
-            .onAppear {
-                loadFestivals()
+                .navigationTitle("Festivals")
+                .onAppear {
+                    loadFestivals()
+                }
             }
         }
-    }
+
     func loadFestivals() {
         guard let url = URL(string: "https://montpellier-game-fest-volunteers-api-vincentdub2.vercel.app/festivals") else {
             print("URL invalide")
@@ -176,9 +169,3 @@ extension HouseView {
         }
     }
 }
-
-    struct HouseView_Previews: PreviewProvider {
-        static var previews: some View {
-            HouseView()
-        }
-    }

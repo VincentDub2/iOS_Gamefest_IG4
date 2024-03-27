@@ -28,7 +28,6 @@
 		C22ED5772BB37E7300106C44 /* FestivalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED56D2BB37E7300106C44 /* FestivalService.swift */; };
 		C22ED5782BB37E7300106C44 /* FestivalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED56F2BB37E7300106C44 /* FestivalViewModel.swift */; };
 		C22ED5792BB37E7300106C44 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5712BB37E7300106C44 /* CircularProgressView.swift */; };
-		C22ED57A2BB37E7300106C44 /* FestivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5722BB37E7300106C44 /* FestivalView.swift */; };
 		C22ED57B2BB37E7300106C44 /* SignupFestivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED5732BB37E7300106C44 /* SignupFestivalView.swift */; };
 		C22ED5852BB37E8000106C44 /* Poste.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED57C2BB37E8000106C44 /* Poste.swift */; };
 		C22ED5862BB37E8000106C44 /* PosteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22ED57E2BB37E8000106C44 /* PosteService.swift */; };
@@ -150,7 +149,6 @@
 		C22ED56D2BB37E7300106C44 /* FestivalService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FestivalService.swift; sourceTree = "<group>"; };
 		C22ED56F2BB37E7300106C44 /* FestivalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FestivalViewModel.swift; sourceTree = "<group>"; };
 		C22ED5712BB37E7300106C44 /* CircularProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
-		C22ED5722BB37E7300106C44 /* FestivalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FestivalView.swift; path = Projet_IOS_Ig4/Festival/Views/FestivalView.swift; sourceTree = SOURCE_ROOT; };
 		C22ED5732BB37E7300106C44 /* SignupFestivalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupFestivalView.swift; sourceTree = "<group>"; };
 		C22ED57C2BB37E8000106C44 /* Poste.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poste.swift; sourceTree = "<group>"; };
 		C22ED57E2BB37E8000106C44 /* PosteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosteService.swift; sourceTree = "<group>"; };
@@ -358,7 +356,6 @@
 			isa = PBXGroup;
 			children = (
 				C22ED5712BB37E7300106C44 /* CircularProgressView.swift */,
-				C22ED5722BB37E7300106C44 /* FestivalView.swift */,
 				C22ED5732BB37E7300106C44 /* SignupFestivalView.swift */,
 			);
 			path = Views;
@@ -979,7 +976,6 @@
 				C22ED5282BB2291700106C44 /* ImagePicker.swift in Sources */,
 				C28998212BA09B3C005A681E /* RegisterView.swift in Sources */,
 				C28998482BA2F022005A681E /* SessionManager.swift in Sources */,
-				C22ED57A2BB37E7300106C44 /* FestivalView.swift in Sources */,
 				C28998512BA2FCAC005A681E /* PlanningService.swift in Sources */,
 				C22279242BAB629F00B9B55C /* AddHousingOfferView.swift in Sources */,
 				C289983A2BA226A6005A681E /* Decoration+SwiftUI.swift in Sources */,
