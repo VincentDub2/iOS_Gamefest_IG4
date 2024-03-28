@@ -63,6 +63,7 @@ struct SignupFestivalView: View {
     @State private var lunchChoices: [String: Bool] = [:]
     @State private var dinnerChoices: [String: Bool] = [:]
     @Environment(\.presentationMode) var presentationMode
+    @State private var flexibleChoices: [Int: Bool] = [:]
     
     var festivalId: Int
         
@@ -226,6 +227,25 @@ struct SignupFestivalView: View {
                                                 .frame(width: columnWidths[1])
                                                 Spacer()
                                             }
+                                        }
+                                    }
+                                    HStack {
+                                        Text("Flexible")
+                                            .padding()
+                                            .frame(width: columnWidths[0])
+                                        
+                                        Spacer()
+                                        
+                                        ForEach(creneauxForDay, id: \.id) { creneau in
+                                            Toggle("", isOn: Binding<Bool>(
+                                                get: { self.flexibleChoices[creneau.id] ?? false },
+                                                set: { self.flexibleChoices[creneau.id] = $0 }
+                                            ))
+                                            .labelsHidden() // Masquer les labels pour afficher uniquement le toggle
+                                            .padding()
+                                            .frame(width: columnWidths[1])
+                                            .cornerRadius(5)
+                                            Spacer()
                                         }
                                     }
                                 }
