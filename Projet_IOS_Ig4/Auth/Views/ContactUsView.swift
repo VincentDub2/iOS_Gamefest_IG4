@@ -45,9 +45,9 @@ struct DeveloperBioView: View {
 
 struct ContactUsView: View {
     let developers: [DeveloperProfile] = [
-        DeveloperProfile(name: "Lucas Leroy", bio: "Élève ingénieur à Polytech Montpellier en école d'ingénieur en informatique et gestion", imageTEST: "imageTEST", email: "leroy.lucas.pro@gmail.com"),
-        DeveloperProfile(name: "Vincent Dubuc", bio: "Élève ingénieur à Polytech Montpellier en école d'ingénieur en informatique et gestion", imageTEST: "developerImage1", email: "vincentdubuc2@gmail.com"),
-        DeveloperProfile(name: "Bastian Albaut", bio: "Élève ingénieur à Polytech Montpellier en école d'ingénieur en informatique et gestion", imageTEST: "developerImage1", email: "laguerre.tribale1@gmail.com"),
+        DeveloperProfile(name: "Lucas Leroy", bio: "Élève ingénieur à Polytech Montpellier en école d'ingénieur en informatique et gestion", imageTEST: "lucas", email: "leroy.lucas.pro@gmail.com"),
+        DeveloperProfile(name: "Vincent Dubuc", bio: "Élève ingénieur à Polytech Montpellier en école d'ingénieur en informatique et gestion", imageTEST: "vincent", email: "vincentdubuc2@gmail.com"),
+        DeveloperProfile(name: "Bastian Albaut", bio: "Élève ingénieur à Polytech Montpellier en école d'ingénieur en informatique et gestion", imageTEST: "bastian", email: "laguerre.tribale1@gmail.com"),
     ]
 
     var body: some View {
