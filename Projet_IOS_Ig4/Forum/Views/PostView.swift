@@ -9,12 +9,14 @@ import RiveRuntime
 struct PostView: View {
     @State var isLike = false
     @State var like: RiveViewModel
+    @State var full: Bool
     
     var post: Post
     var color: Color
     var avatar: Int
+    var heart : Bool = true
     
-    init(post: Post, color: Color,avatar : Int){
+    init(post: Post, color: Color,avatar : Int,heart : Bool = true,full: Bool = true){
         self.post = post
         self.like = RiveViewModel(fileName: "light_like", stateMachineName: "State Machine 1")
     
@@ -23,8 +25,9 @@ struct PostView: View {
         } else {
             self.color = color
         }
+        self.full = full
         self.avatar = avatar
-        
+        self.heart = heart
         post.likes.forEach { like in
             if like.userId == SessionManager.shared.getUser()?.id ?? "96ac88b2-dee8-47f6-945b-3bbef421b96b" {
                 self.isLike = true
@@ -55,8 +58,10 @@ struct PostView: View {
                 Button(action: {
                     toogle()
                 }) {
-                    like.view()
-                        .frame(width: 50, height: 50)
+                    if heart {
+                        like.view()
+                            .frame(width: 50, height: 50)
+                    }
                 }
             }
         
@@ -64,9 +69,9 @@ struct PostView: View {
                         .font(.subheadline)
                         .opacity(0.7)
                         // Supprimez la limite de lignes ou réglez-la sur nil pour permettre un affichage illimité des lignes.
-                        .lineLimit(nil)
                         .foregroundColor(.black)
                         .multilineTextAlignment(.leading)
+                        .lineLimit(full ? nil : 3)
         
         }
         .padding()
@@ -97,6 +102,6 @@ struct Post_Previews: PreviewProvider {
                             Comment(id: 1, postId: 5, userId: "1", body: "Je trouve ce jeu très sympa !", createdAt: Date().ISO8601Format()),
                             Comment(id: 2, postId: 5, userId: "2", body: "Je suis d'accord, c'est un jeu très fun !", createdAt: Date().ISO8601Format())])
         
-     PostView(post: post ,color: .clear, avatar: 1)
+     PostView(post: post ,color: .clear, avatar: 1,heart: false)
     }
 }

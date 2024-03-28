@@ -16,8 +16,9 @@ struct CommentInputView: View {
     var modelRive = RiveViewModel(fileName: "new_file",autoPlay: false)
     
     func handleCommit() {
-        newComment = ""
+        print("HandleCommit : comment added")
         onCommit()
+        newComment = ""
         modelRive.play()
     }
     

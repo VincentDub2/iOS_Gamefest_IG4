@@ -35,7 +35,7 @@ struct AddHousingOfferView: View {
                         .keyboardType(.numberPad)
                 }
                 
-                Button("Submit") {
+                Button("Soumettre") {
                     // Validate input before submitting
                     guard let availabilityInt = Int(availability), !description.isEmpty, !city.isEmpty, !postalCode.isEmpty else {
                         alertMessage = "Please fill all the fields correctly."
@@ -62,8 +62,8 @@ struct AddHousingOfferView: View {
                     Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
                 }
             }
-            .navigationBarTitle("Add Housing", displayMode: .inline)
-            .navigationBarItems(trailing: Button("Cancel") {
+            .navigationBarTitle("Ajouter un logement", displayMode: .inline)
+            .navigationBarItems(trailing: Button("Quitter") {
                 presentationMode.wrappedValue.dismiss()
             })
         }

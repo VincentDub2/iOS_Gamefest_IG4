@@ -12,14 +12,14 @@ import SwiftUI
 struct PostDetailView: View {
     var post: Post
     @ObservedObject var viewModel: ForumViewModel
-    @State private var newComment: String = ""
+    @State private var newComment: String = " "
     @State var isLike = false
     var like = RiveViewModel(fileName: "light_like", stateMachineName: "State Machine 1")
     
     
     var body: some View {
         ScrollView {
-            PostView(post: post, color: post.color,avatar: post.avatar)
+            PostView(post: post, color: post.color,avatar: post.avatar,heart: false)
 
                 .padding()
             
@@ -37,7 +37,7 @@ struct PostDetailView: View {
                 }
 
                 // Champ de texte plus intuitif pour ajouter des commentaires
-                CommentInputView(newComment: $newComment, placeholder: "Add a comment...") {
+                CommentInputView(newComment: $newComment, placeholder: "Ajouter un commentaire") {
                             // Actions à effectuer lorsque l'utilisateur soumet un commentaire
                     ForumViewModel.shared.addComment(to: String(post.id), body: newComment)
                             print("Commentaire soumis : \(newComment)")
@@ -48,7 +48,7 @@ struct PostDetailView: View {
             }
             .padding()
         }
-        .navigationTitle("Post Details")
+        .navigationTitle("Posts du Forum")
     
     }
 }
