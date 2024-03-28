@@ -25,6 +25,7 @@ struct Creneau: Codable, Hashable {
     var description: String
     var isReferent: Bool?
     var jeu:String?
+    var postId: String?
     
     enum CodingKeys: String, CodingKey {
         case id = "idCreneau"
@@ -35,6 +36,7 @@ struct Creneau: Codable, Hashable {
         case description = "description"
         case isReferent = "isReferent"
         case jeu = "Jeux"
+        case postId = "postId"
     }
     
     
