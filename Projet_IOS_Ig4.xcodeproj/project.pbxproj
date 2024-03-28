@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BFD6F4BF2BB3826400CFEA98 /* AnimateAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6F4BE2BB3826400CFEA98 /* AnimateAvatar.swift */; };
 		32C359962BB3FB670098541C /* AnimateAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C359952BB3FB670098541C /* AnimateAvatar.swift */; };
+		BFD6F4BF2BB3826400CFEA98 /* AnimateAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6F4BE2BB3826400CFEA98 /* AnimateAvatar.swift */; };
+		C2213DA72BB497EE00108B00 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C2213DA62BB497EE00108B00 /* Alamofire */; };
 		C22279082BAB5B6000B9B55C /* Housing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22279072BAB5B6000B9B55C /* Housing.swift */; };
 		C222790A2BAB5B8500B9B55C /* HousingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22279092BAB5B8500B9B55C /* HousingViewModel.swift */; };
 		C222790C2BAB5BCD00B9B55C /* HousingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C222790B2BAB5BCD00B9B55C /* HousingView.swift */; };
@@ -57,28 +58,6 @@
 		C22ED5CE2BB3807000106C44 /* start_button.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5B72BB3807000106C44 /* start_button.riv */; };
 		C22ED5CF2BB3807000106C44 /* switch.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5B82BB3807000106C44 /* switch.riv */; };
 		C22ED5D02BB3807000106C44 /* walking_working.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5B92BB3807000106C44 /* walking_working.riv */; };
-		C22ED5552BB3003D00106C44 /* 404_cat.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED53D2BB3000000106C44 /* 404_cat.riv */; };
-		C22ED5562BB3003D00106C44 /* avatar_pack_use_case.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED53E2BB3000000106C44 /* avatar_pack_use_case.riv */; };
-		C22ED5572BB3003D00106C44 /* game_charecter.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED53F2BB3000000106C44 /* game_charecter.riv */; };
-		C22ED5582BB3003D00106C44 /* hey_ho_let's_go!.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5402BB3000000106C44 /* hey_ho_let's_go!.riv */; };
-		C22ED5592BB3003D00106C44 /* noonnap.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5412BB3000000106C44 /* noonnap.riv */; };
-		C22ED55A2BB3003D00106C44 /* sith_de_mayo.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5422BB3000000106C44 /* sith_de_mayo.riv */; };
-		C22ED55B2BB3003D00106C44 /* skin_demo_2.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5432BB3000000106C44 /* skin_demo_2.riv */; };
-		C22ED55C2BB3003D00106C44 /* button.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5452BB3000000106C44 /* button.riv */; };
-		C22ED55D2BB3003D00106C44 /* check.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5462BB3000000106C44 /* check.riv */; };
-		C22ED55E2BB3003D00106C44 /* chess.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5472BB3000000106C44 /* chess.riv */; };
-		C22ED55F2BB3003D00106C44 /* chess2.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5482BB3000000106C44 /* chess2.riv */; };
-		C22ED5602BB3003D00106C44 /* chessactiontest.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5492BB3000000106C44 /* chessactiontest.riv */; };
-		C22ED5612BB3003D00106C44 /* confetti.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED54A2BB3000000106C44 /* confetti.riv */; };
-		C22ED5622BB3003D00106C44 /* house.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED54B2BB3000000106C44 /* house.riv */; };
-		C22ED5632BB3003D00106C44 /* light_like.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED54C2BB3000000106C44 /* light_like.riv */; };
-		C22ED5642BB3003D00106C44 /* menu_button.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED54D2BB3000000106C44 /* menu_button.riv */; };
-		C22ED5652BB3003D00106C44 /* new_file.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED54E2BB3000000106C44 /* new_file.riv */; };
-		C22ED5662BB3003D00106C44 /* nqueens.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED54F2BB3000000106C44 /* nqueens.riv */; };
-		C22ED5672BB3003D00106C44 /* shapes.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5502BB3000000106C44 /* shapes.riv */; };
-		C22ED5682BB3003D00106C44 /* start_button.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5512BB3000000106C44 /* start_button.riv */; };
-		C22ED5692BB3003D00106C44 /* switch.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5522BB3000000106C44 /* switch.riv */; };
-		C22ED56A2BB3003D00106C44 /* walking_working.riv in Resources */ = {isa = PBXBuildFile; fileRef = C22ED5532BB3000000106C44 /* walking_working.riv */; };
 		C28997E02BA0974D005A681E /* Projet_IOS_Ig4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997DF2BA0974D005A681E /* Projet_IOS_Ig4App.swift */; };
 		C28997E22BA0974D005A681E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28997E12BA0974D005A681E /* ContentView.swift */; };
 		C28997E42BA0974E005A681E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C28997E32BA0974E005A681E /* Assets.xcassets */; };
@@ -116,7 +95,6 @@
 		C289986E2BA48DC8005A681E /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C289986D2BA48DC8005A681E /* PostDetailView.swift */; };
 		C28998702BA48DE2005A681E /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C289986F2BA48DE2005A681E /* NewPostView.swift */; };
 		C28998762BA4986D005A681E /* VCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998752BA4986D005A681E /* VCard.swift */; };
-		C28998792BA49B29005A681E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C28998782BA49B29005A681E /* Alamofire */; };
 		C289987F2BA4C8BE005A681E /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = C289987E2BA4C8BE005A681E /* RiveRuntime */; };
 		C28998812BA4C8E0005A681E /* testRive.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998802BA4C8E0005A681E /* testRive.swift */; };
 		C28998872BA4D40E005A681E /* ZombieWalking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998862BA4D40E005A681E /* ZombieWalking.swift */; };
@@ -151,8 +129,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BFD6F4BE2BB3826400CFEA98 /* AnimateAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateAvatar.swift; sourceTree = "<group>"; };
 		32C359952BB3FB670098541C /* AnimateAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateAvatar.swift; sourceTree = "<group>"; };
+		BFD6F4BE2BB3826400CFEA98 /* AnimateAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateAvatar.swift; sourceTree = "<group>"; };
 		C22279072BAB5B6000B9B55C /* Housing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Housing.swift; sourceTree = "<group>"; };
 		C22279092BAB5B8500B9B55C /* HousingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingViewModel.swift; sourceTree = "<group>"; };
 		C222790B2BAB5BCD00B9B55C /* HousingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingView.swift; sourceTree = "<group>"; };
@@ -281,8 +259,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C28998792BA49B29005A681E /* Alamofire in Frameworks */,
 				C289987F2BA4C8BE005A681E /* RiveRuntime in Frameworks */,
+				C2213DA72BB497EE00108B00 /* Alamofire in Frameworks */,
 				C28998302BA22258005A681E /* CalendarKit in Frameworks */,
 				C289984B2BA2F106005A681E /* KeychainSwift in Frameworks */,
 			);
@@ -849,8 +827,8 @@
 			packageProductDependencies = (
 				C289982F2BA22258005A681E /* CalendarKit */,
 				C289984A2BA2F106005A681E /* KeychainSwift */,
-				C28998782BA49B29005A681E /* Alamofire */,
 				C289987E2BA4C8BE005A681E /* RiveRuntime */,
+				C2213DA62BB497EE00108B00 /* Alamofire */,
 			);
 			productName = Projet_IOS_Ig4;
 			productReference = C28997DC2BA0974D005A681E /* Projet_IOS_Ig4.app */;
@@ -1225,10 +1203,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Projet_IOS_Ig4/Preview Content\"";
-				DEVELOPMENT_TEAM = 3Q95PLX65V;
+				DEVELOPMENT_TEAM = Z3AQFUWRS9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1242,8 +1221,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Lucas.Projet-IOS-Ig4";
+				PRODUCT_BUNDLE_IDENTIFIER = "vincent.Projet-IOS-Ig4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1255,10 +1235,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Projet_IOS_Ig4/Preview Content\"";
-				DEVELOPMENT_TEAM = 3Q95PLX65V;
+				DEVELOPMENT_TEAM = Z3AQFUWRS9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1272,8 +1253,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Lucas.Projet-IOS-Ig4";
+				PRODUCT_BUNDLE_IDENTIFIER = "vincent.Projet-IOS-Ig4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1433,6 +1415,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C2213DA62BB497EE00108B00 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C28998772BA49B29005A681E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		C289982F2BA22258005A681E /* CalendarKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C28998272BA2208E005A681E /* XCRemoteSwiftPackageReference "CalendarKit" */;
@@ -1442,11 +1429,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C28998492BA2F106005A681E /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
-		};
-		C28998782BA49B29005A681E /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C28998772BA49B29005A681E /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
 		};
 		C289987E2BA4C8BE005A681E /* RiveRuntime */ = {
 			isa = XCSwiftPackageProductDependency;

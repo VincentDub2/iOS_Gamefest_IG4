@@ -12,14 +12,14 @@ import SwiftUI
 struct PostDetailView: View {
     var post: Post
     @ObservedObject var viewModel: ForumViewModel
-    @State private var newComment: String = ""
+    @State private var newComment: String = " "
     @State var isLike = false
     var like = RiveViewModel(fileName: "light_like", stateMachineName: "State Machine 1")
     
     
     var body: some View {
         ScrollView {
-            PostView(post: post, color: post.color,avatar: post.avatar)
+            PostView(post: post, color: post.color,avatar: post.avatar,heart: false)
 
                 .padding()
             

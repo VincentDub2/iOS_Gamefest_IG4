@@ -68,11 +68,14 @@ class ForumViewModel: ObservableObject {
     }
     
     func addComment(to postId: String, body: String) {
+        print("Adding comment to post \(postId)")
+        print("Body: \(body)")
         forumService.addComment(postId: postId, body: body)
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
                 case .finished:
+                    print("Comment added")
                     // Update the post to show the new comment.
                     self.fetchPosts()
                 case .failure(let error):

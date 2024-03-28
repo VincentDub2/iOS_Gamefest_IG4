@@ -12,7 +12,6 @@ class HousingService {
            
            return Future<[Housing], Error> { promise in
                APIManager.requestGET(endpoint: endpoint) { (result: Result<[Housing], AFError>) in
-                   print(result)
                    switch result {
                    case .success(let posts):
                        promise(.success(posts))
