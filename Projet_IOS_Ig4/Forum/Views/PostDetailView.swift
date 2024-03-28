@@ -37,7 +37,7 @@ struct PostDetailView: View {
                 }
 
                 // Champ de texte plus intuitif pour ajouter des commentaires
-                CommentInputView(newComment: $newComment, placeholder: "Add a comment...") {
+                CommentInputView(newComment: $newComment, placeholder: "Ajouter un commentaire") {
                             // Actions à effectuer lorsque l'utilisateur soumet un commentaire
                     ForumViewModel.shared.addComment(to: String(post.id), body: newComment)
                             print("Commentaire soumis : \(newComment)")
@@ -48,7 +48,7 @@ struct PostDetailView: View {
             }
             .padding()
         }
-        .navigationTitle("Post Details")
+        .navigationTitle("Posts du Forum")
     
     }
 }
