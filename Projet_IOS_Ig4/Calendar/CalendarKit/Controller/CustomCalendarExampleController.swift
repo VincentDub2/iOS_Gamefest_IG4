@@ -1,4 +1,5 @@
 import UIKit
+import SwiftUI
 import EventKit
 import CalendarKit
 
@@ -97,6 +98,7 @@ final class CustomCalendarExampleController: DayViewController {
         event.dateInterval = DateInterval(start: start.addingTimeInterval(30), end: end)
         // Personnalisez ici avec les détails de votre créneau
         event.text = creneau.name
+        event.userInfo = ["postId": creneau.postId] // Stockez des informations supplémentaires si nécessaire
         event.color = colors.randomElement() ?? .gray // Choisissez une couleur par défaut ou selon une logique spécifique
         event.isAllDay = false // Ou true si c'est un événement sur toute la journée
         event.lineBreakMode = .byTruncatingTail
@@ -118,9 +120,20 @@ final class CustomCalendarExampleController: DayViewController {
      
      */
     override func dayViewDidSelectEventView(_ eventView: EventView) {
-        guard let descriptor = eventView.descriptor as? Event else {
-            return
-        }
+        guard let descriptor = eventView.descriptor as? Event,
+                  let userInfo = descriptor.userInfo as? [String: Any], // Cast userInfo to a dictionary
+                  let postId = userInfo["postId"] as? String else {
+                print("Impossible de récupérer postId de l'événement.")
+                return
+            }
+        
+        // Créez une instance de UIHostingController avec PosteView
+        let posteViewController = UIHostingController(rootView: PosteView(postId: postId))
+        
+
+        // Présentez le UIHostingController modalement
+            self.present(posteViewController, animated: true, completion: nil)
+        
         print("Event has been selected: \(descriptor) \(String(describing: descriptor.userInfo))")
     }
     

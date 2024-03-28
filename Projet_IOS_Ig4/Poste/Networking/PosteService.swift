@@ -9,9 +9,8 @@ import Foundation
 import Alamofire
 
 class PosteService {
-    
-    func fetchPoste(completion: @escaping (Result<PosteModel, Error>) -> Void) {
-        let endpoint = "/postes/1"
+    func fetchPoste(postId: String, completion: @escaping (Result<PosteModel, Error>) -> Void) {
+        let endpoint = "/postes/\(postId)" // Utilisez postId dans l'endpoint
         
         APIManager.requestGET(endpoint: endpoint) { (result: Result<PosteModel, AFError>) in
             DispatchQueue.main.async {
@@ -25,4 +24,3 @@ class PosteService {
         }
     }
 }
-

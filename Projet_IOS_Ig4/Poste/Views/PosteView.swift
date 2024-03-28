@@ -9,8 +9,18 @@ import SwiftUI
 
 struct PosteView: View {
     @StateObject private var posteViewModel = PosteViewModel()
-
+    var postId: String
+    
+    let referents = [
+        ("Jean", "Dupont"),
+        ("Marie", "Durand"),
+        ("Luc", "Martin")
+    ]
+    
+    
+    
     var body: some View {
+        
         VStack(alignment: .center, spacing: 20) {
             if let poste = posteViewModel.poste {
                 PosteDetailsView(poste: poste)
@@ -18,7 +28,7 @@ struct PosteView: View {
                 ProgressView("Chargement du poste...")
                     .progressViewStyle(CircularProgressViewStyle())
                     .onAppear {
-                        posteViewModel.fetchPoste()
+                        posteViewModel.fetchPoste(postId: postId) // Utilisez postId ici
                     }
             }
         }
@@ -26,8 +36,10 @@ struct PosteView: View {
     }
 }
 
+
 struct PosteDetailsView: View {
     var poste: PosteModel
+
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -43,7 +55,7 @@ struct PosteDetailsView: View {
 
 struct PosteView_Previews: PreviewProvider {
     static var previews: some View {
-        PosteView()
+        PosteView(postId: "1")
     }
 }
 
