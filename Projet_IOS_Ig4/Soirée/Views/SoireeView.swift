@@ -36,7 +36,7 @@ struct SoireeView : View {
             }
         }
         .padding()
-        .background(Color.white) // Changes background to white for a cleaner look
+        .background(Color.gray) // Changes background to white for a cleaner look
         .cornerRadius(10)
         .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2) // Softens the shadow for a subtle depth effect
         .overlay(
