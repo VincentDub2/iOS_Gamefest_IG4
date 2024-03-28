@@ -80,27 +80,46 @@ struct ForumService {
     }
     
     // Ajouter un commentaire à un post
-        func addComment(postId: String, body: String) -> AnyPublisher<Comment, Error> {
-            let endpoint = "/forum/\(postId)/comment"
-            let parameters: Parameters = [
-                "message": "body",
-                "idUser": SessionManager.shared.user!.id,
+    func addComment(postId: String, body: String?) -> AnyPublisher<Comment, Error> {
+        print("Adding comment to post \(postId)")
+        print("Comment body: \(body ?? "No body")")
+        let endpoint = "/forum/\(postId)/comment"
         
-            ]
-            
-            return Future<Comment, Error> { promise in
-                APIManager.requestPOST(endpoint: endpoint, parameters: parameters) { (result: Result<Comment, AFError>) in
-                    switch result {
-                    case .success(let comment):
-                        promise(.success(comment))
-                        addPostToLocalPost(id: Int(postId)!, comment: comment)
-                    case .failure(let error):
-                        promise(.failure(error))
-                    }
+        // Safely unwrap the optional user ID
+        guard let userId = SessionManager.shared.user?.id else {
+            // Handle the error appropriately, e.g., by returning an error publisher
+            return Fail(error: NSError(domain: "ForumServiceError", code: -1, userInfo: [NSLocalizedDescriptionKey: "User not logged in"])).eraseToAnyPublisher()
+        }
+        
+        guard let body = body else {
+            return Fail(error: NSError(domain: "ForumServiceError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Comment body is empty"])).eraseToAnyPublisher()
+        }
+        
+        let parameters: Parameters = [
+            "message": body,
+            "idUser": userId
+        ]
+        
+        print("""
+              Endpoint: \(endpoint)
+              Parameters: \(parameters)
+              """)
+        
+        return Future<Comment, Error> { promise in
+            APIManager.requestPOST(endpoint: endpoint, parameters: parameters) { (result: Result<Comment, AFError>) in
+                print(result)
+                switch result {
+                case .success(let comment):
+                    promise(.success(comment))
+                    self.addPostToLocalPost(id: Int(postId) ?? Int.random(in: 0..<1000), comment: comment)
+                case .failure(let error):
+                    promise(.failure(error))
                 }
             }
-            .eraseToAnyPublisher()
         }
+        .eraseToAnyPublisher()
+    }
+
     //Permet d'ajouter le commentaire au post sans refetch l'api
     func addPostToLocalPost(id: Int, comment: Comment) {
         for i in 0..<ForumViewModel.shared.posts.count {

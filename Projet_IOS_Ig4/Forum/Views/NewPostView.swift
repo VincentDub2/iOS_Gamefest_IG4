@@ -33,7 +33,6 @@ struct NewPostView: View {
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray.opacity(0.5), lineWidth: 1))
                     .padding(.horizontal)
                     .padding(.top, 5)
-                
                 // Custom content input
                 HStack {
                     Text("Corps du texte")

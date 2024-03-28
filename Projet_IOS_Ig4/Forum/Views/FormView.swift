@@ -22,7 +22,7 @@ struct ForumView: View {
                 LazyVGrid(columns: gridItems, spacing: 20) {
                     ForEach(viewModel.posts) { post in
                         NavigationLink(destination: PostDetailView(post: post, viewModel: viewModel)) {
-                            PostView(post: post, color: post.color,avatar: post.avatar)
+                            PostView(post: post, color: post.color,avatar: post.avatar,full: false)
                         }
                     }
                 }.padding(.top,20)

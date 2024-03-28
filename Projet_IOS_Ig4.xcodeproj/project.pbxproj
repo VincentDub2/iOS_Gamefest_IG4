@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		32C359962BB3FB670098541C /* AnimateAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C359952BB3FB670098541C /* AnimateAvatar.swift */; };
+		BFD6F4BF2BB3826400CFEA98 /* AnimateAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6F4BE2BB3826400CFEA98 /* AnimateAvatar.swift */; };
+		C2213DA72BB497EE00108B00 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C2213DA62BB497EE00108B00 /* Alamofire */; };
 		32E5FED32BB4BCF100CBB346 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E5FED22BB4BCF100CBB346 /* GameViewModel.swift */; };
 		32E5FED82BB4C61600CBB346 /* GameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E5FED72BB4C61600CBB346 /* GameDetailView.swift */; };
 		BFD6F4BF2BB3826400CFEA98 /* AnimateAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6F4BE2BB3826400CFEA98 /* AnimateAvatar.swift */; };
@@ -96,7 +98,6 @@
 		C289986E2BA48DC8005A681E /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C289986D2BA48DC8005A681E /* PostDetailView.swift */; };
 		C28998702BA48DE2005A681E /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C289986F2BA48DE2005A681E /* NewPostView.swift */; };
 		C28998762BA4986D005A681E /* VCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998752BA4986D005A681E /* VCard.swift */; };
-		C28998792BA49B29005A681E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C28998782BA49B29005A681E /* Alamofire */; };
 		C289987F2BA4C8BE005A681E /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = C289987E2BA4C8BE005A681E /* RiveRuntime */; };
 		C28998812BA4C8E0005A681E /* testRive.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998802BA4C8E0005A681E /* testRive.swift */; };
 		C28998872BA4D40E005A681E /* ZombieWalking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28998862BA4D40E005A681E /* ZombieWalking.swift */; };
@@ -263,8 +264,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C28998792BA49B29005A681E /* Alamofire in Frameworks */,
 				C289987F2BA4C8BE005A681E /* RiveRuntime in Frameworks */,
+				C2213DA72BB497EE00108B00 /* Alamofire in Frameworks */,
 				C28998302BA22258005A681E /* CalendarKit in Frameworks */,
 				C289984B2BA2F106005A681E /* KeychainSwift in Frameworks */,
 			);
@@ -857,8 +858,8 @@
 			packageProductDependencies = (
 				C289982F2BA22258005A681E /* CalendarKit */,
 				C289984A2BA2F106005A681E /* KeychainSwift */,
-				C28998782BA49B29005A681E /* Alamofire */,
 				C289987E2BA4C8BE005A681E /* RiveRuntime */,
+				C2213DA62BB497EE00108B00 /* Alamofire */,
 			);
 			productName = Projet_IOS_Ig4;
 			productReference = C28997DC2BA0974D005A681E /* Projet_IOS_Ig4.app */;
@@ -1235,10 +1236,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Projet_IOS_Ig4/Preview Content\"";
-				DEVELOPMENT_TEAM = 3Q95PLX65V;
+				DEVELOPMENT_TEAM = Z3AQFUWRS9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1252,8 +1254,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Lucas.Projet-IOS-Ig4";
+				PRODUCT_BUNDLE_IDENTIFIER = "vincent.Projet-IOS-Ig4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1265,10 +1268,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Projet_IOS_Ig4/Preview Content\"";
-				DEVELOPMENT_TEAM = 3Q95PLX65V;
+				DEVELOPMENT_TEAM = Z3AQFUWRS9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1282,8 +1286,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Lucas.Projet-IOS-Ig4";
+				PRODUCT_BUNDLE_IDENTIFIER = "vincent.Projet-IOS-Ig4";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1443,6 +1448,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C2213DA62BB497EE00108B00 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C28998772BA49B29005A681E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		C289982F2BA22258005A681E /* CalendarKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C28998272BA2208E005A681E /* XCRemoteSwiftPackageReference "CalendarKit" */;
@@ -1452,11 +1462,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C28998492BA2F106005A681E /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
-		};
-		C28998782BA49B29005A681E /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C28998772BA49B29005A681E /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
 		};
 		C289987E2BA4C8BE005A681E /* RiveRuntime */ = {
 			isa = XCSwiftPackageProductDependency;
