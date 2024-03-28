@@ -10,6 +10,9 @@
 		32C359962BB3FB670098541C /* AnimateAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C359952BB3FB670098541C /* AnimateAvatar.swift */; };
 		BFD6F4BF2BB3826400CFEA98 /* AnimateAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6F4BE2BB3826400CFEA98 /* AnimateAvatar.swift */; };
 		C2213DA72BB497EE00108B00 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C2213DA62BB497EE00108B00 /* Alamofire */; };
+		32E5FED32BB4BCF100CBB346 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E5FED22BB4BCF100CBB346 /* GameViewModel.swift */; };
+		32E5FED82BB4C61600CBB346 /* GameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E5FED72BB4C61600CBB346 /* GameDetailView.swift */; };
+		BFD6F4BF2BB3826400CFEA98 /* AnimateAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6F4BE2BB3826400CFEA98 /* AnimateAvatar.swift */; };
 		C22279082BAB5B6000B9B55C /* Housing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22279072BAB5B6000B9B55C /* Housing.swift */; };
 		C222790A2BAB5B8500B9B55C /* HousingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22279092BAB5B8500B9B55C /* HousingViewModel.swift */; };
 		C222790C2BAB5BCD00B9B55C /* HousingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C222790B2BAB5BCD00B9B55C /* HousingView.swift */; };
@@ -130,6 +133,8 @@
 
 /* Begin PBXFileReference section */
 		32C359952BB3FB670098541C /* AnimateAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateAvatar.swift; sourceTree = "<group>"; };
+		32E5FED22BB4BCF100CBB346 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		32E5FED72BB4C61600CBB346 /* GameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailView.swift; sourceTree = "<group>"; };
 		BFD6F4BE2BB3826400CFEA98 /* AnimateAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateAvatar.swift; sourceTree = "<group>"; };
 		C22279072BAB5B6000B9B55C /* Housing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Housing.swift; sourceTree = "<group>"; };
 		C22279092BAB5B8500B9B55C /* HousingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousingViewModel.swift; sourceTree = "<group>"; };
@@ -283,6 +288,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32E5FED12BB4BCD300CBB346 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				32E5FED62BB4C60200CBB346 /* Views */,
+				32E5FED42BB4BD0500CBB346 /* ViewModels */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		32E5FED42BB4BD0500CBB346 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				32E5FED22BB4BCF100CBB346 /* GameViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		32E5FED62BB4C60200CBB346 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32E5FED72BB4C61600CBB346 /* GameDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C22279032BAB5AF900B9B55C /* Logement */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +548,7 @@
 		C28997DE2BA0974D005A681E /* Projet_IOS_Ig4 */ = {
 			isa = PBXGroup;
 			children = (
+				32E5FED12BB4BCD300CBB346 /* Game */,
 				C22ED5BA2BB3807000106C44 /* RiveAsset */,
 				C22ED5752BB37E7300106C44 /* Festival */,
 				C22ED5842BB37E8000106C44 /* Poste */,
@@ -988,6 +1019,7 @@
 				C2BF7A692BA5D6B900CB30BA /* PostView.swift in Sources */,
 				C22ED52B2BB2291700106C44 /* FAQView.swift in Sources */,
 				C28998392BA226A6005A681E /* CalendarView.swift in Sources */,
+				32E5FED82BB4C61600CBB346 /* GameDetailView.swift in Sources */,
 				C22ED5272BB2291700106C44 /* ProfileView.swift in Sources */,
 				C2E592172BADD6C700DA3136 /* HousingCell.swift in Sources */,
 				C222790A2BAB5B8500B9B55C /* HousingViewModel.swift in Sources */,
@@ -1038,6 +1070,7 @@
 				C22ED5312BB22BD600106C44 /* MailView.swift in Sources */,
 				C28998702BA48DE2005A681E /* NewPostView.swift in Sources */,
 				C289988C2BA4DACF005A681E /* AccueilView.swift in Sources */,
+				32E5FED32BB4BCF100CBB346 /* GameViewModel.swift in Sources */,
 				C22279222BAB620400B9B55C /* HousingDetailView.swift in Sources */,
 				C28998532BA3016C005A681E /* Creneau.swift in Sources */,
 				C22ED58A2BB37F4300106C44 /* DateUtils.swift in Sources */,

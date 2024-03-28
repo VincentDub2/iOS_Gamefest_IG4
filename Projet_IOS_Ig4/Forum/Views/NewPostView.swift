@@ -20,14 +20,14 @@ struct NewPostView: View {
             VStack(spacing: 0) {
                 // Custom title input
                 HStack {
-                    Text("Title")
+                    Text("Titre")
                         .font(.callout)
                         .foregroundColor(.secondary)
                     Spacer()
                 }
                 .padding(.horizontal)
                 
-                TextField("Enter your title here", text: $title)
+                TextField("Entrer le titre de votre post ici ", text: $title)
                     .padding()
                     .background(Color(UIColor.systemBackground))
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray.opacity(0.5), lineWidth: 1))
@@ -35,7 +35,7 @@ struct NewPostView: View {
                     .padding(.top, 5)
                 // Custom content input
                 HStack {
-                    Text("Content")
+                    Text("Corps du texte")
                         .font(.callout)
                         .foregroundColor(.secondary)
                     Spacer()
@@ -51,12 +51,12 @@ struct NewPostView: View {
                 
                 Spacer()
             }
-            .navigationBarTitle("New Post", displayMode: .inline)
-            .navigationBarItems(leading: Button("Cancel") {
+            .navigationBarTitle("Nouveau Post", displayMode: .inline)
+            .navigationBarItems(leading: Button("Quitter") {
                 presentationMode.wrappedValue.dismiss()
-            }, trailing: Button("Post") {
+            }, trailing: Button("Publier") {
                 viewModel.addPost(title: title, body: content)
-                print("Post added")
+                print("Post ajouté")
                 presentationMode.wrappedValue.dismiss()
             }.disabled(title.isEmpty || content.isEmpty))
         }
